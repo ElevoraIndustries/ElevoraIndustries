@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="What we do at Elevora Industries: identity, structure, digital experience, and momentum systems that strengthen perception and drive results." />
+  <title>Elevora Industries | What We Do</title>
+
+  <style>
+    :root{
+      --blue:#0094FF;
+      --gold:#FFCC00;
+      --ink:#0b1220;
+      --text:#1c2333;
+      --muted:#5a6477;
+      --bg:#f6f8fc;
+      --line:rgba(11,18,32,.10);
+      --shadow: 0 14px 40px rgba(11,18,32,.10);
+      --radius:18px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(0,148,255,.18), transparent 60%),
+        radial-gradient(800px 550px at 95% 10%, rgba(255,204,0,.22), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
+      line-height:1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+      color:var(--ink); white-space:nowrap;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      box-shadow: 0 10px 24px rgba(0,148,255,.18);
+      position:relative; overflow:hidden;
+    }
+    .mark:after{
+      content:""; position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
+      transform: rotate(20deg);
+      animation: shine 5.8s ease-in-out infinite;
+      opacity:.7;
+    }
+    @keyframes shine{
+      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
+      72% { opacity:.75; }
+      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    }
+
+    nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px; }
+    nav a{
+      font-weight:600; color:var(--muted);
+      padding:10px 10px; border-radius:12px;
+      transition: background .2s ease, color .2s ease;
+    }
+    nav a:hover{ background: rgba(0,148,255,.08); color:var(--ink); }
+    nav a.active{ background: rgba(255,204,0,.22); color:var(--ink); }
+
+    .cta-row{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border-radius:14px; padding:11px 14px; font-weight:750;
+      border:1px solid var(--line); background:#fff; color:var(--ink);
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+    .btn-primary{
+      border:none;
+      background: linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      color:#0b1220;
+      box-shadow: 0 16px 36px rgba(0,148,255,.18);
+    }
+    .btn-primary:hover{ box-shadow: 0 20px 44px rgba(0,148,255,.22); }
+    .menu-toggle{ display:none; }
+    @media (max-width: 840px){
+      nav{ display:none; }
+      .menu-toggle{ display:inline-flex; }
+    }
+
+    /* Page head */
+    main{ padding: 44px 0 26px; }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color:var(--muted);
+      font-weight:650;
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,204,0,.18);
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+      color:var(--ink);
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 18px;
+      max-width: 68ch;
+      margin:0 0 18px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top: 18px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Offer cards */
+    .offers{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 940px){ .offers{ grid-template-columns: 1fr; } }
+
+    .offer{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      position:relative;
+      overflow:hidden;
+    }
+    .offer:after{
+      content:"";
+      position:absolute;
+      inset:-90px -80px auto auto;
+      width:260px; height:260px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
+      transform: rotate(18deg);
+    }
+    .offer.gold:after{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+
+    .kicker{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      position:relative;
+      color:var(--muted);
+      font-weight:750;
+    }
+    .badge{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.9);
+      font-size:12px;
+      color:var(--ink);
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .offer h2{
+      margin:10px 0 8px;
+      font-size: 20px;
+      letter-spacing:-.3px;
+      color:var(--ink);
+      position:relative;
+    }
+    .offer p{ margin:0; color:var(--muted); position:relative; }
+    .offer ul{
+      margin:14px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      position:relative;
+    }
+    .offer li{ margin:8px 0; }
+
+    /* Package band */
+    .band{
+      padding:20px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(0,148,255,.22), transparent 60%),
+        radial-gradient(900px 260px at 90% 30%, rgba(255,204,0,.22), transparent 62%),
+        rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+    }
+    .band strong{ font-size: 18px; color:var(--ink); }
+    .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
+
+    /* FAQ */
+    .faq{
+      padding:18px;
+    }
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 14px;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      margin:12px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--ink);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin:10px 0 0;
+      color:var(--muted);
+    }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.66);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--muted); font-weight:650; font-size: 14px;
+    }
+    .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+    .small{ font-size: 13px; }
+
+    @media (prefers-reduced-motion: reduce){
+      .mark:after{ animation:none; }
+      .btn{ transition:none; }
+    }
+    .mark{
+  width:38px; height:38px; border-radius:12px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent; /* remove gradient if you want */
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* use 'cover' if you want it to fill */
+  display:block;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="Main Navigation">
+        <a class="brand" href="index.html" aria-label="Elevora Industries Home">
+          <span class="mark" aria-hidden="true">
+  <img src="logotransparent.png" alt="" />
+</span>
+          <span>Elevora Industries</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a class="active" href="what-we-do.html">What We Do</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="Work.html">Work</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta-row">
+          <a class="btn" href="Contact.html">Let’s Talk</a>
+          <a class="btn btn-primary" href="Contact.html">Request a Quote</a>
+          <button class="btn menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" style="display:none; padding:0 0 14px;">
+        <div class="card" style="padding:10px;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
+            <a class="btn" href="process.html"toggleMenu()">Process</a>
+            <a class="btn" href="Work.html"toggleMenu()">Work</a>
+            <a class="btn" href="Contact.html" onclick="toggleMenu()">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="pill">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Built to strengthen perception</span>
+    </div>
+
+    <h1>What we do</h1>
+    <p class="sub">
+      Elevora Industries helps your business stand out with clarity, confidence, and real visibility—so people notice you, trust you, and choose you.<br> 
+      We blend brand, marketing, and a strong online presence to spark momentum. Ready to get seen? Let’s build!
+    </p>
+
+    <div class="band" aria-label="Quick overview">
+      <div>
+        <strong>Four core pillars</strong>
+        <span>•Brand & Perception<br>•Marketing & Advertising<br>• Social Media & Web Presence<br>• Growth Momentum</span>
+      </div>
+      <a class="btn btn-primary" href="Contact.html">Start a Project</a>
+    </div>
+
+    <section class="grid" aria-label="Service blocks">
+      <div class="offers">
+        <article class="offer">
+          <div class="kicker">
+            <span>01 — Brand & Perception</span>
+            <span class="badge">Brand clarity</span>
+          </div>
+          <h2>Identity & messaging</h2>
+          <p>
+            We quickly sharpen how people see you. Clear, confident messaging, strong visuals, 
+            and a brand presence that feels premium and unmistakable from the first impression.
+          </p>
+          <ul>
+            <li>Brand identity + clear message (what you’re known for, who you serve, and why people should choose you)</li>
+            <li>How your business sounds + what you communicate (we help you use the same tone and simple, clear words everywhere so people trust you and recognize you fast)</li>
+            <li>Visual direction + brand look (colors, fonts, layout style, and a simple brand kit so everything looks consistent and professional)</li>
+            <li>Offer presentation that feels confident (clear, professional, and inviting—without sounding pushy)</li>
+          </ul>
+        </article>
+
+        <article class="offer gold">
+          <div class="kicker">
+            <span>02 — Marketing & Advertising</span>
+            <span class="badge">Spread the word</span>
+          </div>
+          <h2>Visibility & customer traffic</h2>
+          <p>
+            Great businesses don’t need to change everything — they just need to be seen the right way. We take what makes you special 
+            and turn it into marketing that people notice, remember, and respond to.
+          </p>
+          <ul>
+            <li>Campaign direction (what to promote, when to promote it, and why it matters)</li>
+            <li>Ad-ready messaging (short hooks, offers, and calls-to-action that don’t feel pushy)</li>
+            <li>Content + promo planning (posts, reels, specials, announcements, launches)</li>
+            <li>Real-world promotion (flyers, signage, event buzz, partnerships, community visibility))</li>
+            <li>Consistent look across every touchpoint (so people recognize you instantly)</li>
+          </ul>
+        </article>
+
+        <article class="offer gold">
+          <div class="kicker">
+            <span>03 — Social Media & Web Presence</span>
+            <span class="badge">Look legit everywhere</span>
+          </div>
+          <h2>Your online footprint</h2>
+          <p>
+            Your pages should feel premium, consistent, and easy to trust. We build a clean online presence that looks sharp, 
+            reads clearly, and makes it simple for customers to reach you.
+          </p>
+          <ul>
+            <li>Social profile setup + optimization (bio, highlights, links, branding, pinned content)</li>
+            <li>Content-ready layouts (templates, post styles, reels covers, story formats)</li>
+            <li>Website homepage + key pages (mobile-first, fast, modern)</li>
+            <li>Trust + action sections (clear CTAs, contact options, proof, FAQs)</li>
+            <li>Search-ready setup (clear page structure, strong headings, and clean info so people can find you fast).</li>
+            <li>Lead capture that’s effortless (forms, buttons, call/text, booking links)</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <div class="kicker">
+            <span>04 — Growth Momentum</span>
+            <span class="badge">Stay visible. Stay unforgettable.</span>
+          </div>
+          <h2>Momentum that keeps building</h2>
+          <p>
+            The goal isn’t a one-time spike — it’s steady visibility that compounds.
+             We bring the energy, direction, and marketing know-how to keep you top-of-mind, 
+            so new attention turns into real trust and repeat traffic.
+          </p>
+          <ul>
+            <li>Weekly visibility rhythm (posts, promos, stories, announcements — simple and doable)</li>
+            <li>Promotion playbooks (what to push, how to say it, and where it performs best)</li>
+            <li>Trust boosters that hit (reviews, proof, FAQs, before/after, “why choose us” moments)</li>
+            <li>What’s working check-ins (tighten what performs, cut what doesn’t)</li>
+            <li>Keep-it-fresh support options (updates, new promos, seasonal pushes, clean consistency)</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="card faq" aria-label="FAQ">
+        <h2 style="margin:0 0 12px;">FAQ</h2>
+
+        <details>
+          <summary>Do you only do websites?</summary>
+          <p>
+            No. Websites are one of the main outputs, but the real focus is perception + clarity.
+            We also help with messaging, structure, and systems that support growth beyond just the site.
+          </p>
+        </details>
+
+        <details>
+          <summary>What if I don’t have a brand yet?</summary>
+          <p>
+            Perfect. We can start from scratch with a clean direction—then build the website and assets from that foundation.
+          </p>
+        </details>
+
+        <details>
+          <summary>How fast can we launch?</summary>
+          <p>
+            Timelines depend on scope, but we keep the process simple: discover → clarify → build → launch.
+            If you need something quick, we can start with a strong homepage and expand from there.
+          </p>
+        </details>
+
+        <details>
+          <summary>What do you need from me?</summary>
+          <p>
+            A clear goal, examples of businesses you respect (if you have them), and honest feedback.
+            We’ll guide you through the rest with a simple step-by-step plan.
+          </p>
+        </details>
+
+        <div class="band" style="margin-top:16px;">
+          <div>
+            <strong>Ready to sharpen your presence?</strong>
+            <span>Tell us what you’re building and we’ll map the next steps.</span>
+          </div>
+          <a class="btn btn-primary" href="Contact.html">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Footer">
+    <div class="wrap">
+      <div class="foot">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+</span>
+          <div>
+            <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
+            <div class="small">Identity • Structure • Strategy</div>
+          </div>
+        </div>
+
+        <div>
+          <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
+          <div class="small">Built for clarity, trust, and momentum.</div>
+        </div>
+
+        <div>
+          <a href="Contact.html">Contact</a> &nbsp;•&nbsp;
+          <a href="what-we-do.html">What We Do</a> &nbsp;•&nbsp;
+          <a href="process.html">Process</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Elevora Industries helps businesses strengthen identity, build clear structure, and improve how they’re perceived—so momentum follows." />
+  <title>Elevora Industries | Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    :root{
+      --blue:#0094FF;
+      --gold:#FFCC00;
+      --ink:#0b1220;
+      --text:#1c2333;
+      --muted:#5a6477;
+      --card:#ffffff;
+      --bg:#f6f8fc;
+      --line:rgba(11,18,32,.10);
+      --shadow: 0 14px 40px rgba(11,18,32,.10);
+      --radius:18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(0,148,255,.18), transparent 60%),
+        radial-gradient(800px 550px at 95% 10%, rgba(255,204,0,.22), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
+      line-height:1.5;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; height:auto; display:block; }
+    .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+      color:var(--ink);
+      white-space:nowrap;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      box-shadow: 0 10px 24px rgba(0,148,255,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
+      transform: rotate(20deg);
+      animation: shine 5.8s ease-in-out infinite;
+      opacity:.7;
+    }
+    @keyframes shine{
+      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
+      72% { opacity:.75; }
+      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    }
+
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; align-items:center; gap:14px;
+    }
+    nav a{
+      font-weight:600;
+      color:var(--muted);
+      padding:10px 10px;
+      border-radius:12px;
+      transition: background .2s ease, color .2s ease;
+    }
+    nav a:hover{ background: rgba(0,148,255,.08); color:var(--ink); }
+
+    .cta-row{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border-radius:14px;
+      padding:11px 14px;
+      font-weight:750;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+    .btn-primary{
+      border:none;
+      background: linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      color:#0b1220;
+      box-shadow: 0 16px 36px rgba(0,148,255,.18);
+    }
+    .btn-primary:hover{ box-shadow: 0 20px 44px rgba(0,148,255,.22); }
+
+    /* Mobile */
+    .menu-toggle{ display:none; }
+    @media (max-width: 840px){
+      nav{ display:none; }
+      .menu-toggle{ display:inline-flex; }
+    }
+
+    /* Hero */
+    .hero{
+      padding:64px 0 26px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    @media (max-width: 940px){
+      .hero{ padding:44px 0 18px; }
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color:var(--muted);
+      font-weight:650;
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,204,0,.18);
+    }
+
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height:1.05;
+      letter-spacing:-.8px;
+      color:var(--ink);
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 18px;
+      max-width: 56ch;
+      margin:0 0 18px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top: 18px;
+      align-items:center;
+    }
+
+    .proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+      color:var(--muted);
+      font-weight:650;
+      font-size:14px;
+    }
+    .proof span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      background: rgba(255,255,255,.66);
+      border:1px solid var(--line);
+      border-radius:999px;
+    }
+
+    /* Feature Card */
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .visual{
+      padding:18px;
+      height:100%;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .visual-top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size:13px;
+      color:var(--ink);
+      font-weight:800;
+    }
+    .grid-cards{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 480px){
+      .grid-cards{ grid-template-columns: 1fr; }
+    }
+
+    .mini{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      min-height:110px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+    }
+    .mini:before{
+      content:"";
+      position:absolute;
+      inset:auto -30% -60% -30%;
+      height:140px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.16), transparent 70%);
+      transform: rotate(10deg);
+    }
+    .mini b{
+      font-size:14px;
+      color:var(--ink);
+      position:relative;
+    }
+    .mini p{
+      margin:6px 0 0;
+      font-size:13px;
+      color:var(--muted);
+      position:relative;
+    }
+    .mini .tag{
+      margin-top:10px;
+      font-size:12px;
+      font-weight:800;
+      color: var(--ink);
+      opacity:.9;
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+      position:relative;
+    }
+    .mini .tag i{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px rgba(0,148,255,.14);
+      display:inline-block;
+    }
+    .mini.gold:before{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+    .mini.gold .tag i{
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,204,0,.16);
+    }
+
+    /* Sections */
+    section{ padding: 44px 0; }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom: 16px;
+    }
+    h2{
+      margin:0;
+      font-size: clamp(24px, 2.4vw, 34px);
+      letter-spacing:-.4px;
+      color:var(--ink);
+    }
+    .hint{
+      color:var(--muted);
+      font-weight:650;
+      max-width: 56ch;
+    }
+
+    .cols-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 940px){
+      .cols-3{ grid-template-columns: 1fr; }
+    }
+
+    .service{
+      padding:18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      position:relative;
+      overflow:hidden;
+    }
+    .service:after{
+      content:"";
+      position:absolute;
+      inset:-80px -60px auto auto;
+      width:220px; height:220px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
+      transform: rotate(18deg);
+    }
+    .service:nth-child(2):after{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+    .service:nth-child(3):after{
+      background: radial-gradient(closest-side, rgba(0,148,255,.14), transparent 70%);
+    }
+    .service h3{
+      margin:0 0 8px;
+      font-size: 18px;
+      color:var(--ink);
+      position:relative;
+    }
+    .service p{
+      margin:0;
+      color:var(--muted);
+      position:relative;
+    }
+    .service ul{
+      margin:14px 0 0;
+      padding-left: 18px;
+      color:var(--muted);
+      position:relative;
+    }
+    .service li{ margin:8px 0; }
+
+    /* Process */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top: 16px;
+    }
+    @media (max-width: 1020px){
+      .steps{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px){
+      .steps{ grid-template-columns: 1fr; }
+    }
+    .step{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+    }
+    .num{
+      width:34px; height:34px;
+      border-radius:12px;
+      display:grid; place-items:center;
+      font-weight:900;
+      background: rgba(0,148,255,.10);
+      border:1px solid rgba(0,148,255,.16);
+      color:var(--ink);
+      margin-bottom:10px;
+    }
+    .step:nth-child(2) .num{
+      background: rgba(255,204,0,.16);
+      border:1px solid rgba(255,204,0,.22);
+    }
+    .step:nth-child(3) .num{
+      background: rgba(0,148,255,.10);
+      border:1px solid rgba(0,148,255,.16);
+    }
+    .step:nth-child(4) .num{
+      background: rgba(255,204,0,.14);
+      border:1px solid rgba(255,204,0,.22);
+    }
+    .step b{ color:var(--ink); }
+    .step p{ margin:6px 0 0; color:var(--muted); }
+
+    /* CTA band */
+    .band{
+      margin-top: 10px;
+      padding: 22px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(0,148,255,.22), transparent 60%),
+        radial-gradient(900px 260px at 90% 30%, rgba(255,204,0,.22), transparent 62%),
+        rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .band strong{ font-size: 18px; color:var(--ink); }
+    .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.66);
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:650;
+      font-size: 14px;
+    }
+    .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+    .small{ font-size: 13px; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .mark:after{ animation:none; }
+      .btn{ transition:none; }
+    }
+    .mark{
+  width:38px; height:38px; border-radius:12px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent; /* remove gradient if you want */
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* use 'cover' if you want it to fill */
+  display:block;
+}
+/* Premium section surface so headings don't float on the blue/gradient */
+.section-surface{
+  padding: 26px;
+  border-radius: calc(var(--radius) + 6px);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.80);
+  box-shadow: var(--shadow);
+}
+
+/* Tighter spacing inside the surface */
+.section-surface .section-head{ margin-bottom: 10px; }
+.section-surface .cols-3{ margin-top: 14px; }
+section{ padding: 44px 0; }               /* your existing */
+.section-surface{ margin-top: 12px; }     /* consistent spacing under headings/pills */
+/* Tighten spacing between Hero and What We Deliver */
+.hero{ padding-bottom: 10px; }          /* was 26px */
+#what-we-deliver{ padding-top: 10px; }  /* overrides section's 44px top padding */
+#what-we-deliver .section-surface{ margin-top: 0; }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="Main Navigation">
+        <a class="brand" href="#top" aria-label="Elevora Industries Home">
+          <span class="mark" aria-hidden="true">
+  <img src="logotransparent.png" alt="" />
+</span>
+          <span>Elevora Industries</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="What-We-Do.html">What We Do</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="Work.html">Work</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta-row">
+          <a class="btn" href="Contact.html">Let’s Talk</a>
+          <a class="btn btn-primary" href="Contact.html">Request a Quote</a>
+          <button class="btn menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" style="display:none; padding:0 0 14px;">
+        <div class="card" style="padding:10px;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn" href="What-We-Do.html" onclick="toggleMenu()">What We Do</a>
+            <a class="btn" href="process.html"toggleMenu()">Process</a>
+            <a class="btn" href="Work.html" onclick="toggleMenu()">Work</a>
+            <a class="btn" href="Contact.html" onclick="toggleMenu()">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="wrap">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-grid">
+        <div>
+          <div class="pill">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Identity • Structure • Strategy</span>
+          </div>
+
+          <h1>
+            Elevate how people see your business—<br />
+            so more people feel confident choosing you.
+          </h1>
+
+          <p class="sub">
+            Elevora Industries helps businesses attract more customers with bold, creative marketing and smart advertising that generates leads and brings people through the door. We refine your brand message, strengthen your presence, 
+            and build steady momentum that turns visibility into sales.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="Contact.html">Start a Project</a>
+            <a class="btn" href="What-We-Do.html">Explore What We Do</a>
+          </div>
+
+          <div class="proof" aria-label="Proof points">
+            <span>⚡ Clear positioning</span>
+            <span>🧠 Practical systems</span>
+            <span>📈 Momentum-focused</span>
+            <span>🤝 Built on trust</span>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Highlights panel">
+          <div class="visual">
+            <div class="visual-top">
+              <span>What we build</span>
+              <span class="chip">Elevora Method</span>
+            </div>
+
+            <div class="grid-cards">
+              <div class="mini">
+                <b>Brand & perception</b>
+                <p>Make your message clear, confident, and consistent everywhere people find you—signage, social posts, your website, and every first conversation.</p>
+                <span class="tag"><i aria-hidden="true"></i> Identity</span>
+              </div>
+
+              <div class="mini gold">
+                <b>Structure & clarity</b>
+                <p>Fresh, creative, and well-structured marketing that builds real awareness—and brings more people through your doors.</p>
+                <span class="tag"><i aria-hidden="true"></i> Structure</span>
+              </div>
+
+              <div class="mini gold">
+                <b>Digital experience</b>
+                <p>Polished social pages and a strong online presence that really matters—built to look legit, feel premium, and make it easy for customers to reach you.</p>
+                <span class="tag"><i aria-hidden="true"></i> Experience</span>
+              </div>
+
+              <div class="mini">
+                <b>Growth momentum</b>
+                <p>Energy, motivation, and real marketing expertise that builds your presence online and out in the community—turning attention into momentum.</p>
+                <span class="tag"><i aria-hidden="true"></i> Momentum</span>
+              </div>
+            </div>
+
+            <div class="band" aria-label="Quick CTA">
+              <div>
+                <strong>Want a clean, powerful presence online, and out in the community?</strong>
+                <span>We’ll build a clear game plan and bring the kind of visibility people will truly remember!</span>
+              </div>
+              <a class="btn btn-primary" href="Contact.html">Book a Free Call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--What We Deliver-->
+    <section id="what-we-deliver" aria-label="What We Deliver">
+  <div class="section-surface">
+    <div class="section-head">
+      <div>
+        <h2>What We Deliver</h2>
+        <p class="hint">
+         We help businesses get noticed and bring in more customer traffic by blending creative promotion with a strong online presence—so people hear about you, recognize you, and feel confident reaching out or walking in.
+</p>
+      </div>
+    </div>
+
+    <div class="cols-3">
+      <article class="service">
+        <h3>Awareness & promotion</h3>
+        <p>Turn what you already offer into marketing people pay attention to!</p>
+        <ul>
+          <li>Campaign ideas (what to promote + why it works)</li>
+          <li>Flyers, signage, and event-ready promos</li>
+          <li>Ads and announcements that feel natural, not pushy</li>
+        </ul>
+      </article>
+
+      <article class="service">
+        <h3>Online presence & digital assets</h3>
+        <p>Make your business look legit the instant someone checks you out—then make it easy to contact you, book, or buy!</p>
+        <ul>
+          <li>Premium pages that explain your offer fast (home + key pages)</li>
+          <li>Social + website consistency (same look, same message, everywhere)</li>
+          <li>Action pathways that convert (tap-to-call/text, booking link, forms, clear next step)</li>
+        </ul>
+      </article>
+
+      <article class="service">
+        <h3>Growth momentum</h3>
+        <p>Keep your name circulating and your marketing moving—so visibility turns into steady leads and repeat traffic!</p>
+        <ul>
+          <li>A simple weekly promo rhythm (posts, specials, reminders, event-style pushes)</li>
+          <li>Small upgrades that remove friction (clear offers, faster replies, easier next step)</li>
+          <li>Clean handoff + next-step playbook (what to do next, what to post, what to run)</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <!-- Process -->
+    <section id="process" aria-label="Process">
+      <div class="section-head">
+        <div>
+          <h2>How it works</h2>
+          <p class="hint">
+            No fluff—just a clear, proven process that strengthens your presence online and out in the community, turning visibility into steady momentum.
+          </p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <b>Walkthrough + Wins</b>
+          <p>We take a quick look at what you already have (offer, reputation, signage, social, website) and spot the fastest ways to get more attention and more customers—without changing who you are.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <b>Promo Blueprint</b>
+          <p>We build a simple promotion plan around what actually drives traffic in your area: what to push, how to say it, where it should show up, and how often—so your marketing feels intentional, not random.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <b>Visibility Buildout</b>
+          <p>We create the pieces that make you look premium and easy to choose: upgraded social presence, clean web touchpoints, ads/promos, flyers/signage, and event-ready content that spreads the word fast.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <b>Rollout + Momentum Plan</b>
+          <p>We launch the campaign clean, confirm everything is working, and hand you a plug-and-play plan you can keep running—so visibility keeps stacking after the project is done.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="connect" aria-label="Connect with Elevora Industries">
+  <div class="connect-inner">
+    <div class="connect-copy">
+      <h2 class="connect-title">Connect with Elevora</h2>
+      <p class="connect-sub">
+        Stay connected for new launches, featured work, and fresh promos — or reach out anytime for more information!
+      </p>
+
+      <div class="connect-actions" aria-label="Social links">
+        <a class="connect-btn" href="https://www.instagram.com/elevoraindustries/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a class="connect-btn" href="https://www.facebook.com/profile.php?id=61585322543345" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          <span>Facebook</span>
+        </a>
+
+        <a class="connect-btn" href="https://share.google/JIoY73SFAUyAghNCa" target="_blank" rel="noopener noreferrer" aria-label="Google Business Profile">
+          <i class="fa-brands fa-google" aria-hidden="true"></i>
+          <span>Google</span>
+        </a>
+      </div>
+
+      <p class="connect-note">
+        Prefer a quick message? <a href="contact.html">Contact us</a>.
+      </p>
+    </div>
+
+    <div class="connect-card" aria-hidden="true">
+      <div class="connect-badge">Stay in the loop</div>
+      <div class="connect-big">Presence that looks legit — and gets noticed.</div>
+      <div class="connect-small">Follow for updates, promos, and what we’re building next.</div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<style>
+  .social{ list-style:none; margin:0; padding:0; display:flex; gap:12px; }
+  .social a{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:44px; height:44px; border-radius:14px;
+    border:1px solid rgba(11,18,32,.10);
+    background: rgba(255,255,255,.85);
+    font-size:20px;
+  }
+  .social a:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+</style>
+
+
+          <div class="band" style="margin-top:16px;">
+            <div>
+              <strong>Free clarity call</strong>
+              <span>15 minutes. Straight answers.</span>
+            </div>
+            <a class="btn btn-primary" href="Contact.html">Schedule</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Footer">
+    <div class="wrap">
+      <div class="foot">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+</span>
+          <div>
+            <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
+            <div class="small">Identity • Structure • Strategy</div>
+          </div>
+        </div>
+
+        <div>
+          <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
+          <div class="small">Built for clarity, trust, and momentum.</div>
+        </div>
+
+        <div>
+          <a href="Contact.html">Contact</a> &nbsp;•&nbsp;
+          <a href="What-We-Do.html">What We Do</a> &nbsp;•&nbsp;
+          <a href="process.html">Process</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+
+    // Demo-only submit (so page doesn't break). Replace with real form handler.
+    function fakeSubmit(e){
+      e.preventDefault();
+      const note = document.getElementById("formNote");
+      note.textContent = "Form is a placeholder. Connect this to Formspree / Netlify Forms / your backend to receive messages.";
+      return false;
+    }
+  </script>
+</body>
+</html>

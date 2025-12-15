@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Elevora Industries to start a project, request a quote, or ask a question. Identity, structure, and strategy built for trust and momentum." />
+  <title>Elevora Industries | Contact</title>
+
+  <style>
+    :root{
+      --blue:#0094FF;
+      --gold:#FFCC00;
+      --ink:#0b1220;
+      --text:#1c2333;
+      --muted:#5a6477;
+      --bg:#f6f8fc;
+      --line:rgba(11,18,32,.10);
+      --shadow: 0 14px 40px rgba(11,18,32,.10);
+      --radius:18px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(0,148,255,.18), transparent 60%),
+        radial-gradient(800px 550px at 95% 10%, rgba(255,204,0,.22), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
+      line-height:1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+      color:var(--ink); white-space:nowrap;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      box-shadow: 0 10px 24px rgba(0,148,255,.18);
+      position:relative; overflow:hidden;
+    }
+    .mark:after{
+      content:""; position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
+      transform: rotate(20deg);
+      animation: shine 5.8s ease-in-out infinite;
+      opacity:.7;
+    }
+    @keyframes shine{
+      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
+      72% { opacity:.75; }
+      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    }
+
+    nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px; }
+    nav a{
+      font-weight:600; color:var(--muted);
+      padding:10px 10px; border-radius:12px;
+      transition: background .2s ease, color .2s ease;
+    }
+    nav a:hover{ background: rgba(0,148,255,.08); color:var(--ink); }
+    nav a.active{ background: rgba(255,204,0,.22); color:var(--ink); }
+
+    .cta-row{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border-radius:14px; padding:11px 14px; font-weight:750;
+      border:1px solid var(--line); background:#fff; color:var(--ink);
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer; user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+    .btn-primary{
+      border:none;
+      background: linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      color:#0b1220;
+      box-shadow: 0 16px 36px rgba(0,148,255,.18);
+    }
+    .btn-primary:hover{ box-shadow: 0 20px 44px rgba(0,148,255,.22); }
+    .menu-toggle{ display:none; }
+    @media (max-width: 840px){
+      nav{ display:none; }
+      .menu-toggle{ display:inline-flex; }
+    }
+
+    /* Page head */
+    main{ padding: 44px 0 40px; }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color:var(--muted);
+      font-weight:650;
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,204,0,.18);
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+      color:var(--ink);
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 18px;
+      max-width: 74ch;
+      margin:0 0 18px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Layout */
+    .grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      position:relative;
+      overflow:hidden;
+    }
+    .panel:after{
+      content:"";
+      position:absolute;
+      inset:-90px -80px auto auto;
+      width:260px; height:260px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
+      transform: rotate(18deg);
+      pointer-events:none;
+    }
+    .panel.gold:after{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+
+    .panel h2{
+      margin:0 0 10px;
+      color:var(--ink);
+      font-size: 18px;
+      letter-spacing:-.2px;
+      position:relative;
+    }
+    .panel p{ margin:0; color:var(--muted); position:relative; }
+    .panel ul{ margin:12px 0 0; padding-left:18px; color:var(--muted); position:relative; }
+    .panel li{ margin:8px 0; }
+
+    /* Form */
+    form{ position:relative; }
+    label{
+      display:block;
+      font-weight:900;
+      color:var(--ink);
+      margin:12px 0 6px;
+    }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      outline:none;
+      font:inherit;
+      background: rgba(255,255,255,.94);
+    }
+    textarea{ resize:vertical; min-height: 130px; }
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 620px){
+      .row{ grid-template-columns: 1fr; }
+    }
+    .form-actions{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .note{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-weight:650;
+      font-size: 13px;
+    }
+
+    /* Contact cards */
+    .quick{
+      display:grid;
+      gap:12px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(255,255,255,.90);
+      padding:14px;
+      box-shadow: 0 10px 26px rgba(11,18,32,.05);
+    }
+    .mini b{ color:var(--ink); }
+    .mini span{ display:block; margin-top:6px; color:var(--muted); font-weight:650; }
+    .link{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      margin-top:10px;
+      font-weight:900;
+      color:var(--ink);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    /* CTA band */
+    .band{
+      margin-top:14px;
+      padding:18px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(0,148,255,.22), transparent 60%),
+        radial-gradient(900px 260px at 90% 30%, rgba(255,204,0,.22), transparent 62%),
+        rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+    }
+    .band strong{ font-size: 17px; color:var(--ink); }
+    .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.66);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--muted); font-weight:650; font-size: 14px;
+    }
+    .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+    .small{ font-size: 13px; }
+
+    @media (prefers-reduced-motion: reduce){
+      .mark:after{ animation:none; }
+      .btn{ transition:none; }
+    }
+    .mark{
+  width:38px; height:38px; border-radius:12px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent; /* remove gradient if you want */
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* use 'cover' if you want it to fill */
+  display:block;
+}
+.mark{
+  width:38px; height:38px; border-radius:12px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent; /* remove gradient if you want */
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* use 'cover' if you want it to fill */
+  display:block;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="Main Navigation">
+        <a class="brand" href="index.html" aria-label="Elevora Industries Home">
+          <span class="mark" aria-hidden="true">
+  <img src="logotransparent.png" alt="" />
+</span>
+          <span>Elevora Industries</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="what-we-do.html">What We Do</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta-row">
+          <a class="btn" href="contact.html">Let’s Talk</a>
+          <a class="btn btn-primary" href="#form">Request a Quote</a>
+          <button class="btn menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" style="display:none; padding:0 0 14px;">
+        <div class="card" style="padding:10px;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
+            <a class="btn" href="process.html" onclick="toggleMenu()">Process</a>
+            <a class="btn" href="work.html" onclick="toggleMenu()">Work</a>
+            <a class="btn" href="contact.html" onclick="toggleMenu()">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="pill">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Simple, fast, and clear</span>
+    </div>
+
+    <h1>Contact Elevora</h1>
+    <p class="sub">
+      Tell us what you’re building. We’ll respond with next steps and a clean plan. No pressure—just clarity.
+    </p>
+
+    <div class="grid">
+      <!-- Form -->
+      <section class="panel" id="form" aria-label="Contact form">
+  <h2>Send a message</h2>
+  <p>Use the form below. If you prefer email or text, use the quick links on the right.</p>
+
+ <form id="contactForm" action="https://formspree.io/f/xkgdeayl" method="POST">
+
+    <!-- Redirect after successful submit -->
+
+    <div class="row">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="type">What do you need?</label>
+        <select id="type" name="type" required>
+          <option value="" selected disabled>Select one</option>
+          <option>Website / Landing Page</option>
+          <option>Brand / Messaging Clarity</option>
+          <option>Business Structure / Systems</option>
+          <option>Not sure yet (help me decide)</option>
+        </select>
+      </div>
+      <div>
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline" required>
+          <option value="" selected disabled>Select one</option>
+          <option>ASAP</option>
+          <option>1–2 weeks</option>
+          <option>3–4 weeks</option>
+          <option>Flexible</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="message">Project details</label>
+    <textarea id="message" name="message" placeholder="Briefly tell us your goal, what you currently have, and what you want to improve..." required></textarea>
+
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Send Message</button>
+      <a class="btn" href="work.html">See our work</a>
+    </div>
+
+    <p id="formNote" class="note"></p>
+    <p class="note">
+      Tip: If you already have a website/social pages, paste the links in your message so we can review faster.
+    </p>
+  </form>
+</section>
+
+      <!-- Quick contact -->
+      <aside class="quick" aria-label="Quick contact">
+        <section class="panel gold">
+          <h2>Quick options</h2>
+          <p>Choose what’s easiest. We keep it simple.</p>
+
+          <div class="mini" style="margin-top:12px;">
+            <b>Email:</b>
+            <a class="link" href="mailto:HunterAceves@elevoraindustries.com">HunterAceves@elevoraindustries.com</a>
+            <!-- Replace the email above with your real email -->
+          </div>
+
+          <div class="mini">
+            <b>Phone:</b>
+            <a class="link" href="tel:3603406293">(360) 340-6293</a>
+            <!-- Replace if you want a different business number -->
+          </div>
+
+          <div class="panel">
+  <h2>Connect with Elevora</h2>
+  <div class="calendly-inline-widget"
+       data-url="https://calendly.com/hunteraceves-elevoraindustries/30min"
+       style="min-width:320px;height:700px;"></div>
+</div>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </section>
+
+        <section class="card" aria-label="Expectations" style="padding:16px;">
+          <h2 style="margin:0 0 10px; color:var(--ink); font-size:18px; letter-spacing:-.2px;">What to expect</h2>
+          <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:650;">
+            <li>Response time: usually 24–48 hours</li>
+            <li>First message: a clear next-step plan</li>
+            <li>We’ll keep it simple and actionable</li>
+          </ul>
+
+          <div class="band" style="margin-top:14px;">
+            <div>
+              <strong>Want a fast starting point?</strong>
+              <span>We can begin with a premium homepage and expand.</span>
+            </div>
+            <a class="btn btn-primary" href="process.html">View the process</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer aria-label="Footer">
+    <div class="wrap">
+      <div class="foot">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+</span>
+
+          <div>
+            <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
+            <div class="small">Identity • Structure • Strategy</div>
+          </div>
+        </div>
+
+        <div>
+          <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
+          <div class="small">Built for clarity, trust, and momentum.</div>
+        </div>
+
+        <div>
+          <a href="what-we-do.html">What We Do</a> &nbsp;•&nbsp;
+          <a href="process.html">Process</a> &nbsp;•&nbsp;
+          <a href="work.html">Work</a> &nbsp;•&nbsp;
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+
+    // Demo-only submit so nothing breaks.
+    // Replace the <form action="#"> with a real handler to receive messages.
+    function fakeSubmit(e){
+      e.preventDefault();
+      const note = document.getElementById("formNote");
+      note.textContent = "Form is currently a placeholder. Connect it to Formspree / Netlify Forms / your backend to receive messages.";
+      return false;
+    }
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (res.ok) {
+      window.location.href = "Thankyoupage.html";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+
+  </script>
+</body>
+</html>

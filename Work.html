@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Elevora Industries work: case studies, transformations, and examples of identity, structure, and digital presence built for trust and momentum." />
+  <title>Elevora Industries | Work</title>
+
+  <style>
+    :root{
+      --blue:#0094FF;
+      --gold:#FFCC00;
+      --ink:#0b1220;
+      --text:#1c2333;
+      --muted:#5a6477;
+      --bg:#f6f8fc;
+      --line:rgba(11,18,32,.10);
+      --shadow: 0 14px 40px rgba(11,18,32,.10);
+      --radius:18px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(0,148,255,.18), transparent 60%),
+        radial-gradient(800px 550px at 95% 10%, rgba(255,204,0,.22), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
+      line-height:1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+      color:var(--ink); white-space:nowrap;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      box-shadow: 0 10px 24px rgba(0,148,255,.18);
+      position:relative; overflow:hidden;
+    }
+    .mark:after{
+      content:""; position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
+      transform: rotate(20deg);
+      animation: shine 5.8s ease-in-out infinite;
+      opacity:.7;
+    }
+    @keyframes shine{
+      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
+      72% { opacity:.75; }
+      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    }
+
+    nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px; }
+    nav a{
+      font-weight:600; color:var(--muted);
+      padding:10px 10px; border-radius:12px;
+      transition: background .2s ease, color .2s ease;
+    }
+    nav a:hover{ background: rgba(0,148,255,.08); color:var(--ink); }
+    nav a.active{ background: rgba(255,204,0,.22); color:var(--ink); }
+
+    .cta-row{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border-radius:14px; padding:11px 14px; font-weight:750;
+      border:1px solid var(--line); background:#fff; color:var(--ink);
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer; user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+    .btn-primary{
+      border:none;
+      background: linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      color:#0b1220;
+      box-shadow: 0 16px 36px rgba(0,148,255,.18);
+    }
+    .btn-primary:hover{ box-shadow: 0 20px 44px rgba(0,148,255,.22); }
+    .menu-toggle{ display:none; }
+    @media (max-width: 840px){
+      nav{ display:none; }
+      .menu-toggle{ display:inline-flex; }
+    }
+
+    /* Page head */
+    main{ padding: 44px 0 40px; }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color:var(--muted);
+      font-weight:650;
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,204,0,.18);
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+      color:var(--ink);
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 18px;
+      max-width: 74ch;
+      margin:0 0 18px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Filters */
+    .filters{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .tabs{
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .tab{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      font-weight:850;
+      color:var(--ink);
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .tab:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.08); }
+    .tab.active{
+      background: rgba(255,204,0,.28);
+      border-color: rgba(255,204,0,.35);
+    }
+
+    .search{
+      display:flex; gap:10px; align-items:center;
+      width:min(420px, 100%);
+    }
+    .search input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      outline:none;
+      font:inherit;
+      background: rgba(255,255,255,.92);
+    }
+
+    /* Grid */
+    .grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 1020px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .work{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-height: 260px;
+    }
+    .work:after{
+      content:"";
+      position:absolute;
+      inset:-90px -80px auto auto;
+      width:260px; height:260px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
+      transform: rotate(18deg);
+    }
+    .work.gold:after{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+
+    .work-top{
+      position:relative;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .work h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:-.2px;
+      color:var(--ink);
+    }
+    .meta{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      font-size:12px;
+      font-weight:900;
+      color:var(--ink);
+      white-space:nowrap;
+    }
+    .desc{
+      position:relative;
+      margin:0;
+      color:var(--muted);
+    }
+
+    .bullets{
+      position:relative;
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .bullets li{ margin:8px 0; }
+
+    .work-actions{
+      position:relative;
+      margin-top:auto;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* Case modal */
+    dialog{
+      width:min(860px, 94vw);
+      border:none;
+      border-radius: 20px;
+      padding:0;
+      box-shadow: 0 24px 70px rgba(11,18,32,.28);
+      overflow:hidden;
+    }
+    dialog::backdrop{
+      background: rgba(11,18,32,.55);
+      backdrop-filter: blur(4px);
+    }
+    .modal{
+      background: rgba(255,255,255,.94);
+      border:1px solid var(--line);
+    }
+    .modal-head{
+      padding:16px 18px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(900px 240px at 10% 0%, rgba(0,148,255,.18), transparent 60%),
+        radial-gradient(900px 240px at 90% 30%, rgba(255,204,0,.20), transparent 62%),
+        rgba(255,255,255,.88);
+    }
+    .modal-title{
+      margin:0;
+      color:var(--ink);
+      font-size: 18px;
+      letter-spacing:-.2px;
+      font-weight:950;
+    }
+    .modal-sub{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-weight:650;
+    }
+    .close{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:14px;
+      padding:10px 12px;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .modal-body{
+      padding:16px 18px 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 860px){
+      .modal-body{ grid-template-columns: 1fr; }
+    }
+    .panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+    }
+    .panel h3{
+      margin:0 0 8px;
+      color:var(--ink);
+      font-size: 15px;
+      letter-spacing:-.2px;
+    }
+    .panel p, .panel li{ color:var(--muted); }
+    .panel ul{ margin:10px 0 0; padding-left:18px; }
+    .panel li{ margin:8px 0; }
+
+    /* CTA band */
+    .band{
+      margin-top:18px;
+      padding:20px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(0,148,255,.22), transparent 60%),
+        radial-gradient(900px 260px at 90% 30%, rgba(255,204,0,.22), transparent 62%),
+        rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+    }
+    .band strong{ font-size: 18px; color:var(--ink); }
+    .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.66);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--muted); font-weight:650; font-size: 14px;
+    }
+    .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+    .small{ font-size: 13px; }
+
+    @media (prefers-reduced-motion: reduce){
+      .mark:after{ animation:none; }
+      .btn{ transition:none; }
+      .tab{ transition:none; }
+    }
+    .mark{
+  width:38px; height:38px; border-radius:12px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent; /* remove gradient if you want */
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* use 'cover' if you want it to fill */
+  display:block;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="Main Navigation">
+        <a class="brand" href="index.html" aria-label="Elevora Industries Home">
+          <span class="mark" aria-hidden="true">
+  <img src="logotransparent.png" alt="" />
+</span>
+          <span>Elevora Industries</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="what-we-do.html">What We Do</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a class="active" href="work.html">Work</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta-row">
+          <a class="btn" href="Contact.html">Let’s Talk</a>
+          <a class="btn btn-primary" href="Contact.html">Request a Quote</a>
+          <button class="btn menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" style="display:none; padding:0 0 14px;">
+        <div class="card" style="padding:10px;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
+            <a class="btn" href="process.html" onclick="toggleMenu()">Process</a>
+            <a class="btn" href="work.html" onclick="toggleMenu()">Work</a>
+            <a class="btn" href="Contact.html" onclick="toggleMenu()">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="pill">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Proof you can feel</span>
+    </div>
+
+    <h1>Work</h1>
+    <p class="sub">
+      This page is built to showcase transformations: clearer identity, stronger structure, and a presence that feels
+      premium and trustworthy. Swap the placeholders with your real projects as you launch.
+    </p>
+
+    <div class="filters" aria-label="Filters">
+      <div class="tabs" role="tablist" aria-label="Work filters">
+        <button class="tab active" type="button" data-filter="all" onclick="setFilter('all')">All</button>
+        <button class="tab" type="button" data-filter="identity" onclick="setFilter('identity')">Identity</button>
+        <button class="tab" type="button" data-filter="web" onclick="setFilter('web')">Web</button>
+        <button class="tab" type="button" data-filter="systems" onclick="setFilter('systems')">Systems</button>
+      </div>
+
+      <div class="search">
+        <input id="search" type="search" placeholder="Search projects (ex: restaurant, landscaping, retail)..." oninput="applyFilters()" />
+      </div>
+    </div>
+
+    <section class="grid" aria-label="Work grid">
+      <!-- Project 1 -->
+      <article class="work" data-tags="web identity systems" data-title="D Maza Taquería — Launch Presence">
+        <div class="work-top">
+          <div>
+            <h2>D Maza Taquería — Launch Presence</h2>
+            <div class="meta" style="margin-top:10px;">
+              <span class="chip">Web</span>
+              <span class="chip">Identity</span>
+              <span class="chip">Launch</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">A clean, high-energy presence built to feel warm, authentic, and ready for the public.</p>
+        <ul class="bullets">
+          <li>Clarified message + vibe (welcoming, bold, modern)</li>
+          <li>Content structure built for fast understanding</li>
+          <li>Social-ready visuals + launch rhythm</li>
+        </ul>
+        <div class="work-actions">
+          <button class="btn btn-primary" type="button" onclick="openCase('case1')">View case</button>
+          <a class="btn" href="Contact.html">Build something</a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="work gold" data-tags="identity web" data-title="KLS — Brand Foundation">
+        <div class="work-top">
+          <div>
+            <h2>KLS — Brand Foundation</h2>
+            <div class="meta" style="margin-top:10px;">
+              <span class="chip">Identity</span>
+              <span class="chip">Web</span>
+              <span class="chip">Local</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">A stronger brand look + message that feels legit, consistent, and easy to recognize.</p>
+        <ul class="bullets">
+          <li>Visual direction and logo consistency</li>
+          <li>Service clarity + customer-friendly wording</li>
+          <li>Homepage structure designed for trust</li>
+        </ul>
+        <div class="work-actions">
+          <button class="btn btn-primary" type="button" onclick="openCase('case2')">View case</button>
+          <a class="btn" href="Contact.html">Request a quote</a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="work" data-tags="systems web" data-title="Local Retail — Conversion Cleanup">
+        <div class="work-top">
+          <div>
+            <h2>Local Retail — Conversion Cleanup</h2>
+            <div class="meta" style="margin-top:10px;">
+              <span class="chip">Systems</span>
+              <span class="chip">Web</span>
+              <span class="chip">Clarity</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">A structured customer path that reduces confusion and increases follow-through.</p>
+        <ul class="bullets">
+          <li>Clear “next steps” across the site</li>
+          <li>Better page hierarchy + CTA flow</li>
+          <li>Trust builders added (FAQ, proof, offers)</li>
+        </ul>
+        <div class="work-actions">
+          <button class="btn btn-primary" type="button" onclick="openCase('case3')">View case</button>
+          <a class="btn" href="Contact.html">Talk to us</a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="work gold" data-tags="identity systems" data-title="Service Business — Offer Clarity & Packages">
+        <div class="work-top">
+          <div>
+            <h2>Service Business — Offer Clarity & Packages</h2>
+            <div class="meta" style="margin-top:10px;">
+              <span class="chip">Identity</span>
+              <span class="chip">Systems</span>
+              <span class="chip">Structure</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">Turned “we do a lot” into clear packages customers can understand and choose.</p>
+        <ul class="bullets">
+          <li>Service menu + tiered options</li>
+          <li>Messaging rewritten for quick understanding</li>
+          <li>Simple follow-up system recommendations</li>
+        </ul>
+        <div class="work-actions">
+          <button class="btn btn-primary" type="button" onclick="openCase('case4')">View case</button>
+          <a class="btn" href="Contact.html">Start yours</a>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="work" data-tags="web" data-title="Small Business — Fast One-Page Launch">
+        <div class="work-top">
+          <div>
+            <h2>Small Business — Fast One-Page Launch</h2>
+            <div class="meta" style="margin-top:10px;">
+              <span class="chip">Web</span>
+              <span class="chip">Launch</span>
+              <span class="chip">Fast</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">A clean, modern homepage built to launch quickly while still looking premium.</p>
+        <ul class="bullets">
+          <li>Mobile-first layout</li>
+          <li>Clear CTA and contact flow</li>
+          <li>SEO-ready structure</li>
+        </ul>
+        <div class="work-actions">
+          <button class="btn btn-primary" type="button" onclick="openCase('case5')">View case</button>
+          <a class="btn" href="Contact.html">Get started</a>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="work gold" data-tags="systems" data-title="Content System — Weekly Momentum Plan">
+        <div class="work-top">
+          <div>
+            <h2>Content System — Weekly Momentum Plan</h2>
+            <div class="meta" style="margin-top:10px;">
+              <span class="chip">Systems</span>
+              <span class="chip">Momentum</span>
+              <span class="chip">Repeatable</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">A simple, repeatable plan so the business stays visible without burning out.</p>
+        <ul class="bullets">
+          <li>Weekly posting rhythm</li>
+          <li>Easy content prompts + categories</li>
+          <li>Tracking what’s working</li>
+        </ul>
+        <div class="work-actions">
+          <button class="btn btn-primary" type="button" onclick="openCase('case6')">View case</button>
+          <a class="btn" href="Contact.html">Build a system</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="band" aria-label="CTA">
+      <div>
+        <strong>Want your business to look “established”?</strong>
+        <span>We’ll build the clarity, structure, and presence that makes people trust you fast.</span>
+      </div>
+      <a class="btn btn-primary" href="Contact.html">Contact Elevora</a>
+    </div>
+  </main>
+
+  <!-- Modals (Case Studies) -->
+  <dialog id="case1">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">D Maza Taquería — Launch Presence</div>
+          <div class="modal-sub">Goal: warm + bold presence that feels legit on day one.</div>
+        </div>
+        <button class="close" onclick="closeCase('case1')">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="panel">
+          <h3>What we improved</h3>
+          <ul>
+            <li>Clarity: what it is + why it’s special (fast)</li>
+            <li>Trust: consistent visuals + messaging</li>
+            <li>Momentum: launch-ready content structure</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deliverables</h3>
+          <ul>
+            <li>Homepage structure + CTA flow</li>
+            <li>Social post direction + captions (launch tone)</li>
+            <li>Proof points + FAQs to reduce hesitation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="case2">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">KLS — Brand Foundation</div>
+          <div class="modal-sub">Goal: consistent identity that looks professional and easy to recognize.</div>
+        </div>
+        <button class="close" onclick="closeCase('case2')">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="panel">
+          <h3>What we improved</h3>
+          <ul>
+            <li>Identity consistency across touchpoints</li>
+            <li>Service clarity (simple wording, clear choices)</li>
+            <li>Trust signals (structure + confidence)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deliverables</h3>
+          <ul>
+            <li>Visual direction + usage rules</li>
+            <li>Homepage outline that converts</li>
+            <li>Messaging framework for services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="case3">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Local Retail — Conversion Cleanup</div>
+          <div class="modal-sub">Goal: reduce confusion and increase follow-through.</div>
+        </div>
+        <button class="close" onclick="closeCase('case3')">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="panel">
+          <h3>What we improved</h3>
+          <ul>
+            <li>CTA placement and flow (what to do next)</li>
+            <li>Page hierarchy (what matters first)</li>
+            <li>Trust builders (proof + clarity)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deliverables</h3>
+          <ul>
+            <li>Rewritten section order + headings</li>
+            <li>FAQ + offer clarity</li>
+            <li>Suggested follow-up system</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="case4">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Service Business — Offer Clarity & Packages</div>
+          <div class="modal-sub">Goal: make services easy to understand and choose.</div>
+        </div>
+        <button class="close" onclick="closeCase('case4')">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="panel">
+          <h3>What we improved</h3>
+          <ul>
+            <li>Packages/tier structure</li>
+            <li>Clear language (no jargon)</li>
+            <li>Simple “next step” customer path</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deliverables</h3>
+          <ul>
+            <li>Offer sheet layout</li>
+            <li>Service page outline</li>
+            <li>Basic follow-up recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="case5">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Small Business — Fast One-Page Launch</div>
+          <div class="modal-sub">Goal: launch quickly without looking “cheap.”</div>
+        </div>
+        <button class="close" onclick="closeCase('case5')">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="panel">
+          <h3>What we improved</h3>
+          <ul>
+            <li>Premium layout + spacing</li>
+            <li>Conversion-first structure</li>
+            <li>SEO-ready foundation</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deliverables</h3>
+          <ul>
+            <li>One-page site with strong CTA</li>
+            <li>Contact flow + proof section</li>
+            <li>Simple content plan for upgrades</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="case6">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Content System — Weekly Momentum Plan</div>
+          <div class="modal-sub">Goal: stay visible consistently without burnout.</div>
+        </div>
+        <button class="close" onclick="closeCase('case6')">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="panel">
+          <h3>What we improved</h3>
+          <ul>
+            <li>Consistency through a simple weekly rhythm</li>
+            <li>Clarity on what to post (and why)</li>
+            <li>Tracking what works so it compounds</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deliverables</h3>
+          <ul>
+            <li>Weekly content categories + prompts</li>
+            <li>Posting checklist</li>
+            <li>Simple metrics to watch</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer aria-label="Footer">
+    <div class="wrap">
+      <div class="foot">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+</span>
+          <div>
+            <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
+            <div class="small">Identity • Structure • Strategy</div>
+          </div>
+        </div>
+
+        <div>
+          <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
+          <div class="small">Built for clarity, trust, and momentum.</div>
+        </div>
+
+        <div>
+          <a href="Contact.html">Contact</a> &nbsp;•&nbsp;
+          <a href="what-we-do.html">What We Do</a> &nbsp;•&nbsp;
+          <a href="process.html">Process</a> &nbsp;•&nbsp;
+          <a href="work.html">Work</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+
+    function setFilter(filter){
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      document.querySelector(`.tab[data-filter="${filter}"]`)?.classList.add("active");
+      applyFilters();
+    }
+
+    function applyFilters(){
+      const active = document.querySelector(".tab.active")?.dataset.filter || "all";
+      const q = (document.getElementById("search").value || "").toLowerCase().trim();
+
+      document.querySelectorAll(".work").forEach(card => {
+        const tags = (card.dataset.tags || "").toLowerCase();
+        const title = (card.dataset.title || "").toLowerCase();
+        const matchesFilter = (active === "all") ? true : tags.includes(active);
+        const matchesSearch = !q ? true : (title.includes(q) || tags.includes(q));
+        card.style.display = (matchesFilter && matchesSearch) ? "flex" : "none";
+      });
+    }
+
+    function openCase(id){
+      const d = document.getElementById(id);
+      if (!d) return;
+      d.showModal();
+    }
+    function closeCase(id){
+      const d = document.getElementById(id);
+      if (!d) return;
+      d.close();
+    }
+
+    // Close modal on backdrop click
+    document.querySelectorAll("dialog").forEach(d => {
+      d.addEventListener("click", (e) => {
+        const rect = d.getBoundingClientRect();
+        const clickedInDialog = (
+          e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top && e.clientY <= rect.bottom
+        );
+        if (!clickedInDialog) d.close();
+      });
+    });
+
+    // Close modal with ESC (default dialog behavior, but safe)
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.querySelectorAll("dialog[open]").forEach(d => d.close());
+      }
+    });
+  </script>
+</body>
+</html>

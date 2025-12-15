@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The Elevora process: discover, clarify, build, launch—structured, detailed, and designed to create clarity, trust, and momentum." />
+  <title>Elevora Industries | Process</title>
+
+  <style>
+    :root{
+      --blue:#0094FF;
+      --gold:#FFCC00;
+      --ink:#0b1220;
+      --text:#1c2333;
+      --muted:#5a6477;
+      --bg:#f6f8fc;
+      --line:rgba(11,18,32,.10);
+      --shadow: 0 14px 40px rgba(11,18,32,.10);
+      --radius:18px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(0,148,255,.18), transparent 60%),
+        radial-gradient(800px 550px at 95% 10%, rgba(255,204,0,.22), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
+      line-height:1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+      color:var(--ink); white-space:nowrap;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      box-shadow: 0 10px 24px rgba(0,148,255,.18);
+      position:relative; overflow:hidden;
+    }
+    .mark:after{
+      content:""; position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
+      transform: rotate(20deg);
+      animation: shine 5.8s ease-in-out infinite;
+      opacity:.7;
+    }
+    @keyframes shine{
+      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
+      72% { opacity:.75; }
+      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    }
+
+    nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px; }
+    nav a{
+      font-weight:600; color:var(--muted);
+      padding:10px 10px; border-radius:12px;
+      transition: background .2s ease, color .2s ease;
+    }
+    nav a:hover{ background: rgba(0,148,255,.08); color:var(--ink); }
+    nav a.active{ background: rgba(255,204,0,.22); color:var(--ink); }
+
+    .cta-row{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border-radius:14px; padding:11px 14px; font-weight:750;
+      border:1px solid var(--line); background:#fff; color:var(--ink);
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+    .btn-primary{
+      border:none;
+      background: linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
+      color:#0b1220;
+      box-shadow: 0 16px 36px rgba(0,148,255,.18);
+    }
+    .btn-primary:hover{ box-shadow: 0 20px 44px rgba(0,148,255,.22); }
+    .menu-toggle{ display:none; }
+    @media (max-width: 840px){
+      nav{ display:none; }
+      .menu-toggle{ display:inline-flex; }
+    }
+
+    /* Page head */
+    main{ padding: 44px 0 40px; }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color:var(--muted);
+      font-weight:650;
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(255,204,0,.18);
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+      color:var(--ink);
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 18px;
+      max-width: 74ch;
+      margin:0 0 18px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Fancy timeline */
+    .timeline{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+
+    .phase{
+      position:relative;
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      overflow:hidden;
+    }
+
+    .phase:before{
+      content:"";
+      position:absolute;
+      inset:-120px -100px auto auto;
+      width:320px; height:320px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
+      transform: rotate(15deg);
+    }
+    .phase.gold:before{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+
+    .phase-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      position:relative;
+      flex-wrap:wrap;
+    }
+
+    .phase-left{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      min-width: 280px;
+    }
+
+    .num{
+      width:44px; height:44px;
+      border-radius:16px;
+      display:grid; place-items:center;
+      font-weight:950;
+      background: rgba(0,148,255,.12);
+      border:1px solid rgba(0,148,255,.18);
+      color:var(--ink);
+      flex:0 0 auto;
+    }
+    .gold .num{
+      background: rgba(255,204,0,.18);
+      border:1px solid rgba(255,204,0,.24);
+    }
+
+    .phase-title{
+      margin:0;
+      color:var(--ink);
+      font-size: 20px;
+      letter-spacing:-.3px;
+    }
+    .phase-desc{
+      margin:6px 0 0;
+      color:var(--muted);
+      max-width: 70ch;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      position:relative;
+    }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      font-size:12px;
+      font-weight:900;
+      color:var(--ink);
+      white-space:nowrap;
+    }
+
+    .phase-body{
+      position:relative;
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .phase-body{ grid-template-columns: 1fr; }
+      .phase-left{ min-width: unset; }
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(255,255,255,.86);
+      padding:14px;
+      box-shadow: 0 10px 26px rgba(11,18,32,.05);
+    }
+    .panel h3{
+      margin:0 0 8px;
+      color:var(--ink);
+      font-size: 15px;
+      letter-spacing:-.2px;
+    }
+    .panel p{
+      margin:0;
+      color:var(--muted);
+    }
+    .panel ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .panel li{ margin:8px 0; }
+
+    /* Deliverables + outcomes grid */
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 520px){
+      .mini-grid{ grid-template-columns: 1fr; }
+    }
+    .mini{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .mini:after{
+      content:"";
+      position:absolute;
+      inset:auto -35% -65% -35%;
+      height:160px;
+      background: radial-gradient(closest-side, rgba(0,148,255,.16), transparent 70%);
+      transform: rotate(8deg);
+    }
+    .mini.gold:after{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
+    }
+    .mini b{ position:relative; color:var(--ink); }
+    .mini span{ position:relative; display:block; margin-top:6px; color:var(--muted); font-size:13px; }
+
+    /* Milestones band */
+    .band{
+      margin-top:18px;
+      padding:20px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(0,148,255,.22), transparent 60%),
+        radial-gradient(900px 260px at 90% 30%, rgba(255,204,0,.22), transparent 62%),
+        rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+    }
+    .band strong{ font-size: 18px; color:var(--ink); }
+    .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
+
+    /* FAQ */
+    .faq{
+      margin-top:16px;
+      padding:18px;
+    }
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 14px;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      margin:12px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--ink);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:10px 0 0; color:var(--muted); }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.66);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--muted); font-weight:650; font-size: 14px;
+    }
+    .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+    .small{ font-size: 13px; }
+
+    @media (prefers-reduced-motion: reduce){
+      .mark:after{ animation:none; }
+      .btn{ transition:none; }
+    }
+    .mark{
+  width:38px; height:38px; border-radius:12px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent; /* remove gradient if you want */
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* use 'cover' if you want it to fill */
+  display:block;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="Main Navigation">
+        <a class="brand" href="index.html" aria-label="Elevora Industries Home">
+          <span class="mark" aria-hidden="true">
+  <img src="logotransparent.png" alt="" />
+</span>
+          <span>Elevora Industries</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="what-we-do.html">What We Do</a></li>
+            <li><a class="active" href="process.html">Process</a></li>
+            <li><a href="Work.html">Work</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta-row">
+          <a class="btn" href="Contact.html">Let’s Talk</a>
+          <a class="btn btn-primary" href="Contact.html">Request a Quote</a>
+          <button class="btn menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" style="display:none; padding:0 0 14px;">
+        <div class="card" style="padding:10px;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
+            <a class="btn" href="process.html" onclick="toggleMenu()">Process</a>
+            <a class="btn" href="Work.html" onclick="toggleMenu()">Work</a>
+            <a class="btn" href="Contact.html" onclick="toggleMenu()">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="pill">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Clear steps. Real momentum.</span>
+    </div>
+
+    <h1>The Elevora process</h1>
+    <p class="sub">
+      We keep the process structured, detailed, and easy to follow—while moving with real momentum. You’ll always know what’s happening, what’s next, and what every step is building toward. We map the plan, build the assets, launch the visibility, and refine what performs—across both your online presence and real-world touchpoints. The mission stays the same: elevate perception, sharpen clarity, and stack momentum that keeps growing.
+
+    <div class="band" aria-label="Milestones overview">
+      <div>
+        <strong>4 phases + clear milestones</strong>
+        <span>Discover → Focus → Promote → Launch (with a smooth handoff)</span>
+      </div>
+      <a class="btn btn-primary" href="Contact.html">Start a Project</a>
+    </div>
+
+    <section class="timeline" aria-label="Process timeline">
+      <!-- Phase 1 -->
+      <article class="phase">
+        <div class="phase-head">
+          <div class="phase-left">
+            <div class="num">1</div>
+            <div>
+              <h2 class="phase-title">Discover</h2>
+              <p class="phase-desc">
+                We take a clear look at what you already have—your offer, your presence, and how people are finding you—then spot the quickest opportunities to get you more attention and more customers without changing what makes you you.
+              </p>
+            </div>
+          </div>
+
+          <div class="meta" aria-label="Phase details">
+            <span class="chip">📞 Kickoff call</span>
+            <span class="chip">🧭 Direction audit</span>
+            <span class="chip">🧩 Opportunity map</span>
+          </div>
+        </div>
+
+        <div class="phase-body">
+          <div class="panel">
+            <h3>What we do</h3>
+            <ul>
+              <li><b>Business understanding:</b> who you serve, how you help, and what makes you different.</li>
+              <li><b>Audience clarity:</b> what your customers care about, fear, and need to hear.</li>
+              <li><b>Perception audit:</b> what your brand currently communicates (even unintentionally).</li>
+              <li><b>Competitor scan:</b> what the market is doing and where your opportunity is.</li>
+              <li><b>Asset review:</b> current website, socials, logos, messaging, and customer touchpoints.</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Discover deliverables">
+              <div class="mini">
+                <b>Deliverable: Clarity brief</b>
+                <span>A short document defining goals, audience, priorities, and the “winning direction.”</span>
+              </div>
+              <div class="mini gold">
+                <b>Deliverable: Action roadmap</b>
+                <span>A step-by-step plan with what we build first, second, and why it matters.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>What you get out of it</h3>
+            <ul>
+              <li>A clean understanding of what to fix first (so you don’t waste time).</li>
+              <li>Alignment on what “success” looks like for this project.</li>
+              <li>A clear “north star” so the build phase moves fast and clean.</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Discover outcomes">
+              <div class="mini gold">
+                <b>Outcome: Clear direction</b>
+                <span>You know what you’re building and what it should communicate.</span>
+              </div>
+              <div class="mini">
+                <b>Outcome: Confidence</b>
+                <span>No more guessing—decisions become simple and consistent.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Phase 2 -->
+      <article class="phase gold">
+        <div class="phase-head">
+          <div class="phase-left">
+            <div class="num">2</div>
+            <div>
+              <h2 class="phase-title">Focus</h2>
+              <p class="phase-desc">
+                Cohesive promotion language. Clear offer presentation. Immediate understanding. Unified look 
+                across every spot prospects encounter Elevora work.
+              </p>
+            </div>
+          </div>
+
+          <div class="meta">
+            <span class="chip">🧭 Promo phrasing kit</span>
+            <span class="chip">🧩 Offer arrangement guide</span>
+            <span class="chip">⚡ Action pathway</span>
+          </div>
+        </div>
+
+        <div class="phase-body">
+          <div class="panel">
+            <h3>What we do</h3>
+            <ul>
+              <li><b>Positioning:</b> your “simple sentence” that explains your value.</li>
+              <li><b>Offer clarity:</b> services packaged in a way customers understand instantly.</li>
+              <li><b>Message hierarchy:</b> what to say first, second, and third (so people don’t get lost).</li>
+              <li><b>Trust builders:</b> proof, FAQs, and credibility signals that reduce hesitation.</li>
+              <li><b>Site map:</b> what pages you need now vs later (and what each page must accomplish).</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Clarify deliverables">
+              <div class="mini gold">
+                <b>Deliverable: Content outline</b>
+                <span>Headings, sections, and copy direction for every key page.</span>
+              </div>
+              <div class="mini">
+                <b>Deliverable: Brand mini-kit</b>
+                <span>Simple visual rules for consistency (colors, type, layout rhythm).</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>What you get out of it</h3>
+            <ul>
+              <li>A message that feels confident (not salesy) and still gets results.</li>
+              <li>A structure that leads customers to action without confusion.</li>
+              <li>A clear plan for what content matters most (and what can wait).</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Clarify outcomes">
+              <div class="mini">
+                <b>Outcome: Faster decisions</b>
+                <span>Because the message + structure are locked in.</span>
+              </div>
+              <div class="mini gold">
+                <b>Outcome: Stronger trust</b>
+                <span>People feel like you’re legitimate before they even contact you.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Phase 3 -->
+      <article class="phase">
+        <div class="phase-head">
+          <div class="phase-left">
+            <div class="num">3</div>
+            <div>
+              <h2 class="phase-title">Build</h2>
+              <p class="phase-desc">
+                Now we create the assets—design, pages, and systems—using the clarity we already locked in.
+                This is where everything becomes real.
+              </p>
+            </div>
+          </div>
+
+          <div class="meta">
+            <span class="chip">🛠️ Design + build</span>
+            <span class="chip">📱 Mobile-first</span>
+            <span class="chip">⚡ Fast + clean</span>
+          </div>
+        </div>
+
+        <div class="phase-body">
+          <div class="panel">
+            <h3>What we do</h3>
+            <ul>
+              <li><b>UI design:</b> modern layout, strong hierarchy, and premium look/feel.</li>
+              <li><b>Copy integration:</b> we place messaging where it converts best (not just where it fits).</li>
+              <li><b>SEO foundation:</b> titles, descriptions, headings, and structure built the right way.</li>
+              <li><b>Conversion path:</b> clear CTAs, contact flow, and reduced friction.</li>
+              <li><b>Performance:</b> keep things fast, lightweight, and responsive.</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Build deliverables">
+              <div class="mini">
+                <b>Deliverable: Live-ready pages</b>
+                <span>Homepage + essential pages aligned to the plan.</span>
+              </div>
+              <div class="mini gold">
+                <b>Deliverable: Assets + components</b>
+                <span>Reusable sections and visuals that keep everything consistent.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Quality checks (what we verify)</h3>
+            <ul>
+              <li><b>Mobile experience:</b> layout, spacing, tap targets, and readability.</li>
+              <li><b>Clarity test:</b> “Can a stranger understand this in 10 seconds?”</li>
+              <li><b>CTA flow:</b> every page should lead somewhere intentional.</li>
+              <li><b>Consistency:</b> colors, typography, and tone feel like one brand.</li>
+              <li><b>Basics:</b> links, forms, and key elements work correctly.</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Build outcomes">
+              <div class="mini gold">
+                <b>Outcome: Premium feel</b>
+                <span>Your presence looks established and trustworthy.</span>
+              </div>
+              <div class="mini">
+                <b>Outcome: Clear action</b>
+                <span>People know what to do next (and actually do it).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Phase 4 -->
+      <article class="phase gold">
+        <div class="phase-head">
+          <div class="phase-left">
+            <div class="num">4</div>
+            <div>
+              <h2 class="phase-title">Launch</h2>
+              <p class="phase-desc">
+                We go live with confidence. Everything is checked, connected, and ready. Then we hand you a simple
+                plan so momentum keeps building after the launch.
+              </p>
+            </div>
+          </div>
+
+          <div class="meta">
+            <span class="chip">🚀 Go live</span>
+            <span class="chip">🔗 Connect everything</span>
+            <span class="chip">📋 Clean handoff</span>
+          </div>
+        </div>
+
+        <div class="phase-body">
+          <div class="panel">
+            <h3>What we do</h3>
+            <ul>
+              <li><b>Launch checklist:</b> final review of layout, speed, links, and forms.</li>
+              <li><b>Domain setup:</b> connect your domain and confirm correct routing (if applicable).</li>
+              <li><b>Tracking setup:</b> basic analytics (optional) so you can see what’s working.</li>
+              <li><b>Business presence:</b> guidance for Google Business/Profile basics (optional).</li>
+              <li><b>Handoff:</b> you get a simple doc explaining what to edit and how to maintain it.</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Launch deliverables">
+              <div class="mini gold">
+                <b>Deliverable: Launch pack</b>
+                <span>Checklist, links, logins (you hold them), and next-step priorities.</span>
+              </div>
+              <div class="mini">
+                <b>Deliverable: Momentum plan</b>
+                <span>Simple actions you can repeat weekly to stay visible.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>What happens after launch</h3>
+            <ul>
+              <li><b>Optional support:</b> small updates, new pages, and ongoing improvements.</li>
+              <li><b>Iteration:</b> we refine what’s working and fix what’s not.</li>
+              <li><b>Growth focus:</b> we prioritize the next best move—not random tasks.</li>
+            </ul>
+
+            <div class="mini-grid" aria-label="Launch outcomes">
+              <div class="mini">
+                <b>Outcome: Clean handoff</b>
+                <span>You know exactly how to use and maintain what we built.</span>
+              </div>
+              <div class="mini gold">
+                <b>Outcome: Momentum</b>
+                <span>Launch isn’t the finish line—this is where growth starts.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card faq" aria-label="Process FAQ">
+      <h2 style="margin:0 0 12px; padding:18px 18px 0;">Process FAQ</h2>
+      <div style="padding:0 18px 18px;">
+        <details>
+          <summary>Can we skip phases?</summary>
+          <p>
+            Sometimes—if you already have strong clarity and direction, we can move faster. But when brands feel
+            “stuck,” phase 1 and 2 usually unlock the biggest results.
+          </p>
+        </details>
+
+        <details>
+          <summary>What if I don’t have content or photos yet?</summary>
+          <p>
+            No problem. We can launch with clean placeholders and a simple content plan, then update as you gather photos,
+            testimonials, and proof.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do you offer ongoing support?</summary>
+          <p>
+            Yes—optional. Some clients prefer a clean handoff, others want ongoing upgrades, content additions, and
+            optimization. We can keep it simple either way.
+          </p>
+        </details>
+
+        <div class="band" aria-label="CTA">
+          <div>
+            <strong>Want the next step mapped out?</strong>
+            <span>Tell us what you’re building and we’ll suggest the cleanest path forward.</span>
+          </div>
+          <a class="btn btn-primary" href="Contact.html">Contact Elevora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Footer">
+    <div class="wrap">
+      <div class="foot">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+</span>
+          <div>
+            <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
+            <div class="small">Identity • Structure • Strategy</div>
+          </div>
+        </div>
+
+        <div>
+          <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
+          <div class="small">Built for clarity, trust, and momentum.</div>
+        </div>
+
+        <div>
+          <a href="Contact.html">Contact</a> &nbsp;•&nbsp;
+          <a href="What-We-Do.html">What We Do</a> &nbsp;•&nbsp;
+          <a href="process.html">Process</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
