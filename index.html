@@ -6,14 +6,14 @@
   <meta name="description" content="Elevora Industries helps businesses strengthen identity, build clear structure, and improve how they’re perceived—so momentum follows." />
   <title>Elevora Industries | Home</title>
   <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
-<link rel="shortcut icon" href="/my-favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
-<link rel="manifest" href="/my-favicon/site.webmanifest" />
-  
+  <link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/my-favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/my-favicon/site.webmanifest" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta name="apple-mobile-web-app-title" content="Elevora Industries">
-<meta name="application-name" content="Elevora Industries">
+  <meta name="apple-mobile-web-app-title" content="Elevora Industries">
+  <meta name="application-name" content="Elevora Industries">
 
   <style>
     :root{
@@ -235,15 +235,26 @@
       color:var(--muted);
       font-weight:700;
     }
+
+    /* ✅ CHIP (now matches your Process page hover glow) */
     .chip{
       padding:7px 10px;
       border-radius:999px;
       border:1px solid var(--line);
-      background:#fff;
+      background: rgba(255,255,255,.92);
       font-size:13px;
       color:var(--ink);
       font-weight:800;
+      white-space:nowrap;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
     }
+    .chip:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.98);
+      border-color: rgba(0,148,255,.22);
+      box-shadow: 0 10px 22px rgba(0,148,255,.12);
+    }
+
     .grid-cards{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -470,41 +481,46 @@
       *{ scroll-behavior:auto !important; }
       .mark:after{ animation:none; }
       .btn{ transition:none; }
+      .chip{ transition:none; }
+      .chip:hover{ transform:none; }
     }
+
     .mark{
-  width:38px; height:38px; border-radius:12px;
-  overflow:hidden;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: transparent; /* remove gradient if you want */
-  box-shadow: 0 10px 24px rgba(0,0,0,.10);
-}
+      width:38px; height:38px; border-radius:12px;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+    }
 
-.mark img{
-  width:100%;
-  height:100%;
-  object-fit:contain; /* use 'cover' if you want it to fill */
-  display:block;
-}
-/* Premium section surface so headings don't float on the blue/gradient */
-.section-surface{
-  padding: 26px;
-  border-radius: calc(var(--radius) + 6px);
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.80);
-  box-shadow: var(--shadow);
-}
+    .mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+    }
 
-/* Tighter spacing inside the surface */
-.section-surface .section-head{ margin-bottom: 10px; }
-.section-surface .cols-3{ margin-top: 14px; }
-section{ padding: 44px 0; }               /* your existing */
-.section-surface{ margin-top: 12px; }     /* consistent spacing under headings/pills */
-/* Tighten spacing between Hero and What We Deliver */
-.hero{ padding-bottom: 10px; }          /* was 26px */
-#what-we-deliver{ padding-top: 10px; }  /* overrides section's 44px top padding */
-#what-we-deliver .section-surface{ margin-top: 0; }
+    /* Premium section surface so headings don't float on the blue/gradient */
+    .section-surface{
+      padding: 26px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.80);
+      box-shadow: var(--shadow);
+    }
+
+    /* Tighter spacing inside the surface */
+    .section-surface .section-head{ margin-bottom: 10px; }
+    .section-surface .cols-3{ margin-top: 14px; }
+    section{ padding: 44px 0; }
+    .section-surface{ margin-top: 12px; }
+
+    /* Tighten spacing between Hero and What We Deliver */
+    .hero{ padding-bottom: 10px; }
+    #what-we-deliver{ padding-top: 10px; }
+    #what-we-deliver .section-surface{ margin-top: 0; }
   </style>
 </head>
 
@@ -515,8 +531,8 @@ section{ padding: 44px 0; }               /* your existing */
       <div class="nav" role="navigation" aria-label="Main Navigation">
         <a class="brand" href="#top" aria-label="Elevora Industries Home">
           <span class="mark" aria-hidden="true">
-  <img src="logotransparent.png" alt="" />
-</span>
+            <img src="logotransparent.png" alt="" />
+          </span>
           <span>Elevora Industries</span>
         </a>
 
@@ -630,49 +646,49 @@ section{ padding: 44px 0; }               /* your existing */
 
     <!--What We Deliver-->
     <section id="what-we-deliver" aria-label="What We Deliver">
-  <div class="section-surface">
-    <div class="section-head">
-      <div>
-        <h2>What We Deliver</h2>
-        <p class="hint">
-         We help businesses get noticed and bring in more customer traffic by blending creative promotion with a strong online presence—so people hear about you, recognize you, and feel confident reaching out or walking in.
-</p>
+      <div class="section-surface">
+        <div class="section-head">
+          <div>
+            <h2>What We Deliver</h2>
+            <p class="hint">
+              We help businesses get noticed and bring in more customer traffic by blending creative promotion with a strong online presence—so people hear about you, recognize you, and feel confident reaching out or walking in.
+            </p>
+          </div>
+        </div>
+
+        <div class="cols-3">
+          <article class="service">
+            <h3>Awareness & promotion</h3>
+            <p>Turn what you already offer into marketing people pay attention to!</p>
+            <ul>
+              <li>Campaign ideas (what to promote + why it works)</li>
+              <li>Flyers, signage, and event-ready promos</li>
+              <li>Ads and announcements that feel natural, not pushy</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Online presence & digital assets</h3>
+            <p>Make your business look legit the instant someone checks you out—then make it easy to contact you, book, or buy!</p>
+            <ul>
+              <li>Premium pages that explain your offer fast (home + key pages)</li>
+              <li>Social + website consistency (same look, same message, everywhere)</li>
+              <li>Action pathways that convert (tap-to-call/text, booking link, forms, clear next step)</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Growth momentum</h3>
+            <p>Keep your name circulating and your marketing moving—so visibility turns into steady leads and repeat traffic!</p>
+            <ul>
+              <li>A simple weekly promo rhythm (posts, specials, reminders, event-style pushes)</li>
+              <li>Small upgrades that remove friction (clear offers, faster replies, easier next step)</li>
+              <li>Clean handoff + next-step playbook (what to do next, what to post, what to run)</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-
-    <div class="cols-3">
-      <article class="service">
-        <h3>Awareness & promotion</h3>
-        <p>Turn what you already offer into marketing people pay attention to!</p>
-        <ul>
-          <li>Campaign ideas (what to promote + why it works)</li>
-          <li>Flyers, signage, and event-ready promos</li>
-          <li>Ads and announcements that feel natural, not pushy</li>
-        </ul>
-      </article>
-
-      <article class="service">
-        <h3>Online presence & digital assets</h3>
-        <p>Make your business look legit the instant someone checks you out—then make it easy to contact you, book, or buy!</p>
-        <ul>
-          <li>Premium pages that explain your offer fast (home + key pages)</li>
-          <li>Social + website consistency (same look, same message, everywhere)</li>
-          <li>Action pathways that convert (tap-to-call/text, booking link, forms, clear next step)</li>
-        </ul>
-      </article>
-
-      <article class="service">
-        <h3>Growth momentum</h3>
-        <p>Keep your name circulating and your marketing moving—so visibility turns into steady leads and repeat traffic!</p>
-        <ul>
-          <li>A simple weekly promo rhythm (posts, specials, reminders, event-style pushes)</li>
-          <li>Small upgrades that remove friction (clear offers, faster replies, easier next step)</li>
-          <li>Clean handoff + next-step playbook (what to do next, what to post, what to run)</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Process -->
     <section id="process" aria-label="Process">
@@ -709,73 +725,69 @@ section{ padding: 44px 0; }               /* your existing */
       </div>
     </section>
 
-<section class="connect" aria-label="Connect with Elevora Industries">
-  <div class="connect-inner">
-    <div class="connect-copy">
-      <h2 class="connect-title">Connect with Elevora</h2>
-      <p class="connect-sub">
-        Stay connected for new launches, featured work, and fresh promos — or reach out anytime for more information!
-      </p>
+    <section class="connect" aria-label="Connect with Elevora Industries">
+      <div class="connect-inner">
+        <div class="connect-copy">
+          <h2 class="connect-title">Connect with Elevora</h2>
+          <p class="connect-sub">
+            Stay connected for new launches, featured work, and fresh promos — or reach out anytime for more information!
+          </p>
 
-      <div class="connect-actions" aria-label="Social links">
-        <a class="connect-btn" href="https://www.instagram.com/elevoraindustries/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          <span>Instagram</span>
-        </a>
+          <div class="connect-actions" aria-label="Social links">
+            <a class="connect-btn" href="https://www.instagram.com/elevoraindustries/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              <span>Instagram</span>
+            </a>
 
-        <a class="connect-btn" href="https://www.facebook.com/profile.php?id=61585322543345" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-          <span>Facebook</span>
-        </a>
+            <a class="connect-btn" href="https://www.facebook.com/profile.php?id=61585322543345" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              <span>Facebook</span>
+            </a>
 
-        <a class="connect-btn" href="https://share.google/JIoY73SFAUyAghNCa" target="_blank" rel="noopener noreferrer" aria-label="Google Business Profile">
-          <i class="fa-brands fa-google" aria-hidden="true"></i>
-          <span>Google</span>
-        </a>
-      </div>
+            <a class="connect-btn" href="https://share.google/JIoY73SFAUyAghNCa" target="_blank" rel="noopener noreferrer" aria-label="Google Business Profile">
+              <i class="fa-brands fa-google" aria-hidden="true"></i>
+              <span>Google</span>
+            </a>
+          </div>
 
-      <p class="connect-note">
-        Prefer a quick message? <a href="Contact.html">Contact us</a>.
-      </p>
-    </div>
+          <p class="connect-note">
+            Prefer a quick message? <a href="Contact.html">Contact us</a>.
+          </p>
+        </div>
 
-    <div class="connect-card" aria-hidden="true">
-      <div class="connect-badge">Stay in the loop</div>
-      <div class="connect-big">Presence that looks legit — and gets noticed.</div>
-      <div class="connect-small">Follow for updates, promos, and what we’re building next.</div>
-    </div>
-  </div>
-</section>
-
-</section>
-
-<style>
-  .social{ list-style:none; margin:0; padding:0; display:flex; gap:12px; }
-  .social a{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:44px; height:44px; border-radius:14px;
-    border:1px solid rgba(11,18,32,.10);
-    background: rgba(255,255,255,.85);
-    font-size:20px;
-  }
-  .social a:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
-  .sr-only{
-    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-  }
-</style>
-
-
-          <div class="band" style="margin-top:16px; margin-bottom:60px;">
-  <div>
-    <strong>Free clarity call</strong>
-    <span>15 minutes. Straight answers.</span>
-  </div>
-  <a class="btn btn-primary" href="contact.html">Schedule</a>
-</div>
+        <div class="connect-card" aria-hidden="true">
+          <div class="connect-badge">Stay in the loop</div>
+          <div class="connect-big">Presence that looks legit — and gets noticed.</div>
+          <div class="connect-small">Follow for updates, promos, and what we’re building next.</div>
         </div>
       </div>
     </section>
+
+    </section>
+
+    <style>
+      .social{ list-style:none; margin:0; padding:0; display:flex; gap:12px; }
+      .social a{
+        display:inline-flex; align-items:center; justify-content:center;
+        width:44px; height:44px; border-radius:14px;
+        border:1px solid rgba(11,18,32,.10);
+        background: rgba(255,255,255,.85);
+        font-size:20px;
+      }
+      .social a:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
+      .sr-only{
+        position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+        overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+      }
+    </style>
+
+    <div class="band" style="margin-top:16px; margin-bottom:60px;">
+      <div>
+        <strong>Free clarity call</strong>
+        <span>15 minutes. Straight answers.</span>
+      </div>
+      <a class="btn btn-primary" href="contact.html">Schedule</a>
+    </div>
   </main>
 
   <footer aria-label="Footer">
@@ -783,8 +795,8 @@ section{ padding: 44px 0; }               /* your existing */
       <div class="foot">
         <div style="display:flex; gap:10px; align-items:center;">
           <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
-  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
-</span>
+            <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+          </span>
           <div>
             <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
             <div class="small">Identity • Structure • Strategy</div>
@@ -825,12 +837,3 @@ section{ padding: 44px 0; }               /* your existing */
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
