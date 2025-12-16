@@ -18,7 +18,10 @@
       --shadow: 0 14px 40px rgba(11,18,32,.10);
       --radius:18px;
     }
+
     *{ box-sizing:border-box; }
+    html, body { height: 100%; }
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -28,49 +31,68 @@
         radial-gradient(800px 550px at 95% 10%, rgba(255,204,0,.22), transparent 55%),
         linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
       line-height:1.5;
+
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
     a{ color:inherit; text-decoration:none; }
     .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
 
-    /* Header (same theme, minimal nav) */
+    /* Header */
     header{
       position:sticky; top:0; z-index:50;
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
       backdrop-filter:saturate(140%) blur(10px);
       background: rgba(255,255,255,.72);
       border-bottom:1px solid var(--line);
     }
+
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       gap:16px; padding:14px 0;
     }
-    .brand{
+
+    /* CLICKABLE BRAND BUTTON */
+    .brand-link{
       display:flex; align-items:center; gap:10px;
       font-weight:800; letter-spacing:.2px;
       color:var(--ink); white-space:nowrap;
+      border-radius:14px;
+      padding:8px 10px;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      outline: none;
     }
+    .brand-link:hover{
+      transform: translateY(-1px);
+      background: rgba(0,148,255,.06);
+      box-shadow: 0 10px 22px rgba(11,18,32,.08);
+    }
+    .brand-link:focus-visible{
+      outline: 3px solid rgba(0,148,255,.35);
+      outline-offset: 2px;
+    }
+
     .mark{
       width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
-        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
-      box-shadow: 0 10px 24px rgba(0,148,255,.18);
-      position:relative; overflow:hidden;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      flex: 0 0 auto;
     }
-    .mark:after{
-      content:""; position:absolute; inset:-40%;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
-      transform: rotate(20deg);
-      animation: shine 5.8s ease-in-out infinite;
-      opacity:.7;
-    }
-    @keyframes shine{
-      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
-      72% { opacity:.75; }
-      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    .mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
     }
 
     /* Main */
-    main{ padding: 56px 0 64px; }
+    main{ flex: 1; padding: 56px 0 64px; }
 
     .pill{
       display:inline-flex; gap:10px; align-items:center;
@@ -205,33 +227,8 @@
     .small{ font-size: 13px; }
 
     @media (prefers-reduced-motion: reduce){
-      .mark:after{ animation:none; }
+      .brand-link{ transition:none; }
     }
-    .mark{
-  width:38px; height:38px; border-radius:12px;
-  overflow:hidden;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: transparent; /* remove gradient if you want */
-  box-shadow: 0 10px 24px rgba(0,0,0,.10);
-}
-
-.mark img{
-  width:100%;
-  height:100%;
-  object-fit:contain; /* use 'cover' if you want it to fill */
-  display:block;
-}
-html, body { height: 100%; }
-
-body{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main{ flex: 1; } /* pushes footer to the bottom */
   </style>
 </head>
 
@@ -239,12 +236,15 @@ main{ flex: 1; } /* pushes footer to the bottom */
   <header>
     <div class="wrap">
       <div class="nav" aria-label="Header">
-        <div class="brand">
-         <span class="mark" aria-hidden="true">
-  <img src="logotransparent.png" alt="" />
-</span>
+
+        <!-- ✅ CLICKABLE HEADER BRAND -->
+        <a class="brand-link" href="index.html" aria-label="Back to Elevora Industries Home">
+          <span class="mark" aria-hidden="true">
+            <img src="logotransparent.png" alt="" />
+          </span>
           <span>Elevora Industries</span>
-        </div>
+        </a>
+
         <!-- Intentionally no nav links here -->
       </div>
     </div>
@@ -287,16 +287,18 @@ main{ flex: 1; } /* pushes footer to the bottom */
   <footer aria-label="Footer">
     <div class="wrap">
       <div class="foot">
-        <div style="display:flex; gap:10px; align-items:center;">
-          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
-  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
-</span>
+
+        <!-- ✅ CLICKABLE FOOTER BRAND -->
+        <a class="brand-link" href="index.html" aria-label="Back to Elevora Industries Home">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;">
+            <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+          </span>
 
           <div>
             <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
             <div class="small">Identity • Structure • Strategy</div>
           </div>
-        </div>
+        </a>
 
         <div>
           <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
@@ -309,6 +311,7 @@ main{ flex: 1; } /* pushes footer to the bottom */
           <a href="work.html">Work</a> &nbsp;•&nbsp;
           <a href="contact.html">Contact</a>
         </div>
+
       </div>
     </div>
   </footer>
