@@ -32,7 +32,6 @@
         linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
       line-height:1.5;
 
-      /* Layout base */
       display:flex;
       flex-direction:column;
       min-height:100vh;
@@ -41,7 +40,6 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
 
-    /* Header */
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
@@ -58,7 +56,6 @@
       color:var(--ink); white-space:nowrap;
     }
 
-    /* Logo mark */
     .mark{
       width:38px; height:38px; border-radius:12px;
       overflow:hidden;
@@ -104,19 +101,24 @@
     }
     .btn-primary:hover{ box-shadow: 0 20px 44px rgba(0,148,255,.22); }
 
+    .btn[disabled]{
+      opacity:.65;
+      cursor:not-allowed;
+      transform:none !important;
+      box-shadow:none !important;
+    }
+
     .menu-toggle{ display:none; }
     @media (max-width: 840px){
       nav{ display:none; }
       .menu-toggle{ display:inline-flex; }
     }
 
-    /* Main layout */
     main{
-      flex:1; /* keeps footer at bottom */
+      flex:1;
       padding: 44px 0 28px;
     }
 
-    /* Hero spacing */
     .hero{
       padding-bottom: clamp(18px, 2.4vw, 44px);
     }
@@ -160,19 +162,17 @@
       overflow:hidden;
     }
 
-    /* Grid */
     .grid{
       margin-top: 18px;
       display:grid;
       grid-template-columns: 1.25fr .75fr;
       gap:14px;
-      align-items:stretch; /* important */
+      align-items:stretch;
     }
     @media (max-width: 980px){
       .grid{ grid-template-columns: 1fr; gap:16px; }
     }
 
-    /* LEFT column stack */
     .left-stack{
       display:flex;
       flex-direction:column;
@@ -212,7 +212,6 @@
     }
     .panel p{ margin:0; color:var(--muted); position:relative; }
 
-    /* Form */
     form{ position:relative; z-index:1; }
     label{
       display:block;
@@ -255,7 +254,6 @@
       font-size: 13px;
     }
 
-    /* Right column */
     .quick{
       display:grid;
       gap:12px;
@@ -283,7 +281,6 @@
       text-underline-offset:3px;
     }
 
-    /* CTA band */
     .band{
       margin-top:12px;
       padding:16px;
@@ -300,7 +297,6 @@
     .band strong{ font-size: 17px; color:var(--ink); }
     .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
 
-    /* Island (gap killer) */
     .island{
       flex:1;
       display:flex;
@@ -340,6 +336,7 @@
       color: var(--ink);
       opacity: .95;
     }
+
     .island-title{
       margin:0;
       color:var(--ink);
@@ -368,10 +365,8 @@
       margin-bottom:14px;
     }
 
-    /* pins CTA band to bottom when island stretches */
     .island .band{ margin-top:auto; }
 
-    /* Footer */
     footer{
       padding: 26px 0 34px;
       border-top: 1px solid var(--line);
@@ -384,7 +379,6 @@
     .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
     .small{ font-size: 13px; }
 
-    /* Mobile optimization */
     @media (max-width: 560px){
       main{ padding: 28px 0 20px; }
       .hero{ padding-bottom: 18px; }
@@ -401,7 +395,7 @@
     }
 
     /* =========================================================
-       ✨ ADDITION: "Island Pop" (eye-catch styling + emoji vibe)
+       ✨ "Island Pop" (eye-catch styling + emoji vibe)
        ========================================================= */
     .island-pop{
       position: relative;
@@ -421,13 +415,11 @@
     .island-pop > *{ position:relative; z-index:1; }
 
     .island-title{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       font-weight: 950;
       letter-spacing: -.4px;
       line-height: 1.1;
     }
     .island-subtitle{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       font-weight: 750;
       opacity: .95;
     }
@@ -487,14 +479,11 @@
       .island-lead{ font-size: 15px; }
     }
 
-    .band-pop{
-      margin-top: 14px;
-    }
+    .band-pop{ margin-top: 14px; }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="wrap">
       <div class="nav" role="navigation" aria-label="Main Navigation">
@@ -509,26 +498,25 @@
           <ul>
             <li><a href="what-we-do.html">What We Do</a></li>
             <li><a href="process.html">Process</a></li>
-            <li><a href="Work.html">Work</a></li>
-            <li><a class="active" href="Contact.html">Contact</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
           </ul>
         </nav>
 
         <div class="cta-row">
-          <a class="btn" href="Contact.html">Let’s Talk</a>
+          <a class="btn" href="contact.html">Let’s Talk</a>
           <a class="btn btn-primary" href="#form">Request a Quote</a>
           <button class="btn menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
         </div>
       </div>
 
-      <!-- Mobile menu -->
       <div id="mobileMenu" style="display:none; padding:0 0 14px;">
         <div class="card" style="padding:10px;">
           <div style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
             <a class="btn" href="process.html" onclick="toggleMenu()">Process</a>
-            <a class="btn" href="Work.html" onclick="toggleMenu()">Work</a>
-            <a class="btn" href="Contact.html" onclick="toggleMenu()">Contact</a>
+            <a class="btn" href="work.html" onclick="toggleMenu()">Work</a>
+            <a class="btn" href="contact.html" onclick="toggleMenu()">Contact</a>
           </div>
         </div>
       </div>
@@ -549,10 +537,9 @@
     </section>
 
     <div class="grid">
-      <!-- LEFT COLUMN -->
       <div class="left-stack" aria-label="Contact column">
-        <!-- Form box -->
-        <section class="panel" id="form" aria-label="Contact form" style="padding:15px>
+        <!-- ✅ FIXED: missing quote in style attribute (this was breaking your form) -->
+        <section class="panel" id="form" aria-label="Contact form" style="padding:15px;">
           <h2>Send a message</h2>
           <p>Use the form below. If you prefer email or text, use the quick links on the right.</p>
 
@@ -595,18 +582,17 @@
             <textarea id="message" name="message" placeholder="Briefly tell us your goal, what you currently have, and what you want to improve..." required></textarea>
 
             <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Send Message</button>
-              <a class="btn" href="Work.html">See our work</a>
+              <button class="btn btn-primary" type="submit" id="sendBtn">Send Message</button>
+              <a class="btn" href="work.html">See our work</a>
             </div>
 
-            <p id="formNote" class="note"></p>
+            <p id="formNote" class="note" aria-live="polite"></p>
             <p class="note">
               Tip: If you already have a website/social pages, paste the links in your message so we can review faster.
             </p>
           </form>
         </section>
 
-        <!-- ✅ UPDATED: Island box with "pop" styling + emojis -->
         <section class="island island-pop" aria-label="Quick project starter">
           <div class="island-head">
             <span class="island-icon" aria-hidden="true">
@@ -685,7 +671,6 @@
         </section>
       </div>
 
-      <!-- RIGHT: Quick contact -->
       <aside class="quick" aria-label="Quick contact">
         <section class="panel gold">
           <h2>Quick options</h2>
@@ -754,8 +739,8 @@
         <div>
           <a href="what-we-do.html">What We Do</a> &nbsp;•&nbsp;
           <a href="process.html">Process</a> &nbsp;•&nbsp;
-          <a href="Work.html">Work</a> &nbsp;•&nbsp;
-          <a href="Contact.html">Contact</a>
+          <a href="work.html">Work</a> &nbsp;•&nbsp;
+          <a href="contact.html">Contact</a>
         </div>
       </div>
     </div>
@@ -769,28 +754,46 @@
       menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
     }
 
+    // ✅ Safer submit handler (won't crash if the form can't be found)
     const form = document.getElementById("contactForm");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    const note = document.getElementById("formNote");
+    const sendBtn = document.getElementById("sendBtn");
 
-      try{
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { "Accept": "application/json" }
-        });
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-        if (res.ok) {
-          window.location.href = "Thankyoupage.html";
-        } else {
-          alert("Something went wrong. Please try again.");
+        if (note) note.textContent = "Sending…";
+
+        if (sendBtn) {
+          sendBtn.disabled = true;
+          sendBtn.textContent = "Sending…";
         }
-      }catch(err){
-        alert("Network error. Please try again.");
-      }
-    });
+
+        try{
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            window.location.href = "Thankyoupage.html";
+          } else {
+            if (note) note.textContent = "Something went wrong. Please try again.";
+            alert("Something went wrong. Please try again.");
+          }
+        }catch(err){
+          if (note) note.textContent = "Network error. Please try again.";
+          alert("Network error. Please try again.");
+        } finally {
+          if (sendBtn) {
+            sendBtn.disabled = false;
+            sendBtn.textContent = "Send Message";
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>
-
-
