@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="What we do at Elevora Industries: identity, structure, digital experience, and momentum systems that strengthen perception and drive results." />
   <title>Elevora Industries | What We Do</title>
-  <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
-<link rel="shortcut icon" href="/my-favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
-<link rel="manifest" href="/my-favicon/site.webmanifest" />
-<meta name="apple-mobile-web-app-title" content="Elevora Industries">
-<meta name="application-name" content="Elevora Industries">
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/my-favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/my-favicon/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Elevora Industries">
+  <meta name="application-name" content="Elevora Industries">
 
   <style>
     :root{
@@ -56,25 +57,22 @@
       font-weight:800; letter-spacing:.2px;
       color:var(--ink); white-space:nowrap;
     }
+
+    /* Logo image version */
     .mark{
       width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
-        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
-      box-shadow: 0 10px 24px rgba(0,148,255,.18);
-      position:relative; overflow:hidden;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
     }
-    .mark:after{
-      content:""; position:absolute; inset:-40%;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
-      transform: rotate(20deg);
-      animation: shine 5.8s ease-in-out infinite;
-      opacity:.7;
-    }
-    @keyframes shine{
-      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
-      72% { opacity:.75; }
-      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+    .mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
     }
 
     nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px; }
@@ -93,6 +91,7 @@
       border:1px solid var(--line); background:#fff; color:var(--ink);
       transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
       cursor:pointer;
+      user-select:none;
     }
     .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
     .btn-primary{
@@ -106,6 +105,15 @@
     @media (max-width: 840px){
       nav{ display:none; }
       .menu-toggle{ display:inline-flex; }
+    }
+
+    /* Shared surfaces */
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
 
     /* Page head */
@@ -134,8 +142,30 @@
     .sub{
       color:var(--muted);
       font-size: 18px;
-      max-width: 68ch;
-      margin:0 0 18px;
+      max-width: 72ch;
+      margin:0 0 14px;
+    }
+
+    /* CHIP THING (same system as Process/Index) */
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      font-size:12px;
+      font-weight:900;
+      color:var(--ink);
+      white-space:nowrap;
+      box-shadow: 0 10px 26px rgba(11,18,32,.04);
+    }
+    .chip.blue{
+      background: rgba(0,148,255,.10);
+      border-color: rgba(0,148,255,.18);
+    }
+    .chip.gold{
+      background: rgba(255,204,0,.18);
+      border-color: rgba(255,204,0,.26);
     }
 
     .grid{
@@ -143,14 +173,6 @@
       grid-template-columns: 1fr;
       gap:14px;
       margin-top: 18px;
-    }
-
-    .card{
-      background: rgba(255,255,255,.78);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
     }
 
     /* Offer cards */
@@ -182,22 +204,36 @@
       background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
     }
 
+    /* NEW: top accent bar so color placement feels intentional */
+    .offer:before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background: linear-gradient(90deg, rgba(0,148,255,.70), rgba(255,204,0,.70));
+      opacity:.85;
+    }
+
     .kicker{
       display:flex; align-items:center; justify-content:space-between; gap:12px;
       position:relative;
       color:var(--muted);
-      font-weight:750;
+      font-weight:800;
+      flex-wrap:wrap;
     }
+
+    /* Replaces the old .badge with chip styling */
     .badge{
       padding:7px 10px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.92);
       font-size:12px;
       color:var(--ink);
-      font-weight:900;
+      font-weight:950;
       white-space:nowrap;
     }
+
     .offer h2{
       margin:10px 0 8px;
       font-size: 20px;
@@ -213,6 +249,8 @@
       position:relative;
     }
     .offer li{ margin:8px 0; }
+
+    .offer .chips{ margin-top: 12px; position:relative; }
 
     /* Package band */
     .band{
@@ -231,9 +269,7 @@
     .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
 
     /* FAQ */
-    .faq{
-      padding:18px;
-    }
+    .faq{ padding:18px; }
     details{
       background:#fff;
       border:1px solid var(--line);
@@ -249,10 +285,7 @@
       list-style:none;
     }
     summary::-webkit-details-marker{ display:none; }
-    details p{
-      margin:10px 0 0;
-      color:var(--muted);
-    }
+    details p{ margin:10px 0 0; color:var(--muted); }
 
     /* Footer */
     footer{
@@ -268,25 +301,8 @@
     .small{ font-size: 13px; }
 
     @media (prefers-reduced-motion: reduce){
-      .mark:after{ animation:none; }
       .btn{ transition:none; }
     }
-    .mark{
-  width:38px; height:38px; border-radius:12px;
-  overflow:hidden;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: transparent; /* remove gradient if you want */
-  box-shadow: 0 10px 24px rgba(0,0,0,.10);
-}
-
-.mark img{
-  width:100%;
-  height:100%;
-  object-fit:contain; /* use 'cover' if you want it to fill */
-  display:block;
-}
   </style>
 </head>
 
@@ -297,8 +313,8 @@
       <div class="nav" role="navigation" aria-label="Main Navigation">
         <a class="brand" href="index.html" aria-label="Elevora Industries Home">
           <span class="mark" aria-hidden="true">
-  <img src="logotransparent.png" alt="" />
-</span>
+            <img src="logotransparent.png" alt="" />
+          </span>
           <span>Elevora Industries</span>
         </a>
 
@@ -323,9 +339,9 @@
         <div class="card" style="padding:10px;">
           <div style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
-            <a class="btn" href="process.html"toggleMenu()">Process</a>
-            <a class="btn" href="Work.html"toggleMenu()">Work</a>
-            <a class="btn" href="Contact.html" onclick="toggleMenu()">Contact</a>
+            <a class="btn" href="process.html" onclick="toggleMenu()">Process</a>
+            <a class="btn" href="work.html" onclick="toggleMenu()">Work</a>
+            <a class="btn" href="contact.html" onclick="toggleMenu()">Contact</a>
           </div>
         </div>
       </div>
@@ -340,14 +356,23 @@
 
     <h1>What we do</h1>
     <p class="sub">
-      Elevora Industries helps your business stand out with clarity, confidence, and real visibility—so people notice you, trust you, and choose you.<br> 
-      We blend brand, marketing, and a strong online presence to spark momentum. Ready to get seen? Let’s build!
+      Elevora Industries helps your business stand out with clarity, confidence, and real visibility—so people notice you, trust you, and choose you. <br>
+      We blend brand, marketing, and a strong online presence to spark momentum. Ready to get seen? Let’s build! 🚀✨
     </p>
+
+    <!-- NEW: quick chips under intro (same vibe as process) -->
+    <div class="chips" aria-label="Quick highlights" style="margin: 6px 0 18px;">
+      <span class="chip blue">⚡ Clear positioning</span>
+      <span class="chip gold">📍 Local visibility</span>
+      <span class="chip blue">📲 Easy next step</span>
+      <span class="chip gold">✨ Premium look</span>
+      <span class="chip blue">📈 Momentum systems</span>
+    </div>
 
     <div class="band" aria-label="Quick overview">
       <div>
         <strong>Four core pillars</strong>
-        <span>•Brand & Perception<br>•Marketing & Advertising<br>• Social Media & Web Presence<br>• Growth Momentum</span>
+        <span>• Brand & Perception<br>• Marketing & Advertising<br>• Social Media & Web Presence<br>• Growth Momentum</span>
       </div>
       <a class="btn btn-primary" href="contact.html">Start a Project</a>
     </div>
@@ -357,36 +382,54 @@
         <article class="offer">
           <div class="kicker">
             <span>01 — Brand & Perception</span>
-            <span class="badge">Brand clarity</span>
+            <span class="badge chip blue">Brand clarity</span>
           </div>
+
           <h2>Identity & messaging</h2>
           <p>
-            We quickly sharpen how people see you. Clear, confident messaging, strong visuals, 
-            and a brand presence that feels premium and unmistakable from the first impression.
+            We sharpen how people see you—fast. Clear, confident messaging + strong visuals,
+            so your first impression feels premium and unmistakable.
           </p>
+
+          <!-- NEW chips -->
+          <div class="chips" aria-label="Identity chips">
+            <span class="chip blue">🧠 Message clarity</span>
+            <span class="chip gold">🎯 Strong offer</span>
+            <span class="chip blue">✨ Consistent look</span>
+          </div>
+
           <ul>
             <li>Brand identity + clear message (what you’re known for, who you serve, and why people should choose you)</li>
-            <li>How your business sounds + what you communicate (we help you use the same tone and simple, clear words everywhere so people trust you and recognize you fast)</li>
-            <li>Visual direction + brand look (colors, fonts, layout style, and a simple brand kit so everything looks consistent and professional)</li>
-            <li>Offer presentation that feels confident (clear, professional, and inviting—without sounding pushy)</li>
+            <li>How your business sounds + what you communicate (consistent tone + simple words that build trust)</li>
+            <li>Visual direction + brand look (colors, fonts, layout style, and a simple brand kit)</li>
+            <li>Offer presentation that feels confident (inviting, clear, not pushy)</li>
           </ul>
         </article>
 
         <article class="offer gold">
           <div class="kicker">
             <span>02 — Marketing & Advertising</span>
-            <span class="badge">Spread the word</span>
+            <span class="badge chip gold">Spread the word</span>
           </div>
+
           <h2>Visibility & customer traffic</h2>
           <p>
-            Great businesses don’t need to change everything — they just need to be seen the right way. We take what makes you special 
-            and turn it into marketing that people notice, remember, and respond to.
+            Great businesses don’t need to change everything — they just need to be seen the right way.
+            We turn what makes you special into marketing people notice, remember, and respond to.
           </p>
+
+          <!-- NEW chips -->
+          <div class="chips" aria-label="Marketing chips">
+            <span class="chip gold">📣 Attention hooks</span>
+            <span class="chip blue">🪧 Real-world promo</span>
+            <span class="chip gold">📈 More traffic</span>
+          </div>
+
           <ul>
             <li>Campaign direction (what to promote, when to promote it, and why it matters)</li>
             <li>Ad-ready messaging (short hooks, offers, and calls-to-action that don’t feel pushy)</li>
             <li>Content + promo planning (posts, reels, specials, announcements, launches)</li>
-            <li>Real-world promotion (flyers, signage, event buzz, partnerships, community visibility))</li>
+            <li>Real-world promotion (flyers, signage, event buzz, partnerships, community visibility)</li>
             <li>Consistent look across every touchpoint (so people recognize you instantly)</li>
           </ul>
         </article>
@@ -394,19 +437,28 @@
         <article class="offer gold">
           <div class="kicker">
             <span>03 — Social Media & Web Presence</span>
-            <span class="badge">Look legit everywhere</span>
+            <span class="badge chip blue">Look legit</span>
           </div>
+
           <h2>Your online footprint</h2>
           <p>
-            Your pages should feel premium, consistent, and easy to trust. We build a clean online presence that looks sharp, 
-            reads clearly, and makes it simple for customers to reach you.
+            Your pages should feel premium, consistent, and easy to trust.
+            We build a clean online presence that looks sharp, reads clearly, and makes it simple for customers to reach you.
           </p>
+
+          <!-- NEW chips -->
+          <div class="chips" aria-label="Online chips">
+            <span class="chip blue">🌐 Premium pages</span>
+            <span class="chip gold">📲 Tap-to-call</span>
+            <span class="chip blue">🧭 Clear path</span>
+          </div>
+
           <ul>
             <li>Social profile setup + optimization (bio, highlights, links, branding, pinned content)</li>
             <li>Content-ready layouts (templates, post styles, reels covers, story formats)</li>
             <li>Website homepage + key pages (mobile-first, fast, modern)</li>
             <li>Trust + action sections (clear CTAs, contact options, proof, FAQs)</li>
-            <li>Search-ready setup (clear page structure, strong headings, and clean info so people can find you fast).</li>
+            <li>Search-ready setup (strong headings, clean info so people can find you fast)</li>
             <li>Lead capture that’s effortless (forms, buttons, call/text, booking links)</li>
           </ul>
         </article>
@@ -414,14 +466,23 @@
         <article class="offer">
           <div class="kicker">
             <span>04 — Growth Momentum</span>
-            <span class="badge">Stay visible. Stay unforgettable.</span>
+            <span class="badge chip gold">Stay unforgettable</span>
           </div>
+
           <h2>Momentum that keeps building</h2>
           <p>
             The goal isn’t a one-time spike — it’s steady visibility that compounds.
-             We bring the energy, direction, and marketing know-how to keep you top-of-mind, 
+            We bring the energy, direction, and marketing know-how to keep you top-of-mind,
             so new attention turns into real trust and repeat traffic.
           </p>
+
+          <!-- NEW chips -->
+          <div class="chips" aria-label="Momentum chips">
+            <span class="chip gold">🗓️ Weekly rhythm</span>
+            <span class="chip blue">🤝 Trust builders</span>
+            <span class="chip gold">📈 Compound growth</span>
+          </div>
+
           <ul>
             <li>Weekly visibility rhythm (posts, promos, stories, announcements — simple and doable)</li>
             <li>Promotion playbooks (what to push, how to say it, and where it performs best)</li>
@@ -434,6 +495,13 @@
 
       <div class="card faq" aria-label="FAQ">
         <h2 style="margin:0 0 12px;">FAQ</h2>
+
+        <!-- NEW: chips inside FAQ header for extra “modern” pop -->
+        <div class="chips" aria-label="FAQ chips" style="margin: 0 0 10px;">
+          <span class="chip blue">✅ Clear</span>
+          <span class="chip gold">⚡ Fast</span>
+          <span class="chip blue">🤝 Collaborative</span>
+        </div>
 
         <details>
           <summary>Do you only do websites?</summary>
@@ -469,7 +537,7 @@
         <div class="band" style="margin-top:16px;">
           <div>
             <strong>Ready to sharpen your presence?</strong>
-            <span>Tell us what you’re building and we’ll map the next steps.</span>
+            <span>Tell us what you’re building and we’ll map the next steps. 🔥</span>
           </div>
           <a class="btn btn-primary" href="contact.html">Contact Us</a>
         </div>
@@ -482,8 +550,8 @@
       <div class="foot">
         <div style="display:flex; gap:10px; align-items:center;">
           <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
-  <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
-</span>
+            <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+          </span>
           <div>
             <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
             <div class="small">Identity • Structure • Strategy</div>
@@ -514,6 +582,3 @@
   </script>
 </body>
 </html>
-
-
-
