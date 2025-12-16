@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Elevora Industries work: real local marketing examples—flyers, signage, launch promos, and visibility systems built to drive calls, walk-ins, and repeat customers." />
+  <meta name="description" content="Elevora Industries work: local marketing wins — flyers, door hangers, posters, social promo, landing pages, and visibility systems built to drive calls and foot traffic." />
   <title>Elevora Industries | Work</title>
 
   <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
@@ -56,20 +56,33 @@
       font-weight:800; letter-spacing:.2px;
       color:var(--ink); white-space:nowrap;
     }
+
+    /* Logo mark (kept consistent + safe) */
     .mark{
       width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
-        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
-      box-shadow: 0 10px 24px rgba(0,148,255,.18);
-      position:relative; overflow:hidden;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      position:relative;
+    }
+    .mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
     }
     .mark:after{
-      content:""; position:absolute; inset:-40%;
+      content:"";
+      position:absolute;
+      inset:-40%;
       background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
       transform: rotate(20deg);
       animation: shine 5.8s ease-in-out infinite;
       opacity:.7;
+      pointer-events:none;
     }
     @keyframes shine{
       0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
@@ -134,7 +147,7 @@
     .sub{
       color:var(--muted);
       font-size: 18px;
-      max-width: 74ch;
+      max-width: 78ch;
       margin:0 0 18px;
     }
 
@@ -176,7 +189,7 @@
 
     .search{
       display:flex; gap:10px; align-items:center;
-      width:min(420px, 100%);
+      width:min(460px, 100%);
     }
     .search input{
       width:100%;
@@ -213,7 +226,7 @@
       display:flex;
       flex-direction:column;
       gap:12px;
-      min-height: 260px;
+      min-height: 270px;
     }
     .work:after{
       content:"";
@@ -222,6 +235,7 @@
       width:260px; height:260px;
       background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
       transform: rotate(18deg);
+      pointer-events:none;
     }
     .work.gold:after{
       background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
@@ -260,6 +274,7 @@
       position:relative;
       margin:0;
       color:var(--muted);
+      font-weight:650;
     }
 
     .bullets{
@@ -267,6 +282,7 @@
       margin:0;
       padding-left:18px;
       color:var(--muted);
+      font-weight:650;
     }
     .bullets li{ margin:8px 0; }
 
@@ -350,7 +366,7 @@
       font-size: 15px;
       letter-spacing:-.2px;
     }
-    .panel p, .panel li{ color:var(--muted); }
+    .panel p, .panel li{ color:var(--muted); font-weight:650; }
     .panel ul{ margin:10px 0 0; padding-left:18px; }
     .panel li{ margin:8px 0; }
 
@@ -388,22 +404,6 @@
       .mark:after{ animation:none; }
       .btn{ transition:none; }
       .tab{ transition:none; }
-    }
-    .mark{
-      width:38px; height:38px; border-radius:12px;
-      overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background: transparent;
-      box-shadow: 0 10px 24px rgba(0,0,0,.10);
-    }
-
-    .mark img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
     }
   </style>
 </head>
@@ -453,71 +453,71 @@
   <main class="wrap">
     <div class="pill">
       <span class="dot" aria-hidden="true"></span>
-      <span>Real local results</span>
+      <span>Real-world promos. Real momentum. 🔥</span>
     </div>
 
-    <h1>Work</h1>
+    <h1>Work that gets attention 🎯</h1>
     <p class="sub">
-      This is where we show the kind of work that gets noticed in the real world: flyers, menus, posters, signage, launch promos,
-      and the simple systems that turn attention into calls, walk-ins, and repeat customers.
-      Replace the placeholders with your real projects as you stack wins.
+      This is where the fun stuff lives 😄 — flyers, door hangers, posters, promo graphics, QR funnels, and “people actually show up” campaigns.
+      As you complete more projects, swap these examples with your real client wins (photos, results, and before/after). 🚀
     </p>
 
     <div class="filters" aria-label="Filters">
       <div class="tabs" role="tablist" aria-label="Work filters">
-        <button class="tab active" type="button" data-filter="all" onclick="setFilter('all')">All</button>
-        <button class="tab" type="button" data-filter="print" onclick="setFilter('print')">Print</button>
-        <button class="tab" type="button" data-filter="digital" onclick="setFilter('digital')">Digital</button>
-        <button class="tab" type="button" data-filter="systems" onclick="setFilter('systems')">Systems</button>
+        <button class="tab active" type="button" data-filter="all" onclick="setFilter('all')">All ✨</button>
+        <button class="tab" type="button" data-filter="print" onclick="setFilter('print')">Print 🖨️</button>
+        <button class="tab" type="button" data-filter="social" onclick="setFilter('social')">Social 📣</button>
+        <button class="tab" type="button" data-filter="web" onclick="setFilter('web')">Web 🌐</button>
+        <button class="tab" type="button" data-filter="strategy" onclick="setFilter('strategy')">Strategy 🧠</button>
       </div>
 
       <div class="search">
-        <input id="search" type="search" placeholder="Search examples (ex: restaurant, flyers, door hangers, QR)..." oninput="applyFilters()" />
+        <input id="search" type="search" placeholder="Search: flyers, door hangers, grand opening, QR, promos…" oninput="applyFilters()" />
       </div>
     </div>
 
     <section class="grid" aria-label="Work grid">
       <!-- Project 1 -->
-      <article class="work" data-tags="digital print systems" data-title="D Maza Taquería — Local Launch Visibility">
+      <article class="work" data-tags="print social strategy" data-title="D Maza Taquería — Grand Opening Promo Kit">
         <div class="work-top">
           <div>
-            <h2>D Maza Taquería — Local Launch Visibility</h2>
+            <h2>D Maza Taquería — Grand Opening Promo Kit 🌮🔥</h2>
             <div class="meta" style="margin-top:10px;">
               <span class="chip">Print</span>
-              <span class="chip">Digital</span>
-              <span class="chip">Launch</span>
+              <span class="chip">Social</span>
+              <span class="chip">Foot Traffic</span>
             </div>
           </div>
         </div>
-        <p class="desc">Built a clean “grand opening-ready” presence with local promo assets that point customers to one easy next step.</p>
+        <p class="desc">A high-energy launch setup built to feel authentic, exciting, and ready for the community. 💥</p>
         <ul class="bullets">
-          <li>Flyer/poster messaging that reads fast and feels legit</li>
-          <li>QR + contact flow for fast conversions (call, map, menu)</li>
-          <li>Launch-ready visuals and a simple promo rhythm</li>
+          <li>Flyers + posters designed to “stop the scroll” and “stop the walk” 🛑👀</li>
+          <li>IG/FB promo captions + story ideas that build hype 📲✨</li>
+          <li>QR flow for menu / directions / quick contact 🔗</li>
         </ul>
         <div class="work-actions">
           <button class="btn btn-primary" type="button" onclick="openCase('case1')">View case</button>
-          <a class="btn" href="contact.html">Build mine</a>
+          <a class="btn" href="contact.html">Build yours</a>
         </div>
       </article>
 
       <!-- Project 2 -->
-      <article class="work gold" data-tags="print digital" data-title="KLS — Door Hangers + Yard Sign Direction">
+      <article class="work gold" data-tags="print strategy" data-title="KLS — Door Hangers & Yard Signs System">
         <div class="work-top">
           <div>
-            <h2>KLS — Door Hangers + Yard Sign Direction</h2>
+            <h2>KLS — Door Hangers & Yard Signs That Pop 🏡🌿</h2>
             <div class="meta" style="margin-top:10px;">
               <span class="chip">Print</span>
               <span class="chip">Local</span>
-              <span class="chip">Clarity</span>
+              <span class="chip">Calls</span>
             </div>
           </div>
         </div>
-        <p class="desc">Focused the message so a neighbor can understand services instantly—then made the design feel professional and consistent.</p>
+        <p class="desc">A clean print system made for neighborhoods — bold, readable, and action-first. ✅</p>
         <ul class="bullets">
-          <li>Offer clarity that makes choosing easy</li>
-          <li>Print-ready layout built for visibility from distance</li>
-          <li>Brand consistency across signs, flyers, and socials</li>
+          <li>Offer wording that’s simple + confident (not salesy) 😎</li>
+          <li>Design hierarchy that reads fast from the sidewalk 👟</li>
+          <li>Clear CTA: call/text + service list + trust cues ⭐</li>
         </ul>
         <div class="work-actions">
           <button class="btn btn-primary" type="button" onclick="openCase('case2')">View case</button>
@@ -526,106 +526,106 @@
       </article>
 
       <!-- Project 3 -->
-      <article class="work" data-tags="digital systems" data-title="Local Business — QR Conversion Cleanup">
+      <article class="work" data-tags="print social" data-title="Local Retail — Sale Event Promo Bundle">
         <div class="work-top">
           <div>
-            <h2>Local Business — QR Conversion Cleanup</h2>
+            <h2>Local Retail — Sale Event Promo Bundle 🏷️✨</h2>
             <div class="meta" style="margin-top:10px;">
-              <span class="chip">Systems</span>
-              <span class="chip">Digital</span>
-              <span class="chip">Clarity</span>
+              <span class="chip">Print</span>
+              <span class="chip">Social</span>
+              <span class="chip">Event</span>
             </div>
           </div>
         </div>
-        <p class="desc">Took “people see it but don’t act” and fixed the path so customers know exactly what to do next.</p>
+        <p class="desc">Window posters + matching social graphics that turn a “sale” into an actual event. 🎉</p>
         <ul class="bullets">
-          <li>Scan → action flow (call/text/map/menu) simplified</li>
-          <li>Better CTA wording and placement</li>
-          <li>Trust elements added to reduce hesitation</li>
+          <li>Window/signage designed for instant clarity 👀</li>
+          <li>Matching IG posts + stories so the brand feels consistent 📲</li>
+          <li>Simple promo framing that drives urgency (without cringe) ⏳</li>
         </ul>
         <div class="work-actions">
           <button class="btn btn-primary" type="button" onclick="openCase('case3')">View case</button>
-          <a class="btn" href="contact.html">Let’s fix mine</a>
+          <a class="btn" href="contact.html">Let’s build</a>
         </div>
       </article>
 
       <!-- Project 4 -->
-      <article class="work gold" data-tags="print systems" data-title="Service Business — Flyer + Offer Sheet Packages">
+      <article class="work gold" data-tags="strategy print web" data-title="Service Business — Offer Sheet & Packages">
         <div class="work-top">
           <div>
-            <h2>Service Business — Flyer + Offer Sheet Packages</h2>
+            <h2>Service Business — Offer Sheet & Packages 📋💥</h2>
             <div class="meta" style="margin-top:10px;">
+              <span class="chip">Strategy</span>
               <span class="chip">Print</span>
-              <span class="chip">Systems</span>
-              <span class="chip">Structure</span>
+              <span class="chip">Web</span>
             </div>
           </div>
         </div>
-        <p class="desc">Turned “we do a lot” into clean packages customers can understand in seconds—perfect for flyers and handouts.</p>
+        <p class="desc">We turned “we do a lot” into clear choices customers can understand instantly. 😮‍💨✅</p>
         <ul class="bullets">
-          <li>Service menu + tiered options customers can pick</li>
-          <li>Copy rewritten to sound confident (not pushy)</li>
-          <li>Follow-up path suggestions (so leads don’t die)</li>
+          <li>Tiered packages (Good / Better / Best) that feel premium ⭐</li>
+          <li>Customer-friendly wording + trust builders to reduce hesitation 🧠</li>
+          <li>Offer sheet + landing-page structure that drives action 🎯</li>
         </ul>
         <div class="work-actions">
           <button class="btn btn-primary" type="button" onclick="openCase('case4')">View case</button>
-          <a class="btn" href="contact.html">Start mine</a>
+          <a class="btn" href="contact.html">Start yours</a>
         </div>
       </article>
 
       <!-- Project 5 -->
-      <article class="work" data-tags="digital" data-title="One-Page Promo — Event / Special Offer Landing">
+      <article class="work" data-tags="web strategy" data-title="QR Funnel — Flyer to Landing Page Conversion">
         <div class="work-top">
           <div>
-            <h2>One-Page Promo — Event / Special Offer Landing</h2>
+            <h2>QR Funnel — Flyer → Landing Page Conversion 🔗📱</h2>
             <div class="meta" style="margin-top:10px;">
-              <span class="chip">Digital</span>
-              <span class="chip">Fast</span>
-              <span class="chip">CTA</span>
+              <span class="chip">Web</span>
+              <span class="chip">Strategy</span>
+              <span class="chip">Leads</span>
             </div>
           </div>
         </div>
-        <p class="desc">A simple landing page built to support flyers and QR codes—so local attention turns into real action.</p>
+        <p class="desc">A clean one-page funnel that makes printed promos measurable (and way more effective). 📈</p>
         <ul class="bullets">
-          <li>Mobile-first and fast</li>
-          <li>Clear offer + clean “next step” CTA</li>
-          <li>Designed to match your print pieces</li>
+          <li>Fast-loading offer page with clear next step ⚡</li>
+          <li>QR on flyers/posters that routes people instantly ✅</li>
+          <li>Simple tracking + form flow so leads don’t slip 🧲</li>
         </ul>
         <div class="work-actions">
           <button class="btn btn-primary" type="button" onclick="openCase('case5')">View case</button>
-          <a class="btn" href="contact.html">Get started</a>
+          <a class="btn" href="contact.html">Build a funnel</a>
         </div>
       </article>
 
       <!-- Project 6 -->
-      <article class="work gold" data-tags="systems print digital" data-title="Visibility System — Weekly Promo Rhythm">
+      <article class="work gold" data-tags="strategy social print" data-title="Weekly Visibility System — Promo Rhythm & Templates">
         <div class="work-top">
           <div>
-            <h2>Visibility System — Weekly Promo Rhythm</h2>
+            <h2>Weekly Visibility System — Promo Rhythm & Templates 📆🚀</h2>
             <div class="meta" style="margin-top:10px;">
-              <span class="chip">Systems</span>
+              <span class="chip">Strategy</span>
+              <span class="chip">Social</span>
               <span class="chip">Print</span>
-              <span class="chip">Repeatable</span>
             </div>
           </div>
         </div>
-        <p class="desc">A repeatable system so you’re not “marketing once” — you stay visible consistently without burnout.</p>
+        <p class="desc">A repeatable plan so a business stays visible every week — without burnout. 😤➡️😎</p>
         <ul class="bullets">
-          <li>Weekly promo categories (offers, reminders, proof, community)</li>
-          <li>Simple flyer refresh strategy (rotate headlines/offers)</li>
-          <li>Track what gets calls so it compounds</li>
+          <li>Weekly promo rhythm (what to post + what to print) 🔁</li>
+          <li>Template pack: flyers, IG posts, stories, simple promos 🧰</li>
+          <li>Checklist system so it actually gets done ✅</li>
         </ul>
         <div class="work-actions">
           <button class="btn btn-primary" type="button" onclick="openCase('case6')">View case</button>
-          <a class="btn" href="contact.html">Build a system</a>
+          <a class="btn" href="contact.html">Make me visible</a>
         </div>
       </article>
     </section>
 
     <div class="band" aria-label="CTA">
       <div>
-        <strong>Want marketing that locals actually notice?</strong>
-        <span>We’ll build print + promo assets that look established, read fast, and drive real action.</span>
+        <strong>Want promos that make people actually move? 👣🔥</strong>
+        <span>Flyers, signage, social, and clean next steps — built to drive calls, traffic, and trust.</span>
       </div>
       <a class="btn btn-primary" href="contact.html">Contact Elevora</a>
     </div>
@@ -636,8 +636,8 @@
     <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="modal-title">D Maza Taquería — Local Launch Visibility</div>
-          <div class="modal-sub">Goal: launch-ready presence + local promo that converts.</div>
+          <div class="modal-title">D Maza Taquería — Grand Opening Promo Kit 🌮🔥</div>
+          <div class="modal-sub">Goal: hype + clarity + “we need to go there” energy — across print + social.</div>
         </div>
         <button class="close" onclick="closeCase('case1')">Close</button>
       </div>
@@ -645,17 +645,17 @@
         <div class="panel">
           <h3>What we improved</h3>
           <ul>
-            <li>Flyer/poster messaging that reads in seconds</li>
-            <li>QR → action path (menu/map/call) simplified</li>
-            <li>Consistent visuals for trust on day one</li>
+            <li>Instant clarity (what it is, where it is, why it’s exciting)</li>
+            <li>Consistency across flyers + posts so it feels legit</li>
+            <li>Clear next step (QR/menu/directions/contact)</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Deliverables</h3>
           <ul>
-            <li>Launch copy kit for print + socials</li>
-            <li>QR placement guidance (best spots + sizes)</li>
-            <li>Simple promo rhythm to keep momentum</li>
+            <li>Flyer/poster direction + layout hierarchy</li>
+            <li>Promo captions + short hype prompts for reels</li>
+            <li>QR routing plan (menu, directions, contact)</li>
           </ul>
         </div>
       </div>
@@ -666,8 +666,8 @@
     <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="modal-title">KLS — Door Hangers + Yard Sign Direction</div>
-          <div class="modal-sub">Goal: clear local messaging + professional print presence.</div>
+          <div class="modal-title">KLS — Door Hangers & Yard Signs 🏡🌿</div>
+          <div class="modal-sub">Goal: neighborhood visibility that drives calls fast — clean + bold + readable.</div>
         </div>
         <button class="close" onclick="closeCase('case2')">Close</button>
       </div>
@@ -675,17 +675,17 @@
         <div class="panel">
           <h3>What we improved</h3>
           <ul>
-            <li>Offer clarity (what you do + why it matters)</li>
-            <li>Design hierarchy so it’s readable from distance</li>
-            <li>Consistency across print + online touchpoints</li>
+            <li>Offer clarity (no confusion, no clutter)</li>
+            <li>Readable hierarchy from a distance</li>
+            <li>Trust cues that reduce hesitation</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Deliverables</h3>
           <ul>
-            <li>Door hanger copy + layout direction</li>
-            <li>Yard sign messaging options</li>
-            <li>Brand consistency guidelines (simple + usable)</li>
+            <li>Door hanger messaging + layout plan</li>
+            <li>Yard sign headline + CTA setup</li>
+            <li>Simple “call/text” structure that converts</li>
           </ul>
         </div>
       </div>
@@ -696,8 +696,8 @@
     <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="modal-title">Local Business — QR Conversion Cleanup</div>
-          <div class="modal-sub">Goal: turn “seen” into “action.”</div>
+          <div class="modal-title">Local Retail — Sale Event Promo Bundle 🏷️✨</div>
+          <div class="modal-sub">Goal: turn “a sale” into an event — more buzz, more walk-ins, more urgency.</div>
         </div>
         <button class="close" onclick="closeCase('case3')">Close</button>
       </div>
@@ -705,17 +705,17 @@
         <div class="panel">
           <h3>What we improved</h3>
           <ul>
-            <li>Scan path shortened (less steps, less confusion)</li>
-            <li>CTA language rewritten to be obvious</li>
-            <li>Trust elements added so people follow through</li>
+            <li>Promo framing (simple + exciting, not messy)</li>
+            <li>Matching assets so the brand looks consistent</li>
+            <li>Clear “why now” urgency with clean wording</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Deliverables</h3>
           <ul>
-            <li>QR destination recommendations (best “next step”)</li>
-            <li>CTA rewrite set (call/text/map/menu)</li>
-            <li>Basic tracking approach (optional)</li>
+            <li>Window poster structure + headline options</li>
+            <li>IG post/story matching graphic direction</li>
+            <li>Quick callout list (hours, deal, limit, dates)</li>
           </ul>
         </div>
       </div>
@@ -726,8 +726,8 @@
     <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="modal-title">Service Business — Flyer + Offer Sheet Packages</div>
-          <div class="modal-sub">Goal: make services easy to choose quickly.</div>
+          <div class="modal-title">Service Business — Offer Sheet & Packages 📋💥</div>
+          <div class="modal-sub">Goal: make services easy to understand, easy to pick, and easy to say yes to.</div>
         </div>
         <button class="close" onclick="closeCase('case4')">Close</button>
       </div>
@@ -735,17 +735,17 @@
         <div class="panel">
           <h3>What we improved</h3>
           <ul>
-            <li>Packages that feel simple (not overwhelming)</li>
-            <li>Flyer language that sounds confident, not pushy</li>
-            <li>Follow-up suggestions so leads don’t disappear</li>
+            <li>Package clarity (choices feel simple + premium)</li>
+            <li>Trust builders (FAQ/proof style cues)</li>
+            <li>Conversion path (what happens next)</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Deliverables</h3>
           <ul>
-            <li>Offer sheet structure (tiered options)</li>
-            <li>Flyer-ready headings + bullets</li>
-            <li>CTA + contact flow recommendations</li>
+            <li>Offer sheet layout + copy structure</li>
+            <li>Landing page outline to match the offer</li>
+            <li>CTA wording that feels confident (not pushy)</li>
           </ul>
         </div>
       </div>
@@ -756,8 +756,8 @@
     <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="modal-title">One-Page Promo — Event / Special Offer Landing</div>
-          <div class="modal-sub">Goal: support flyers/QR with a clean mobile conversion page.</div>
+          <div class="modal-title">QR Funnel — Flyer → Landing Page 🔗📱</div>
+          <div class="modal-sub">Goal: make print promos measurable + convert faster with one clean path.</div>
         </div>
         <button class="close" onclick="closeCase('case5')">Close</button>
       </div>
@@ -765,17 +765,17 @@
         <div class="panel">
           <h3>What we improved</h3>
           <ul>
-            <li>Clear headline + offer + next step</li>
-            <li>Mobile-first spacing and readability</li>
-            <li>Trust cues added (so it doesn’t feel sketchy)</li>
+            <li>Clarity: one offer, one page, one next step</li>
+            <li>Speed: lightweight layout that loads fast</li>
+            <li>Follow-through: friction removed from the contact path</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Deliverables</h3>
           <ul>
-            <li>Landing page structure aligned to print</li>
-            <li>CTA + contact setup guidance</li>
-            <li>Optional tracking recommendations</li>
+            <li>Landing page CTA flow + section structure</li>
+            <li>QR routing plan + best-practice placement</li>
+            <li>Lead capture structure (form/contact)</li>
           </ul>
         </div>
       </div>
@@ -786,8 +786,8 @@
     <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="modal-title">Visibility System — Weekly Promo Rhythm</div>
-          <div class="modal-sub">Goal: stay visible consistently without burnout.</div>
+          <div class="modal-title">Weekly Visibility System 📆🚀</div>
+          <div class="modal-sub">Goal: consistent promo without burnout — templates + rhythm + repeat.</div>
         </div>
         <button class="close" onclick="closeCase('case6')">Close</button>
       </div>
@@ -795,17 +795,17 @@
         <div class="panel">
           <h3>What we improved</h3>
           <ul>
-            <li>Consistency with a simple weekly promo cycle</li>
-            <li>Print refresh strategy (rotate headlines/offers)</li>
-            <li>Focus on what gets calls so it compounds</li>
+            <li>Consistency (a rhythm you can actually keep)</li>
+            <li>Clarity (what to post/print and why it works)</li>
+            <li>Momentum (small actions that compound weekly)</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Deliverables</h3>
           <ul>
-            <li>Weekly promo categories + prompts</li>
-            <li>Simple placement/refresh checklist</li>
-            <li>Quick tracking approach (optional)</li>
+            <li>Weekly categories + simple promo prompts</li>
+            <li>Template direction for flyers + posts</li>
+            <li>Checklist workflow so it stays easy</li>
           </ul>
         </div>
       </div>
@@ -816,7 +816,7 @@
     <div class="wrap">
       <div class="foot">
         <div style="display:flex; gap:10px; align-items:center;">
-          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;">
             <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
           </span>
           <div>
@@ -890,6 +890,7 @@
       });
     });
 
+    // Close modal with ESC
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         document.querySelectorAll("dialog[open]").forEach(d => d.close());
