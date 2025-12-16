@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Elevora Industries helps businesses strengthen identity, build clear structure, and improve how they’re perceived—so momentum follows." />
   <title>Elevora Industries | Home</title>
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
   <link rel="shortcut icon" href="/my-favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/my-favicon/site.webmanifest" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="apple-mobile-web-app-title" content="Elevora Industries">
   <meta name="application-name" content="Elevora Industries">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root{
@@ -22,7 +25,6 @@
       --ink:#0b1220;
       --text:#1c2333;
       --muted:#5a6477;
-      --card:#ffffff;
       --bg:#f6f8fc;
       --line:rgba(11,18,32,.10);
       --shadow: 0 14px 40px rgba(11,18,32,.10);
@@ -41,85 +43,59 @@
         linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
       line-height:1.5;
     }
-
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; height:auto; display:block; }
     .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
 
     /* Header */
     header{
-      position:sticky;
-      top:0;
-      z-index:50;
+      position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
       background: rgba(255,255,255,.72);
       border-bottom:1px solid var(--line);
     }
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:14px 0;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
     }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
-      color:var(--ink);
-      white-space:nowrap;
-    }
-    .mark{
-      width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
-        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
-      box-shadow: 0 10px 24px rgba(0,148,255,.18);
-      position:relative;
-      overflow:hidden;
-    }
-    .mark:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
-      transform: rotate(20deg);
-      animation: shine 5.8s ease-in-out infinite;
-      opacity:.7;
-    }
-    @keyframes shine{
-      0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
-      72% { opacity:.75; }
-      100% { transform: translateX(55%) rotate(20deg); opacity:0; }
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+      color:var(--ink); white-space:nowrap;
     }
 
-    nav ul{
-      list-style:none; margin:0; padding:0;
-      display:flex; align-items:center; gap:14px;
+    /* Logo image version */
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
     }
+    .mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+    }
+
+    nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:14px; align-items:center; }
     nav a{
-      font-weight:600;
-      color:var(--muted);
-      padding:10px 10px;
-      border-radius:12px;
+      font-weight:600; color:var(--muted);
+      padding:10px 10px; border-radius:12px;
       transition: background .2s ease, color .2s ease;
     }
     nav a:hover{ background: rgba(0,148,255,.08); color:var(--ink); }
 
     .cta-row{ display:flex; gap:10px; align-items:center; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      border-radius:14px;
-      padding:11px 14px;
-      font-weight:750;
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--ink);
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border-radius:14px; padding:11px 14px; font-weight:750;
+      border:1px solid var(--line); background:#fff; color:var(--ink);
       transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
-      cursor:pointer;
-      user-select:none;
+      cursor:pointer; user-select:none;
     }
     .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
     .btn-primary{
@@ -137,28 +113,18 @@
       .menu-toggle{ display:inline-flex; }
     }
 
-    /* Hero */
-    .hero{
-      padding:64px 0 26px;
-      position:relative;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:26px;
-      align-items:stretch;
-    }
-    @media (max-width: 940px){
-      .hero{ padding:44px 0 18px; }
-      .hero-grid{ grid-template-columns: 1fr; }
+    /* Shared UI */
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
 
     .pill{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.72);
       color:var(--muted);
@@ -171,6 +137,42 @@
       box-shadow: 0 0 0 6px rgba(255,204,0,.18);
     }
 
+    /* “Chip thing” (blue + gold variants) */
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      font-size:12px;
+      font-weight:900;
+      color:var(--ink);
+      white-space:nowrap;
+      box-shadow: 0 10px 26px rgba(11,18,32,.04);
+    }
+    .chip.blue{
+      background: rgba(0,148,255,.10);
+      border-color: rgba(0,148,255,.18);
+    }
+    .chip.gold{
+      background: rgba(255,204,0,.18);
+      border-color: rgba(255,204,0,.26);
+    }
+
+    /* Hero */
+    main{ display:block; }
+    .hero{ padding:64px 0 18px; position:relative; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    @media (max-width: 940px){
+      .hero{ padding:44px 0 14px; }
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
     h1{
       margin:14px 0 12px;
       font-size: clamp(34px, 4vw, 56px);
@@ -181,46 +183,17 @@
     .sub{
       color:var(--muted);
       font-size: 18px;
-      max-width: 56ch;
-      margin:0 0 18px;
+      max-width: 58ch;
+      margin:0 0 14px;
     }
 
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top: 18px;
-      align-items:center;
-    }
+    .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 16px; align-items:center; }
 
-    .proof{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
-      color:var(--muted);
-      font-weight:650;
-      font-size:14px;
-    }
-    .proof span{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 10px;
-      background: rgba(255,255,255,.66);
-      border:1px solid var(--line);
-      border-radius:999px;
-    }
+    /* Proof chips (fun + clean) */
+    .proof{ margin-top:16px; }
+    .proof .chip{ font-size:12px; font-weight:950; }
 
-    /* Feature Card */
-    .card{
-      background: rgba(255,255,255,.78);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-
+    /* Highlights panel */
     .visual{
       padding:18px;
       height:100%;
@@ -233,43 +206,21 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:10px;
       color:var(--muted);
-      font-weight:700;
-    }
-
-    /* ✅ CHIP (now matches your Process page hover glow) */
-    .chip{
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.92);
-      font-size:13px;
-      color:var(--ink);
       font-weight:800;
-      white-space:nowrap;
-      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
     }
-    .chip:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.98);
-      border-color: rgba(0,148,255,.22);
-      box-shadow: 0 10px 22px rgba(0,148,255,.12);
-    }
-
     .grid-cards{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
     }
-    @media (max-width: 480px){
-      .grid-cards{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 480px){ .grid-cards{ grid-template-columns: 1fr; } }
 
     .mini{
       background:#fff;
       border:1px solid var(--line);
       border-radius:16px;
       padding:14px;
-      min-height:110px;
+      min-height:118px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
@@ -280,29 +231,23 @@
       content:"";
       position:absolute;
       inset:auto -30% -60% -30%;
-      height:140px;
+      height:150px;
       background: radial-gradient(closest-side, rgba(0,148,255,.16), transparent 70%);
       transform: rotate(10deg);
     }
-    .mini b{
-      font-size:14px;
-      color:var(--ink);
-      position:relative;
+    .mini.gold:before{
+      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
     }
-    .mini p{
-      margin:6px 0 0;
-      font-size:13px;
-      color:var(--muted);
-      position:relative;
-    }
+    .mini b{ font-size:14px; color:var(--ink); position:relative; }
+    .mini p{ margin:6px 0 0; font-size:13px; color:var(--muted); position:relative; }
     .mini .tag{
       margin-top:10px;
       font-size:12px;
-      font-weight:800;
+      font-weight:950;
       color: var(--ink);
-      opacity:.9;
+      opacity:.92;
       display:inline-flex;
-      gap:6px;
+      gap:8px;
       align-items:center;
       position:relative;
     }
@@ -311,9 +256,6 @@
       background: var(--blue);
       box-shadow: 0 0 0 6px rgba(0,148,255,.14);
       display:inline-block;
-    }
-    .mini.gold:before{
-      background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
     }
     .mini.gold .tag i{
       background: var(--gold);
@@ -327,7 +269,7 @@
       align-items:flex-end;
       justify-content:space-between;
       gap:18px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     h2{
       margin:0;
@@ -336,20 +278,30 @@
       color:var(--ink);
     }
     .hint{
+      margin:10px 0 0;
       color:var(--muted);
       font-weight:650;
-      max-width: 56ch;
+      max-width: 64ch;
     }
 
+    /* Premium section surface (keeps text off the gradients) */
+    .section-surface{
+      padding: 26px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.80);
+      box-shadow: var(--shadow);
+    }
+
+    /* What We Deliver */
+    #what-we-deliver{ padding-top: 10px; }
     .cols-3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:14px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
-    @media (max-width: 940px){
-      .cols-3{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 940px){ .cols-3{ grid-template-columns: 1fr; } }
 
     .service{
       padding:18px;
@@ -368,79 +320,66 @@
       background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
       transform: rotate(18deg);
     }
-    .service:nth-child(2):after{
+    .service.gold:after{
       background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
     }
-    .service:nth-child(3):after{
-      background: radial-gradient(closest-side, rgba(0,148,255,.14), transparent 70%);
-    }
-    .service h3{
-      margin:0 0 8px;
-      font-size: 18px;
-      color:var(--ink);
-      position:relative;
-    }
-    .service p{
-      margin:0;
-      color:var(--muted);
-      position:relative;
-    }
-    .service ul{
-      margin:14px 0 0;
-      padding-left: 18px;
-      color:var(--muted);
-      position:relative;
-    }
+    .service h3{ margin:0 0 8px; font-size: 18px; color:var(--ink); position:relative; }
+    .service p{ margin:0; color:var(--muted); position:relative; }
+    .service ul{ margin:14px 0 0; padding-left: 18px; color:var(--muted); position:relative; }
     .service li{ margin:8px 0; }
 
-    /* Process */
+    .service .chips{ margin-top: 12px; position:relative; }
+
+    /* Home “How it works” steps */
     .steps{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
       gap:12px;
       margin-top: 16px;
     }
-    @media (max-width: 1020px){
-      .steps{ grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 520px){
-      .steps{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 1020px){ .steps{ grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px){ .steps{ grid-template-columns: 1fr; } }
+
     .step{
       padding:16px;
       border-radius: var(--radius);
       border:1px solid var(--line);
       background:#fff;
       box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      position:relative;
+      overflow:hidden;
+    }
+    .step:before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background: linear-gradient(90deg, rgba(0,148,255,.70), rgba(255,204,0,.70));
+      opacity:.85;
     }
     .num{
       width:34px; height:34px;
       border-radius:12px;
       display:grid; place-items:center;
-      font-weight:900;
+      font-weight:950;
       background: rgba(0,148,255,.10);
       border:1px solid rgba(0,148,255,.16);
       color:var(--ink);
       margin-bottom:10px;
+      position:relative;
     }
-    .step:nth-child(2) .num{
-      background: rgba(255,204,0,.16);
-      border:1px solid rgba(255,204,0,.22);
-    }
-    .step:nth-child(3) .num{
-      background: rgba(0,148,255,.10);
-      border:1px solid rgba(0,148,255,.16);
-    }
+    .step:nth-child(2) .num,
     .step:nth-child(4) .num{
-      background: rgba(255,204,0,.14);
+      background: rgba(255,204,0,.16);
       border:1px solid rgba(255,204,0,.22);
     }
     .step b{ color:var(--ink); }
     .step p{ margin:6px 0 0; color:var(--muted); }
+    .step .chips{ margin-top: 12px; }
 
     /* CTA band */
     .band{
-      margin-top: 10px;
+      margin-top: 14px;
       padding: 22px;
       border-radius: calc(var(--radius) + 6px);
       border: 1px solid var(--line);
@@ -458,6 +397,77 @@
     .band strong{ font-size: 18px; color:var(--ink); }
     .band span{ color:var(--muted); font-weight:650; display:block; margin-top:4px; }
 
+    /* Connect section (your current HTML had classes but no styling) */
+    .connect{ padding: 22px 0 0; }
+    .connect-inner{
+      padding: 26px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .connect-inner{ grid-template-columns: 1fr; } }
+
+    .connect-title{ margin:0; font-size: clamp(22px, 2.2vw, 30px); letter-spacing:-.35px; color:var(--ink); }
+    .connect-sub{ margin:10px 0 0; color:var(--muted); font-weight:650; max-width: 70ch; }
+
+    .connect-actions{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .connect-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:900;
+      color:var(--ink);
+      box-shadow: 0 10px 22px rgba(11,18,32,.06);
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+    .connect-btn:hover{ transform: translateY(-1px); box-shadow: 0 14px 30px rgba(11,18,32,.10); }
+    .connect-btn i{ font-size: 18px; }
+
+    .connect-note{ margin:14px 0 0; color:var(--muted); font-weight:650; }
+    .connect-note a{ text-decoration:underline; text-underline-offset:3px; }
+
+    .connect-card{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(600px 260px at 10% 0%, rgba(0,148,255,.22), transparent 60%),
+        radial-gradient(600px 260px at 90% 30%, rgba(255,204,0,.22), transparent 62%),
+        #fff;
+      box-shadow: 0 10px 26px rgba(11,18,32,.06);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .connect-badge{
+      display:inline-flex;
+      width:fit-content;
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:950;
+      border:1px solid rgba(255,204,0,.30);
+      background: rgba(255,204,0,.18);
+      color: var(--ink);
+    }
+    .connect-big{ font-weight:950; color:var(--ink); font-size: 18px; letter-spacing:-.2px; }
+    .connect-small{ color:var(--muted); font-weight:650; }
+
     /* Footer */
     footer{
       padding: 34px 0 50px;
@@ -465,13 +475,8 @@
       background: rgba(255,255,255,.66);
     }
     .foot{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-weight:650;
-      font-size: 14px;
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--muted); font-weight:650; font-size: 14px;
     }
     .foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
     .small{ font-size: 13px; }
@@ -479,48 +484,8 @@
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       *{ scroll-behavior:auto !important; }
-      .mark:after{ animation:none; }
-      .btn{ transition:none; }
-      .chip{ transition:none; }
-      .chip:hover{ transform:none; }
+      .btn, .connect-btn{ transition:none; }
     }
-
-    .mark{
-      width:38px; height:38px; border-radius:12px;
-      overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background: transparent;
-      box-shadow: 0 10px 24px rgba(0,0,0,.10);
-    }
-
-    .mark img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-    }
-
-    /* Premium section surface so headings don't float on the blue/gradient */
-    .section-surface{
-      padding: 26px;
-      border-radius: calc(var(--radius) + 6px);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.80);
-      box-shadow: var(--shadow);
-    }
-
-    /* Tighter spacing inside the surface */
-    .section-surface .section-head{ margin-bottom: 10px; }
-    .section-surface .cols-3{ margin-top: 14px; }
-    section{ padding: 44px 0; }
-    .section-surface{ margin-top: 12px; }
-
-    /* Tighten spacing between Hero and What We Deliver */
-    .hero{ padding-bottom: 10px; }
-    #what-we-deliver{ padding-top: 10px; }
-    #what-we-deliver .section-surface{ margin-top: 0; }
   </style>
 </head>
 
@@ -529,7 +494,7 @@
   <header>
     <div class="wrap">
       <div class="nav" role="navigation" aria-label="Main Navigation">
-        <a class="brand" href="#top" aria-label="Elevora Industries Home">
+        <a class="brand" href="index.html#top" aria-label="Elevora Industries Home">
           <span class="mark" aria-hidden="true">
             <img src="logotransparent.png" alt="" />
           </span>
@@ -557,7 +522,7 @@
         <div class="card" style="padding:10px;">
           <div style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="what-we-do.html" onclick="toggleMenu()">What We Do</a>
-            <a class="btn" href="process.html"toggleMenu()">Process</a>
+            <a class="btn" href="process.html" onclick="toggleMenu()">Process</a>
             <a class="btn" href="work.html" onclick="toggleMenu()">Work</a>
             <a class="btn" href="contact.html" onclick="toggleMenu()">Contact</a>
           </div>
@@ -582,20 +547,22 @@
           </h1>
 
           <p class="sub">
-            Elevora Industries helps businesses attract more customers with bold, creative marketing and smart advertising that generates leads and brings people through the door. We refine your brand message, strengthen your presence, 
-            and build steady momentum that turns visibility into sales.
+            Elevora Industries helps businesses attract more customers with bold, creative marketing and smart advertising that generates leads and brings people through the door.
+            We refine your brand message, strengthen your presence, and build steady momentum that turns visibility into sales.
           </p>
+
+          <!-- CHIP THING (like your process page) -->
+          <div class="chips proof" aria-label="Quick benefits">
+            <span class="chip blue">⚡ Clear positioning</span>
+            <span class="chip gold">🧠 Practical systems</span>
+            <span class="chip blue">📍 Local visibility</span>
+            <span class="chip gold">📈 Momentum-focused</span>
+            <span class="chip blue">🤝 Built on trust</span>
+          </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="contact.html">Start a Project</a>
             <a class="btn" href="what-we-do.html">Explore What We Do</a>
-          </div>
-
-          <div class="proof" aria-label="Proof points">
-            <span>⚡ Clear positioning</span>
-            <span>🧠 Practical systems</span>
-            <span>📈 Momentum-focused</span>
-            <span>🤝 Built on trust</span>
           </div>
         </div>
 
@@ -603,7 +570,7 @@
           <div class="visual">
             <div class="visual-top">
               <span>What we build</span>
-              <span class="chip">Elevora Method</span>
+              <span class="chip gold">✨ Elevora Method</span>
             </div>
 
             <div class="grid-cards">
@@ -634,8 +601,8 @@
 
             <div class="band" aria-label="Quick CTA">
               <div>
-                <strong>Want a clean, powerful presence online, and out in the community?</strong>
-                <span>We’ll build a clear game plan and bring the kind of visibility people will truly remember!</span>
+                <strong>Want a clean, powerful presence online—and out in the community?</strong>
+                <span>We’ll build a clear game plan and bring the kind of visibility people will truly remember. 🔥</span>
               </div>
               <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
             </div>
@@ -644,7 +611,7 @@
       </div>
     </section>
 
-    <!--What We Deliver-->
+    <!-- What We Deliver -->
     <section id="what-we-deliver" aria-label="What We Deliver">
       <div class="section-surface">
         <div class="section-head">
@@ -656,10 +623,24 @@
           </div>
         </div>
 
+        <!-- CHIP THING (section chips) -->
+        <div class="chips" aria-label="Deliverables highlights" style="margin-top:10px;">
+          <span class="chip blue">🖨️ Print-ready flyers</span>
+          <span class="chip gold">📍 Local placement plans</span>
+          <span class="chip blue">📲 QR scan-to-action</span>
+          <span class="chip gold">🎯 Offers that convert</span>
+          <span class="chip blue">✨ Consistent brand look</span>
+        </div>
+
         <div class="cols-3">
-          <article class="service">
+          <article class="service gold">
             <h3>Awareness & promotion</h3>
-            <p>Turn what you already offer into marketing people pay attention to!</p>
+            <p>Turn what you already offer into marketing people pay attention to. 😮‍💨🔥</p>
+            <div class="chips" aria-label="Awareness chips">
+              <span class="chip gold">📣 Promos</span>
+              <span class="chip blue">🪧 Signage</span>
+              <span class="chip gold">🎉 Event-ready</span>
+            </div>
             <ul>
               <li>Campaign ideas (what to promote + why it works)</li>
               <li>Flyers, signage, and event-ready promos</li>
@@ -669,7 +650,12 @@
 
           <article class="service">
             <h3>Online presence & digital assets</h3>
-            <p>Make your business look legit the instant someone checks you out—then make it easy to contact you, book, or buy!</p>
+            <p>Look legit instantly—then make it effortless to contact you, book, or buy. ✅</p>
+            <div class="chips" aria-label="Digital chips">
+              <span class="chip blue">🌐 Pages that convert</span>
+              <span class="chip gold">📞 Tap-to-call</span>
+              <span class="chip blue">🧭 Clear next step</span>
+            </div>
             <ul>
               <li>Premium pages that explain your offer fast (home + key pages)</li>
               <li>Social + website consistency (same look, same message, everywhere)</li>
@@ -677,9 +663,14 @@
             </ul>
           </article>
 
-          <article class="service">
+          <article class="service gold">
             <h3>Growth momentum</h3>
-            <p>Keep your name circulating and your marketing moving—so visibility turns into steady leads and repeat traffic!</p>
+            <p>Keep your name circulating so visibility turns into steady leads and repeat traffic. 📈</p>
+            <div class="chips" aria-label="Momentum chips">
+              <span class="chip gold">🗓️ Weekly rhythm</span>
+              <span class="chip blue">⚡ Fast upgrades</span>
+              <span class="chip gold">📦 Clean handoff</span>
+            </div>
             <ul>
               <li>A simple weekly promo rhythm (posts, specials, reminders, event-style pushes)</li>
               <li>Small upgrades that remove friction (clear offers, faster replies, easier next step)</li>
@@ -690,8 +681,8 @@
       </div>
     </section>
 
-    <!-- Process -->
-    <section id="process" aria-label="Process">
+    <!-- How it works -->
+    <section id="process" aria-label="How it works">
       <div class="section-head">
         <div>
           <h2>How it works</h2>
@@ -705,33 +696,73 @@
         <div class="step">
           <div class="num">1</div>
           <b>Walkthrough + Wins</b>
-          <p>We take a quick look at what you already have (offer, reputation, signage, social, website) and spot the fastest ways to get more attention and more customers—without changing who you are.</p>
+          <p>We review what you already have (offer, reputation, signage, social, website) and spot the fastest visibility wins—without changing who you are.</p>
+          <div class="chips" aria-label="Step 1 chips">
+            <span class="chip blue">🔎 Quick audit</span>
+            <span class="chip gold">⚡ Fast wins</span>
+            <span class="chip blue">📍 Local-first</span>
+          </div>
         </div>
+
         <div class="step">
           <div class="num">2</div>
           <b>Promo Blueprint</b>
-          <p>We build a simple promotion plan around what actually drives traffic in your area: what to push, how to say it, where it should show up, and how often—so your marketing feels intentional, not random.</p>
+          <p>We build a simple promo plan around what drives traffic in your area: what to push, how to say it, where it should show up, and how often.</p>
+          <div class="chips" aria-label="Step 2 chips">
+            <span class="chip gold">🧠 Hooks</span>
+            <span class="chip blue">🎯 Offers</span>
+            <span class="chip gold">📌 Clear CTA</span>
+          </div>
         </div>
+
         <div class="step">
           <div class="num">3</div>
           <b>Visibility Buildout</b>
-          <p>We create the pieces that make you look premium and easy to choose: upgraded social presence, clean web touchpoints, ads/promos, flyers/signage, and event-ready content that spreads the word fast.</p>
+          <p>We create the pieces that make you look premium and easy to choose: flyers/signage, web touchpoints, social polish, promos, and event-ready content.</p>
+          <div class="chips" aria-label="Step 3 chips">
+            <span class="chip blue">🖨️ Print-ready</span>
+            <span class="chip gold">📲 QR action</span>
+            <span class="chip blue">✨ Consistent look</span>
+          </div>
         </div>
+
         <div class="step">
           <div class="num">4</div>
           <b>Rollout + Momentum Plan</b>
-          <p>We launch the campaign clean, confirm everything is working, and hand you a plug-and-play plan you can keep running—so visibility keeps stacking after the project is done.</p>
+          <p>We launch clean, confirm everything works, and hand you a plug-and-play plan you can keep running—so momentum stacks after the project.</p>
+          <div class="chips" aria-label="Step 4 chips">
+            <span class="chip gold">🚀 Launch</span>
+            <span class="chip blue">🗓️ Weekly plan</span>
+            <span class="chip gold">📈 Improve</span>
+          </div>
         </div>
+      </div>
+
+      <div class="band" style="margin-top:16px;">
+        <div>
+          <strong>Free clarity call</strong>
+          <span>15 minutes. Straight answers. No pressure. 😄</span>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Schedule</a>
       </div>
     </section>
 
+    <!-- Connect -->
     <section class="connect" aria-label="Connect with Elevora Industries">
       <div class="connect-inner">
         <div class="connect-copy">
           <h2 class="connect-title">Connect with Elevora</h2>
           <p class="connect-sub">
-            Stay connected for new launches, featured work, and fresh promos — or reach out anytime for more information!
+            Stay connected for new launches, featured work, and fresh promos — or reach out anytime for more info. 🚀
           </p>
+
+          <!-- CHIP THING (connect chips) -->
+          <div class="chips" aria-label="Connect highlights" style="margin-top:12px;">
+            <span class="chip blue">📸 New work</span>
+            <span class="chip gold">🔥 Promos</span>
+            <span class="chip blue">🎥 Reels</span>
+            <span class="chip gold">📍 Local launches</span>
+          </div>
 
           <div class="connect-actions" aria-label="Social links">
             <a class="connect-btn" href="https://www.instagram.com/elevoraindustries/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -751,7 +782,7 @@
           </div>
 
           <p class="connect-note">
-            Prefer a quick message? <a href="Contact.html">Contact us</a>.
+            Prefer a quick message? <a href="contact.html">Contact us</a>.
           </p>
         </div>
 
@@ -762,39 +793,13 @@
         </div>
       </div>
     </section>
-
-    </section>
-
-    <style>
-      .social{ list-style:none; margin:0; padding:0; display:flex; gap:12px; }
-      .social a{
-        display:inline-flex; align-items:center; justify-content:center;
-        width:44px; height:44px; border-radius:14px;
-        border:1px solid rgba(11,18,32,.10);
-        background: rgba(255,255,255,.85);
-        font-size:20px;
-      }
-      .social a:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(11,18,32,.10); }
-      .sr-only{
-        position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-        overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-      }
-    </style>
-
-    <div class="band" style="margin-top:16px; margin-bottom:60px;">
-      <div>
-        <strong>Free clarity call</strong>
-        <span>15 minutes. Straight answers.</span>
-      </div>
-      <a class="btn btn-primary" href="contact.html">Schedule</a>
-    </div>
   </main>
 
   <footer aria-label="Footer">
     <div class="wrap">
       <div class="foot">
         <div style="display:flex; gap:10px; align-items:center;">
-          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;">
             <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
           </span>
           <div>
@@ -811,7 +816,8 @@
         <div>
           <a href="contact.html">Contact</a> &nbsp;•&nbsp;
           <a href="what-we-do.html">What We Do</a> &nbsp;•&nbsp;
-          <a href="process.html">Process</a>
+          <a href="process.html">Process</a> &nbsp;•&nbsp;
+          <a href="work.html">Work</a>
         </div>
       </div>
     </div>
@@ -825,14 +831,6 @@
     function toggleMenu(){
       const menu = document.getElementById("mobileMenu");
       menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
-    }
-
-    // Demo-only submit (so page doesn't break). Replace with real form handler.
-    function fakeSubmit(e){
-      e.preventDefault();
-      const note = document.getElementById("formNote");
-      note.textContent = "Form is a placeholder. Connect this to Formspree / Netlify Forms / your backend to receive messages.";
-      return false;
     }
   </script>
 </body>
