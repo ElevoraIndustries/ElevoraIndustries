@@ -241,6 +241,8 @@
       align-items:center;
       position:relative;
     }
+
+    /* Chips (now with “badge glow” hover) */
     .chip{
       padding:7px 10px;
       border-radius:999px;
@@ -250,6 +252,17 @@
       font-weight:900;
       color:var(--ink);
       white-space:nowrap;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .chip:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.98);
+      border-color: rgba(0,148,255,.22);
+      box-shadow: 0 10px 22px rgba(0,148,255,.12);
+    }
+    .phase.gold .chip:hover{
+      border-color: rgba(255,204,0,.38);
+      box-shadow: 0 10px 22px rgba(255,204,0,.18);
     }
 
     .phase-body{
@@ -379,6 +392,8 @@
     @media (prefers-reduced-motion: reduce){
       .mark:after{ animation:none; }
       .btn{ transition:none; }
+      .chip{ transition:none; }
+      .chip:hover{ transform:none; }
     }
   </style>
 </head>
@@ -428,7 +443,7 @@
   <main class="wrap">
     <div class="pill">
       <span class="dot" aria-hidden="true"></span>
-      <span>Local visibility. Real people. Real action. 🚀</span>
+      <span>Local visibility. Real people. Real action. 🚀✨</span>
     </div>
 
     <h1>How we build local momentum 🔥</h1>
@@ -443,7 +458,7 @@
         <strong>4 phases + clear milestones ✅</strong>
         <span>Scan → Hook → Build → Deploy (then refine weekly)</span>
       </div>
-      <a class="btn btn-primary" href="contact.html">Start a Project</a>
+      <a class="btn btn-primary" href="contact.html">Start a Project 🚀</a>
     </div>
 
     <section class="timeline" aria-label="Process timeline">
@@ -462,9 +477,9 @@
           </div>
 
           <div class="meta" aria-label="Phase details">
-            <span class="chip">📞 Kickoff</span>
-            <span class="chip">📍 Local scan</span>
-            <span class="chip">🧭 Target map</span>
+            <span class="chip">☎️ Kickoff</span>
+            <span class="chip">🗺️ Local scan</span>
+            <span class="chip">🎯 Target map</span>
           </div>
         </div>
 
@@ -530,7 +545,7 @@
           <div class="meta">
             <span class="chip">🧠 Headline kit</span>
             <span class="chip">🧩 Offer layout</span>
-            <span class="chip">📞 Clear CTA</span>
+            <span class="chip">📣 Clear CTA</span>
           </div>
         </div>
 
@@ -596,7 +611,7 @@
           <div class="meta">
             <span class="chip">🖨️ Print-ready</span>
             <span class="chip">📱 QR-friendly</span>
-            <span class="chip">🔥 Bold + clean</span>
+            <span class="chip">✨ Clean + bold</span>
           </div>
         </div>
 
@@ -746,7 +761,7 @@
             <strong>Want a clean local plan? 🔥</strong>
             <span>Tell us your business + your goal and we’ll recommend the best next step.</span>
           </div>
-          <a class="btn btn-primary" href="contact.html">Contact Elevora</a>
+          <a class="btn btn-primary" href="contact.html">Contact Elevora ✉️</a>
         </div>
       </div>
     </section>
