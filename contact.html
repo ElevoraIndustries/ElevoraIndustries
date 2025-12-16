@@ -196,19 +196,19 @@
     .left-stack{
       display:flex;
       flex-direction:column;
-      gap:26px;
+      gap:26px;                 /* more breathing room between sections */
       height:100%;
-      padding-top: 10px;
+      padding-top: 10px;        /* pushes left column down slightly */
     }
     @media (min-width: 981px){
-      .left-stack{ padding-left: 10px; }
+      .left-stack{ padding-left: 10px; } /* subtle horizontal offset vs seam */
     }
 
     aside.quick{
-      padding-top: 28px;
+      padding-top: 28px;        /* different start line than left side */
     }
     @media (min-width: 981px){
-      aside.quick{ padding-right: 10px; }
+      aside.quick{ padding-right: 10px; } /* subtle opposite offset */
     }
 
     .panel{
@@ -343,8 +343,62 @@
       position:relative;
     }
 
-    /* ✅ Key fix: don’t override the “fast answer” spacing band */
-    .island .band:not(.band-pop){ margin-top:auto; }
+    .island-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+    .island-icon{
+      width:42px; height:42px;
+      border-radius:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, rgba(0,148,255,.22), rgba(255,204,0,.22));
+      box-shadow: 0 12px 26px rgba(11,18,32,.08);
+      flex: 0 0 auto;
+    }
+    .island-icon svg{
+      width:22px; height:22px;
+      color: var(--ink);
+      opacity: .95;
+    }
+
+    .island-title{
+      margin:0;
+      color:var(--ink);
+      font-size:18px;
+      font-weight: 950;
+      letter-spacing: -.4px;
+      line-height: 1.1;
+    }
+    .island-subtitle{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-weight: 750;
+      opacity: .95;
+      font-size:13px;
+    }
+
+    .island p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.7;
+    }
+
+    .island-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      margin-bottom:14px;
+    }
+
+    .island .band{ margin-top:auto; }
 
     footer{
       padding: 26px 0 34px;
@@ -425,13 +479,7 @@
       white-space: nowrap;
     }
 
-    .island-grid{
-      display:grid;
-      gap:12px;
-      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-      margin-bottom:14px;
-      margin-top: 10px;
-    }
+    .island-grid-pop{ margin-top: 10px; }
 
     .mini-pop{
       position: relative;
@@ -467,11 +515,7 @@
       .island-lead{ font-size: 15px; }
     }
 
-    /* ✅ Spacing you asked for (between tiles + “fast answer” band) */
-    .band-pop{
-      margin-top: 22px;
-      margin-bottom: 2px;
-    }
+    .band-pop{ margin-top: 14px; }
   </style>
 </head>
 
@@ -531,6 +575,7 @@
     <div class="grid">
       <div class="left-stack" aria-label="Contact column">
 
+        <!-- ✅ SWAPPED: Quick project starter FIRST -->
         <section class="island island-pop" aria-label="Quick project starter">
           <div class="island-head">
             <span class="island-icon" aria-hidden="true">
@@ -551,7 +596,7 @@
             Share what you can below and we’ll respond with a cleaner plan, clearer scope, and real next steps. No pressure—just momentum.
           </p>
 
-          <div class="island-grid">
+          <div class="island-grid island-grid-pop">
             <div class="mini mini-pop">
               <b>🎯 1) Your goal</b>
               <span>What do you want the site/brand to do? (More calls, stronger trust, better leads, cleaner image, etc.)</span>
@@ -599,15 +644,16 @@
             </div>
           </div>
 
-          <div class="band band-pop">
-            <div>
-              <strong>Want a fast answer? ⚡</strong>
-              <span>Send a short message and we’ll reply with the next best step.</span>
-            </div>
-            <a class="btn btn-primary" href="#form">Message us 💬</a>
+          <div class="band band-pop" style="margin-top:22px; margin-bottom:2px;">
+  <div>
+    <strong>Want a fast answer? ⚡</strong>
+    <span>Send a short message and we’ll reply with the next best step.</span>
+  </div>
+  <a class="btn btn-primary" href="#form">Message us 💬</a>
           </div>
         </section>
 
+        <!-- ✅ SWAPPED: Form SECOND (under Quick Project Starter) -->
         <section class="panel" id="form" aria-label="Contact form">
           <h2>Send a message</h2>
           <p>Use the form below. If you prefer email or text, use the quick links on the right.</p>
@@ -787,3 +833,4 @@
   </script>
 </body>
 </html>
+
