@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Contact Elevora Industries to start a project, request a quote, or ask a question. Identity, structure, and strategy built for trust and momentum." />
   <title>Elevora Industries | Contact</title>
-  <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
-<link rel="shortcut icon" href="/my-favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
-<link rel="manifest" href="/my-favicon/site.webmanifest" />
-  <meta name="apple-mobile-web-app-title" content="Elevora Industries">
-<meta name="application-name" content="Elevora Industries">
 
+  <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/my-favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/my-favicon/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Elevora Industries">
+  <meta name="application-name" content="Elevora Industries">
 
   <style>
     :root{
@@ -48,7 +48,6 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
 
-    /* Header (single block, Safari-friendly) */
     header{
       position:sticky; top:0; z-index:50;
       -webkit-backdrop-filter: saturate(140%) blur(10px);
@@ -136,7 +135,7 @@
 
     main{
       flex:1;
-      padding: 44px 0 28px;
+      padding: 44px 0 34px;
     }
 
     .hero{
@@ -183,21 +182,33 @@
     }
 
     .grid{
-      margin-top: 18px;
+      margin-top: 20px;
       display:grid;
       grid-template-columns: 1.25fr .75fr;
       gap:14px;
       align-items:stretch;
     }
     @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; gap:16px; }
+      .grid{ grid-template-columns: 1fr; gap:18px; }
     }
 
+    /* ✅ IMPORTANT: spacing + intentional offset so blocks do NOT line up with the background seam */
     .left-stack{
       display:flex;
       flex-direction:column;
-      gap:22px;
+      gap:26px;                 /* more breathing room between sections */
       height:100%;
+      padding-top: 10px;        /* pushes left column down slightly */
+    }
+    @media (min-width: 981px){
+      .left-stack{ padding-left: 10px; } /* subtle horizontal offset vs seam */
+    }
+
+    aside.quick{
+      padding-top: 28px;        /* different start line than left side */
+    }
+    @media (min-width: 981px){
+      aside.quick{ padding-right: 10px; } /* subtle opposite offset */
     }
 
     .panel{
@@ -399,14 +410,12 @@
       color:var(--muted); font-weight:650; font-size: 14px;
     }
 
-    /* Footer links are underlined by default */
     .foot a{
       color:var(--muted);
       text-decoration: underline;
       text-underline-offset:3px;
     }
 
-    /* ✅ Footer brand link: no underline */
     .foot a.brand-link{
       text-decoration: none !important;
     }
@@ -425,13 +434,15 @@
       .btn{ width:100%; }
       .form-actions{ flex-direction:column; align-items:stretch; }
       .cta-row{ gap:8px; }
+
+      .left-stack{ padding-left:0; padding-top:0; }
+      aside.quick{ padding-top:0; padding-right:0; }
     }
 
     @media (prefers-reduced-motion: reduce){
       .btn{ transition:none; }
     }
 
-    /* Island Pop */
     .island-pop{
       position: relative;
       overflow: hidden;
@@ -563,60 +574,8 @@
 
     <div class="grid">
       <div class="left-stack" aria-label="Contact column">
-        <section class="panel" id="form" aria-label="Contact form">
-          <h2>Send a message</h2>
-          <p>Use the form below. If you prefer email or text, use the quick links on the right.</p>
 
-          <form id="contactForm" action="https://formspree.io/f/xkgdeayl" method="POST">
-            <div class="row">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@email.com" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="type">What do you need?</label>
-                <select id="type" name="type" required>
-                  <option value="" selected disabled>Select one</option>
-                  <option>Website / Landing Page</option>
-                  <option>Brand / Messaging Clarity</option>
-                  <option>Business Structure / Systems</option>
-                  <option>Not sure yet (help me decide)</option>
-                </select>
-              </div>
-              <div>
-                <label for="timeline">Timeline</label>
-                <select id="timeline" name="timeline" required>
-                  <option value="" selected disabled>Select one</option>
-                  <option>ASAP</option>
-                  <option>1–2 weeks</option>
-                  <option>3–4 weeks</option>
-                  <option>Flexible</option>
-                </select>
-              </div>
-            </div>
-
-            <label for="message">Project details</label>
-            <textarea id="message" name="message" placeholder="Briefly tell us your goal, what you currently have, and what you want to improve..." required></textarea>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit" id="sendBtn">Send Message</button>
-              <a class="btn" href="work.html">See our work</a>
-            </div>
-
-            <p id="formNote" class="note" aria-live="polite"></p>
-            <p class="note">
-              Tip: If you already have a website/social pages, paste the links in your message so we can review faster.
-            </p>
-          </form>
-        </section>
-
+        <!-- ✅ SWAPPED: Quick project starter FIRST -->
         <section class="island island-pop" aria-label="Quick project starter">
           <div class="island-head">
             <span class="island-icon" aria-hidden="true">
@@ -693,6 +652,62 @@
             <a class="btn btn-primary" href="#form">Message us 💬</a>
           </div>
         </section>
+
+        <!-- ✅ SWAPPED: Form SECOND (under Quick Project Starter) -->
+        <section class="panel" id="form" aria-label="Contact form">
+          <h2>Send a message</h2>
+          <p>Use the form below. If you prefer email or text, use the quick links on the right.</p>
+
+          <form id="contactForm" action="https://formspree.io/f/xkgdeayl" method="POST">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="type">What do you need?</label>
+                <select id="type" name="type" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Website / Landing Page</option>
+                  <option>Brand / Messaging Clarity</option>
+                  <option>Business Structure / Systems</option>
+                  <option>Not sure yet (help me decide)</option>
+                </select>
+              </div>
+              <div>
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>ASAP</option>
+                  <option>1–2 weeks</option>
+                  <option>3–4 weeks</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" placeholder="Briefly tell us your goal, what you currently have, and what you want to improve..." required></textarea>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit" id="sendBtn">Send Message</button>
+              <a class="btn" href="work.html">See our work</a>
+            </div>
+
+            <p id="formNote" class="note" aria-live="polite"></p>
+            <p class="note">
+              Tip: If you already have a website/social pages, paste the links in your message so we can review faster.
+            </p>
+          </form>
+        </section>
+
       </div>
 
       <aside class="quick" aria-label="Quick contact">
@@ -720,7 +735,7 @@
           <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </section>
 
-        <section class="card" aria-label="Expectations" style="padding:30px;">
+        <section class="card" aria-label="Expectations" style="padding:30px; margin-top: 12px;">
           <h2 style="margin:0 0 10px; color:var(--ink); font-size:18px; letter-spacing:-.2px;">What to expect</h2>
           <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:650;">
             <li>Response time: usually 24–48 hours</li>
@@ -743,7 +758,6 @@
   <footer aria-label="Footer">
     <div class="wrap">
       <div class="foot">
-        <!-- ✅ Brand block is now a link to index.html AND has no underline -->
         <a class="brand-link" href="index.html" aria-label="Go to Elevora Industries Home" style="display:flex; gap:10px; align-items:center;">
           <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;">
             <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
@@ -819,5 +833,3 @@
   </script>
 </body>
 </html>
-
-
