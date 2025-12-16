@@ -57,13 +57,23 @@
       font-weight:800; letter-spacing:.2px;
       color:var(--ink); white-space:nowrap;
     }
+
+    /* Logo mark (image version, consistent + safe) */
     .mark{
       width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
-        linear-gradient(135deg, var(--blue), #37b2ff 55%, var(--gold));
-      box-shadow: 0 10px 24px rgba(0,148,255,.18);
-      position:relative; overflow:hidden;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      position:relative;
+    }
+    .mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
     }
     .mark:after{
       content:""; position:absolute; inset:-40%;
@@ -71,6 +81,7 @@
       transform: rotate(20deg);
       animation: shine 5.8s ease-in-out infinite;
       opacity:.7;
+      pointer-events:none;
     }
     @keyframes shine{
       0%,65% { transform: translateX(-55%) rotate(20deg); opacity:.0; }
@@ -136,7 +147,7 @@
     .sub{
       color:var(--muted);
       font-size: 18px;
-      max-width: 74ch;
+      max-width: 78ch;
       margin:0 0 18px;
     }
 
@@ -173,6 +184,7 @@
       width:320px; height:320px;
       background: radial-gradient(closest-side, rgba(0,148,255,.18), transparent 70%);
       transform: rotate(15deg);
+      pointer-events:none;
     }
     .phase.gold:before{
       background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
@@ -218,7 +230,8 @@
     .phase-desc{
       margin:6px 0 0;
       color:var(--muted);
-      max-width: 70ch;
+      max-width: 72ch;
+      font-weight:650;
     }
 
     .meta{
@@ -268,11 +281,13 @@
     .panel p{
       margin:0;
       color:var(--muted);
+      font-weight:650;
     }
     .panel ul{
       margin:10px 0 0;
       padding-left:18px;
       color:var(--muted);
+      font-weight:650;
     }
     .panel li{ margin:8px 0; }
 
@@ -301,12 +316,13 @@
       height:160px;
       background: radial-gradient(closest-side, rgba(0,148,255,.16), transparent 70%);
       transform: rotate(8deg);
+      pointer-events:none;
     }
     .mini.gold:after{
       background: radial-gradient(closest-side, rgba(255,204,0,.22), transparent 70%);
     }
     .mini b{ position:relative; color:var(--ink); }
-    .mini span{ position:relative; display:block; margin-top:6px; color:var(--muted); font-size:13px; }
+    .mini span{ position:relative; display:block; margin-top:6px; color:var(--muted); font-size:13px; font-weight:650; }
 
     /* Milestones band */
     .band{
@@ -345,7 +361,7 @@
       list-style:none;
     }
     summary::-webkit-details-marker{ display:none; }
-    details p{ margin:10px 0 0; color:var(--muted); }
+    details p{ margin:10px 0 0; color:var(--muted); font-weight:650; }
 
     /* Footer */
     footer{
@@ -363,23 +379,6 @@
     @media (prefers-reduced-motion: reduce){
       .mark:after{ animation:none; }
       .btn{ transition:none; }
-    }
-
-    /* Logo image version */
-    .mark{
-      width:38px; height:38px; border-radius:12px;
-      overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background: transparent;
-      box-shadow: 0 10px 24px rgba(0,0,0,.10);
-    }
-    .mark img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
     }
   </style>
 </head>
@@ -429,20 +428,20 @@
   <main class="wrap">
     <div class="pill">
       <span class="dot" aria-hidden="true"></span>
-      <span>Local visibility. Real customer traffic.</span>
+      <span>Local visibility. Real people. Real action. 🚀</span>
     </div>
 
-    <h1>The Elevora process</h1>
+    <h1>How we build local momentum 🔥</h1>
     <p class="sub">
-      This is how we build local marketing that actually gets seen—and actually gets acted on.
-      We combine sharp messaging with real-world promotion: flyers, menus, door hangers, posters, signage, and community visibility
-      that points people to one simple next step. You’ll always know what we’re doing, why it matters, and what comes next.
+      This isn’t “random marketing.” This is a clean, repeatable system that gets your business seen in the real world —
+      <b>flyers, door hangers, posters, menus, signage, promo graphics</b> — all pointing to one simple next step. 📍📞
+      You’ll always know what’s happening, what’s next, and why it matters.
     </p>
 
     <div class="band" aria-label="Milestones overview">
       <div>
-        <strong>4 phases + clear milestones</strong>
-        <span>Audit → Message → Design → Distribute (then refine what works)</span>
+        <strong>4 phases + clear milestones ✅</strong>
+        <span>Scan → Hook → Build → Deploy (then refine weekly)</span>
       </div>
       <a class="btn btn-primary" href="contact.html">Start a Project</a>
     </div>
@@ -454,19 +453,18 @@
           <div class="phase-left">
             <div class="num">1</div>
             <div>
-              <h2 class="phase-title">Audit</h2>
+              <h2 class="phase-title">Scan + Targets 🎯</h2>
               <p class="phase-desc">
-                We look at how people are finding you right now (and why they’re choosing you—or not).
-                Then we pinpoint the fastest visibility wins for your neighborhood: where to show up, what to say,
-                and what to place in front of real local customers.
+                We figure out how locals find you right now (and what’s stopping them), then pick the smartest places to show up:
+                <b>neighborhoods, partner locations, foot-traffic zones, events, and “where your customers already go.”</b> 👣
               </p>
             </div>
           </div>
 
           <div class="meta" aria-label="Phase details">
-            <span class="chip">📞 Quick kickoff</span>
-            <span class="chip">📍 Local presence scan</span>
-            <span class="chip">🧩 Fast-win map</span>
+            <span class="chip">📞 Kickoff</span>
+            <span class="chip">📍 Local scan</span>
+            <span class="chip">🧭 Target map</span>
           </div>
         </div>
 
@@ -474,21 +472,21 @@
           <div class="panel">
             <h3>What we do</h3>
             <ul>
-              <li><b>Offer clarity:</b> what you sell, who it’s for, and what makes it an easy “yes.”</li>
-              <li><b>Local customer behavior:</b> where your people actually are (stores, neighborhoods, events, foot-traffic zones).</li>
-              <li><b>Visibility audit:</b> your Google profile, socials, signage, menus, flyers—anything customers see.</li>
-              <li><b>Competitor scan:</b> what others are doing locally (and how to stand out without being cheesy).</li>
-              <li><b>Quick wins:</b> the top 3 moves that can increase calls/walk-ins the fastest.</li>
+              <li><b>Offer check:</b> what you sell + the fastest reason someone should care.</li>
+              <li><b>Local customer behavior:</b> where your people hang out (stores, gyms, schools, neighborhoods, events).</li>
+              <li><b>Presence scan:</b> Google profile basics, signage, menu clarity, social vibe, first impressions.</li>
+              <li><b>Competitor check:</b> what others are doing locally (and how to look cleaner, not louder).</li>
+              <li><b>Fast-win picks:</b> the top 3 moves that can increase calls/walk-ins quickly.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Audit deliverables">
+            <div class="mini-grid" aria-label="Scan deliverables">
               <div class="mini">
-                <b>Deliverable: Local clarity brief</b>
-                <span>Goals, audience, and the simple “what we’re pushing” message.</span>
+                <b>Deliverable: Local game plan 🗺️</b>
+                <span>Targets + priority areas + what we place where (so nothing gets wasted).</span>
               </div>
               <div class="mini gold">
-                <b>Deliverable: Visibility roadmap</b>
-                <span>What we print/post first, where it goes, and how it drives action.</span>
+                <b>Deliverable: “What to push” message ✅</b>
+                <span>The main offer + hook we’ll repeat across flyers, posters, and social.</span>
               </div>
             </div>
           </div>
@@ -496,18 +494,18 @@
           <div class="panel">
             <h3>What you get out of it</h3>
             <ul>
-              <li>A clear game plan that fits your neighborhood + customer habits.</li>
-              <li>A realistic approach that doesn’t rely on “going viral.”</li>
-              <li>A simple target: more calls, more walk-ins, more repeat customers.</li>
+              <li>A plan built for real local attention spans (not marketing theory).</li>
+              <li>Clarity on what to do first so you don’t waste time or money.</li>
+              <li>One simple goal: more calls, more visits, more trust.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Audit outcomes">
+            <div class="mini-grid" aria-label="Scan outcomes">
               <div class="mini gold">
                 <b>Outcome: Clear direction</b>
-                <span>No guessing—just a prioritized plan that makes sense.</span>
+                <span>You know exactly what the next move is.</span>
               </div>
               <div class="mini">
-                <b>Outcome: Faster results</b>
+                <b>Outcome: Faster wins</b>
                 <span>We focus on what gets seen locally first.</span>
               </div>
             </div>
@@ -521,19 +519,18 @@
           <div class="phase-left">
             <div class="num">2</div>
             <div>
-              <h2 class="phase-title">Message</h2>
+              <h2 class="phase-title">Hook + Copy That Hits ⚡</h2>
               <p class="phase-desc">
-                We write the words that make strangers stop, understand, and act—fast.
-                This is your flyer language, poster headline, menu callout, and “what we do” explanation
-                built for real local attention spans.
+                We write the words that make strangers stop, understand, and act — fast.
+                These are your <b>flyer headlines, poster hooks, menu callouts, and “scan here” CTA</b> lines. 🧠✨
               </p>
             </div>
           </div>
 
           <div class="meta">
-            <span class="chip">🧠 Headline + hook</span>
+            <span class="chip">🧠 Headline kit</span>
             <span class="chip">🧩 Offer layout</span>
-            <span class="chip">📌 Clear CTA</span>
+            <span class="chip">📞 Clear CTA</span>
           </div>
         </div>
 
@@ -541,21 +538,21 @@
           <div class="panel">
             <h3>What we do</h3>
             <ul>
-              <li><b>One-sentence value:</b> a simple line that explains you instantly.</li>
-              <li><b>Offer arrangement:</b> what you lead with on a flyer (so it doesn’t look cluttered).</li>
-              <li><b>Trust cues:</b> the little phrases that remove hesitation (hours, guarantees, reviews, “family-owned,” etc.).</li>
-              <li><b>Local relevance:</b> wording that matches your community and how people talk.</li>
-              <li><b>CTA clarity:</b> call/text/visit/scan—one clean action per piece.</li>
+              <li><b>One-sentence clarity:</b> what you do + who it’s for (in plain English).</li>
+              <li><b>Promo framing:</b> your offer explained cleanly (not cluttered).</li>
+              <li><b>Trust cues:</b> hours, guarantees, reviews, “family-owned,” location cues, etc.</li>
+              <li><b>Local tone:</b> wording that feels natural for your community (not corporate).</li>
+              <li><b>One action per piece:</b> call / text / visit / scan — simple wins.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Message deliverables">
+            <div class="mini-grid" aria-label="Hook deliverables">
               <div class="mini gold">
-                <b>Deliverable: Flyer copy kit</b>
-                <span>Headlines, subheadlines, offers, and CTAs ready to place on designs.</span>
+                <b>Deliverable: Flyer + sign copy kit 🖊️</b>
+                <span>Headlines, subheads, offers, and CTAs ready for design.</span>
               </div>
               <div class="mini">
-                <b>Deliverable: Promo phrase library</b>
-                <span>Reusable lines for posters, socials, menus, signs, and QR captions.</span>
+                <b>Deliverable: Promo phrase library 📣</b>
+                <span>Reusable lines for door hangers, posters, menus, and social posts.</span>
               </div>
             </div>
           </div>
@@ -564,18 +561,18 @@
             <h3>What you get out of it</h3>
             <ul>
               <li>Messaging that feels confident (not spammy) and still gets attention.</li>
-              <li>A cleaner offer that customers understand immediately.</li>
-              <li>Consistency across every touchpoint—flyers, posters, social, and in-store.</li>
+              <li>Cleaner offers that customers understand instantly.</li>
+              <li>Consistency across every touchpoint so it feels legit.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Message outcomes">
+            <div class="mini-grid" aria-label="Hook outcomes">
               <div class="mini">
-                <b>Outcome: Stronger response</b>
-                <span>People actually call/text/visit instead of scrolling past.</span>
+                <b>Outcome: Better response</b>
+                <span>People actually call/text/scan instead of ignoring it.</span>
               </div>
               <div class="mini gold">
                 <b>Outcome: Higher trust</b>
-                <span>Your marketing looks legitimate and intentional.</span>
+                <span>Your marketing looks intentional and professional.</span>
               </div>
             </div>
           </div>
@@ -588,18 +585,18 @@
           <div class="phase-left">
             <div class="num">3</div>
             <div>
-              <h2 class="phase-title">Design</h2>
+              <h2 class="phase-title">Build the Assets 🖨️✨</h2>
               <p class="phase-desc">
-                Now we turn the plan into real assets: flyers, posters, menus, door hangers, cards, and clean visuals
-                that look professional and make the next step obvious.
+                Now we turn the plan into real marketing pieces: <b>flyers, door hangers, posters, menus, signage, business cards</b>,
+                plus QR flows that make the next step stupid-easy. 📲✅
               </p>
             </div>
           </div>
 
           <div class="meta">
             <span class="chip">🖨️ Print-ready</span>
-            <span class="chip">📱 Mobile-friendly QR</span>
-            <span class="chip">✨ Clean + bold</span>
+            <span class="chip">📱 QR-friendly</span>
+            <span class="chip">🔥 Bold + clean</span>
           </div>
         </div>
 
@@ -607,43 +604,43 @@
           <div class="panel">
             <h3>What we do</h3>
             <ul>
-              <li><b>Layout hierarchy:</b> big message first, details second, action always clear.</li>
-              <li><b>Brand consistency:</b> colors, font rhythm, spacing, and a professional feel.</li>
-              <li><b>Print-ready files:</b> proper sizing and clean output for real-world use.</li>
-              <li><b>QR + contact flow:</b> scan-to-call, scan-to-menu, scan-to-map, or scan-to-book.</li>
-              <li><b>Optional web tie-in:</b> matching landing page or contact page for conversions.</li>
+              <li><b>Hierarchy that works:</b> big message first, details second, CTA always obvious.</li>
+              <li><b>Brand consistency:</b> colors, spacing, type rhythm, premium look.</li>
+              <li><b>Print-ready exports:</b> correct sizes + clean files for real use.</li>
+              <li><b>QR funnels:</b> scan-to-menu, scan-to-map, scan-to-call, scan-to-quote.</li>
+              <li><b>Optional web tie-in:</b> landing page or contact page that converts.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Design deliverables">
+            <div class="mini-grid" aria-label="Build deliverables">
               <div class="mini">
-                <b>Deliverable: Marketing assets</b>
-                <span>Flyers, posters, menus, signage designs—built to your exact goal.</span>
+                <b>Deliverable: Marketing bundle 🎁</b>
+                <span>Flyers, posters, menus, signage, door hangers — built for your goal.</span>
               </div>
               <div class="mini gold">
-                <b>Deliverable: Reusable templates</b>
-                <span>Formats you can reuse for future promos without starting over.</span>
+                <b>Deliverable: Reusable templates 🧰</b>
+                <span>Future promos stay fast because you’re not starting from scratch.</span>
               </div>
             </div>
           </div>
 
           <div class="panel">
-            <h3>Quality checks (what we verify)</h3>
+            <h3>Quality checks (we verify)</h3>
             <ul>
-              <li><b>Readability:</b> can someone understand it from 6–10 feet away?</li>
-              <li><b>Clarity test:</b> “Would a stranger know what to do next in 5 seconds?”</li>
-              <li><b>Print safety:</b> margins, spacing, and clean export settings.</li>
-              <li><b>QR reliability:</b> scans fast, lands correctly, works on phones.</li>
+              <li><b>Readability:</b> does it make sense from 6–10 feet away?</li>
+              <li><b>Speed test:</b> “Can a stranger understand it in 5 seconds?”</li>
+              <li><b>Print safety:</b> margins, spacing, clean export settings.</li>
+              <li><b>QR reliability:</b> scans fast + lands correctly on mobile.</li>
               <li><b>Consistency:</b> everything feels like one brand, not random graphics.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Design outcomes">
+            <div class="mini-grid" aria-label="Build outcomes">
               <div class="mini gold">
-                <b>Outcome: Premium look</b>
+                <b>Outcome: Premium feel</b>
                 <span>Your marketing looks established and trustworthy.</span>
               </div>
               <div class="mini">
-                <b>Outcome: Cleaner action</b>
-                <span>Customers know exactly how to reach you.</span>
+                <b>Outcome: Clean action</b>
+                <span>Customers know exactly what to do next.</span>
               </div>
             </div>
           </div>
@@ -656,18 +653,18 @@
           <div class="phase-left">
             <div class="num">4</div>
             <div>
-              <h2 class="phase-title">Distribute + Refine</h2>
+              <h2 class="phase-title">Deploy + Refine 📍📈</h2>
               <p class="phase-desc">
-                Great marketing isn’t just “made”—it’s placed. We help you deploy your flyers and visuals where they actually get seen:
-                local partner locations, neighborhoods, events, and foot-traffic zones—then we refine what performs.
+                Great marketing isn’t just “made” — it’s <b>placed.</b> We help you deploy your pieces where they actually get seen:
+                partner locations, neighborhoods, events, and high-traffic zones… then we tighten what performs. 🔥
               </p>
             </div>
           </div>
 
           <div class="meta">
             <span class="chip">📍 Placement plan</span>
-            <span class="chip">🤝 Local partners</span>
-            <span class="chip">📈 Improve weekly</span>
+            <span class="chip">🤝 Partner drops</span>
+            <span class="chip">🔁 Improve weekly</span>
           </div>
         </div>
 
@@ -675,41 +672,41 @@
           <div class="panel">
             <h3>What we do</h3>
             <ul>
-              <li><b>Distribution plan:</b> where to place flyers so they don’t get wasted.</li>
-              <li><b>Partner strategy:</b> nearby stores/locations that can share or host materials.</li>
-              <li><b>QR tracking guidance:</b> simple ways to measure interest (optional).</li>
-              <li><b>Google + maps tie-in:</b> make “find us” easy for locals (optional).</li>
-              <li><b>Next promo plan:</b> rotate offers so attention stays fresh.</li>
+              <li><b>Placement checklist:</b> where to drop flyers so they don’t get wasted.</li>
+              <li><b>Partner strategy:</b> nearby stores/locations that can host materials.</li>
+              <li><b>Promo rotation:</b> keep attention fresh with seasonal or weekly offers.</li>
+              <li><b>QR/link guidance:</b> simple tracking options (optional, not complicated).</li>
+              <li><b>Refine:</b> adjust headlines + offers based on what gets responses.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Distribution deliverables">
+            <div class="mini-grid" aria-label="Deploy deliverables">
               <div class="mini gold">
-                <b>Deliverable: Placement checklist</b>
-                <span>A simple list of where to place, how many, and how often to refresh.</span>
+                <b>Deliverable: Placement + refresh plan ✅</b>
+                <span>Where to post, how many, how often to refresh, and what to swap.</span>
               </div>
               <div class="mini">
-                <b>Deliverable: Momentum plan</b>
-                <span>Repeatable weekly actions that keep your visibility alive.</span>
+                <b>Deliverable: Weekly momentum plan 📆</b>
+                <span>Small repeatable actions that keep your presence alive.</span>
               </div>
             </div>
           </div>
 
           <div class="panel">
-            <h3>What happens after launch</h3>
+            <h3>What happens after</h3>
             <ul>
-              <li><b>Optional support:</b> new promos, seasonal flyers, menu updates, and signage refreshes.</li>
-              <li><b>Refine:</b> we improve headlines/offers based on what customers respond to.</li>
+              <li><b>Optional support:</b> new promos, seasonal menus, signage refreshes, updates.</li>
+              <li><b>Refine:</b> we improve what works and cut what doesn’t.</li>
               <li><b>Consistency:</b> your marketing stays clean and recognizable over time.</li>
             </ul>
 
-            <div class="mini-grid" aria-label="Distribution outcomes">
+            <div class="mini-grid" aria-label="Deploy outcomes">
               <div class="mini">
                 <b>Outcome: Real visibility</b>
                 <span>Your marketing gets placed where locals actually see it.</span>
               </div>
               <div class="mini gold">
-                <b>Outcome: Steady momentum</b>
-                <span>Not a one-time flyer drop—an ongoing presence.</span>
+                <b>Outcome: Steady traffic</b>
+                <span>Not a one-time flyer drop — an ongoing presence.</span>
               </div>
             </div>
           </div>
@@ -718,20 +715,20 @@
     </section>
 
     <section class="card faq" aria-label="Process FAQ">
-      <h2 style="margin:0 0 12px; padding:18px 18px 0;">Process FAQ</h2>
+      <h2 style="margin:0 0 12px; padding:18px 18px 0;">Process FAQ ❓</h2>
       <div style="padding:0 18px 18px;">
         <details>
           <summary>Do you only do flyers?</summary>
           <p>
-            Flyers are a big part of local growth—but we also create posters, menus, door hangers, signage, business cards,
-            and simple landing pages that turn local attention into calls, texts, and visits.
+            Nope 😄 Flyers are powerful — but we also create door hangers, posters, menus, signage, business cards,
+            promo graphics, and simple landing pages that turn local attention into calls, texts, and visits.
           </p>
         </details>
 
         <details>
           <summary>What if I don’t have photos yet?</summary>
           <p>
-            No problem. We can start with clean, high-quality layouts and strong copy, then upgrade with photos as you collect them.
+            Totally fine ✅ We can start with clean layouts + strong copy, then upgrade with photos as you collect them.
             The priority is clarity and action first.
           </p>
         </details>
@@ -739,14 +736,14 @@
         <details>
           <summary>How do we know it’s working?</summary>
           <p>
-            We keep it practical. We can use QR codes, trackable links, or simple “where did you hear about us?” prompts.
-            The real goal is visible: more calls, more walk-ins, and better brand recognition locally.
+            We keep it practical: QR codes, trackable links, or a simple “where did you hear about us?” prompt.
+            The real proof is obvious — more calls, more walk-ins, and stronger recognition locally. 📞📍
           </p>
         </details>
 
         <div class="band" aria-label="CTA">
           <div>
-            <strong>Want a clean local plan?</strong>
+            <strong>Want a clean local plan? 🔥</strong>
             <span>Tell us your business + your goal and we’ll recommend the best next step.</span>
           </div>
           <a class="btn btn-primary" href="contact.html">Contact Elevora</a>
