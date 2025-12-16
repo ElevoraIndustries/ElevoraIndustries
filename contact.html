@@ -40,19 +40,15 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ width:min(1180px, 92vw); margin-inline:auto; }
 
+    /* Header (single block, Safari-friendly) */
     header{
       position:sticky; top:0; z-index:50;
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
       backdrop-filter:saturate(140%) blur(10px);
       background: rgba(255,255,255,.72);
       border-bottom:1px solid var(--line);
     }
-    header{
-  position:sticky; top:0; z-index:50;
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
-  backdrop-filter:saturate(140%) blur(10px);
-  background: rgba(255,255,255,.72);
-  border-bottom:1px solid var(--line);
-  }
+
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       gap:16px; padding:14px 0;
@@ -114,14 +110,15 @@
       transform:none !important;
       box-shadow:none !important;
     }
+
     .btn:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-a:focus-visible{
-  outline: 3px solid rgba(0,148,255,.35);
-  outline-offset: 2px;
-}
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible,
+    a:focus-visible{
+      outline: 3px solid rgba(0,148,255,.35);
+      outline-offset: 2px;
+    }
 
     .menu-toggle{ display:none; }
     @media (max-width: 840px){
@@ -358,12 +355,19 @@ a:focus-visible{
       font-size:18px;
       letter-spacing:-.2px;
       line-height:1.2;
+
+      font-weight: 950;
+      letter-spacing: -.4px;
+      line-height: 1.1;
     }
     .island-subtitle{
       margin:2px 0 0;
       color:var(--muted);
       font-weight:650;
       font-size:13px;
+
+      font-weight: 750;
+      opacity: .95;
     }
 
     .island p{
@@ -409,9 +413,7 @@ a:focus-visible{
       .btn{ transition:none; }
     }
 
-    /* =========================================================
-       ✨ "Island Pop" (eye-catch styling + emoji vibe)
-       ========================================================= */
+    /* Island Pop */
     .island-pop{
       position: relative;
       overflow: hidden;
@@ -428,16 +430,6 @@ a:focus-visible{
       opacity:.9;
     }
     .island-pop > *{ position:relative; z-index:1; }
-
-    .island-title{
-      font-weight: 950;
-      letter-spacing: -.4px;
-      line-height: 1.1;
-    }
-    .island-subtitle{
-      font-weight: 750;
-      opacity: .95;
-    }
 
     .island-lead{
       font-weight: 700;
@@ -553,8 +545,7 @@ a:focus-visible{
 
     <div class="grid">
       <div class="left-stack" aria-label="Contact column">
-        <!-- ✅ FIXED: missing quote in style attribute (this was breaking your form) -->
-       <section class="panel" id="form" aria-label="Contact form">
+        <section class="panel" id="form" aria-label="Contact form">
           <h2>Send a message</h2>
           <p>Use the form below. If you prefer email or text, use the quick links on the right.</p>
 
@@ -594,225 +585,4 @@ a:focus-visible{
             </div>
 
             <label for="message">Project details</label>
-            <textarea id="message" name="message" placeholder="Briefly tell us your goal, what you currently have, and what you want to improve..." required></textarea>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit" id="sendBtn">Send Message</button>
-              <a class="btn" href="work.html">See our work</a>
-            </div>
-
-            <p id="formNote" class="note" aria-live="polite"></p>
-            <p class="note">
-              Tip: If you already have a website/social pages, paste the links in your message so we can review faster.
-            </p>
-          </form>
-        </section>
-
-        <section class="island island-pop" aria-label="Quick project starter">
-          <div class="island-head">
-            <span class="island-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M13 2L3 14h7l-1 8 12-14h-7l-1-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </span>
-
-            <div>
-              <h2 class="island-title">Quick project starter ✨</h2>
-              <p class="island-subtitle">6 quick answers = faster clarity + better next steps 🚀</p>
-            </div>
-
-            <div class="island-badge" aria-hidden="true">Fast Track ⚡</div>
-          </div>
-
-          <p class="island-lead">
-            Share what you can below and we’ll respond with a cleaner plan, clearer scope, and real next steps. No pressure—just momentum.
-          </p>
-
-          <div class="island-grid island-grid-pop">
-            <div class="mini mini-pop">
-              <b>🎯 1) Your goal</b>
-              <span>What do you want the site/brand to do? (More calls, stronger trust, better leads, cleaner image, etc.)</span>
-            </div>
-
-            <div class="mini mini-pop">
-              <b>🧩 2) What you already have</b>
-              <span>Website, logo, Google profile, social pages, photos—anything we should build from.</span>
-            </div>
-
-            <div class="mini mini-pop">
-              <b>👥 3) Your audience</b>
-              <span>Who you serve + where they find you (local, online, referrals, walk-ins, etc.).</span>
-            </div>
-
-            <div class="mini mini-pop">
-              <b>⭐ 4) Your top priority</b>
-              <span>Pick one: clarity, credibility, conversions, visibility, or consistency.</span>
-            </div>
-
-            <div class="mini mini-pop">
-              <b>🛠️ 5) What’s not working</b>
-              <span>Confusing site? Not enough calls? Weak photos? No clear offer? We’ll fix the bottleneck first.</span>
-            </div>
-
-            <div class="mini mini-pop">
-              <b>🧠 6) Examples you like</b>
-              <span>Share 1–2 brands you respect so we can match your vibe + quality level.</span>
-            </div>
-          </div>
-
-          <div class="island-two">
-            <div class="mini mini-pop">
-              <b>📩 What you’ll get back</b>
-              <span>
-                A short reply with: (1) the best next step, (2) a simple scope recommendation, and (3) a clear timeline.
-              </span>
-            </div>
-
-            <div class="mini mini-pop">
-              <b>✅ Best fit for</b>
-              <span>
-                Local businesses, service providers, and teams who want a clean online presence that feels trustworthy and easy to act on.
-              </span>
-            </div>
-          </div>
-
-          <div class="band band-pop" style="margin-bottom:2px;">
-            <div>
-              <strong>Want a fast answer? ⚡</strong>
-              <span>Send a short message and we’ll reply with the next best step.</span>
-            </div>
-            <a class="btn btn-primary" href="#form">Message us 💬</a>
-          </div>
-        </section>
-      </div>
-
-      <aside class="quick" aria-label="Quick contact">
-        <section class="panel gold">
-          <h2>Quick options</h2>
-          <p>Choose what’s easiest. We keep it simple.</p>
-
-          <div class="mini" style="margin-top:12px;">
-            <b>Email:</b>
-            <a class="link" href="mailto:HunterAceves@elevoraindustries.com">HunterAceves@elevoraindustries.com</a>
-          </div>
-
-          <div class="mini">
-            <b>Phone:</b>
-            <a class="link" href="tel:3603406293">(360) 340-6293</a>
-          </div>
-
-          <div class="panel" style="margin-top:12px;">
-            <h2>Connect with Elevora</h2>
-            <div
-              class="calendly-inline-widget"
-              data-url="https://calendly.com/hunteraceves-elevoraindustries/30min"
-              style="min-width:320px;height:670px;">
-            </div>
-          </div>
-          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        </section>
-
-        <section class="card" aria-label="Expectations" style="padding:30px;">
-          <h2 style="margin:0 0 10px; color:var(--ink); font-size:18px; letter-spacing:-.2px;">What to expect</h2>
-          <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:650;">
-            <li>Response time: usually 24–48 hours</li>
-            <li>First message: a clear next-step plan</li>
-            <li>We’ll keep it simple and actionable</li>
-          </ul>
-
-          <div class="band" style="margin-top:45px;">
-            <div>
-              <strong>Want a fast starting point?</strong>
-              <span>We can begin with a premium homepage and expand.</span>
-            </div>
-            <a class="btn btn-primary" href="process.html">View the process</a>
-          </div>
-        </section>
-      </aside>
-    </div>
-  </main>
-
-  <footer aria-label="Footer">
-    <div class="wrap">
-      <div class="foot">
-        <div style="display:flex; gap:10px; align-items:center;">
-          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;">
-            <img src="logotransparent.png" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
-          </span>
-
-          <div>
-            <div style="font-weight:900; color:var(--ink);">Elevora Industries</div>
-            <div class="small">Identity • Structure • Strategy</div>
-          </div>
-        </div>
-
-        <div>
-          <div>© <span id="year"></span> Elevora Industries. All rights reserved.</div>
-          <div class="small">Built for clarity, trust, and momentum.</div>
-        </div>
-
-        <div>
-          <a href="what-we-do.html">What We Do</a> &nbsp;•&nbsp;
-          <a href="process.html">Process</a> &nbsp;•&nbsp;
-          <a href="work.html">Work</a> &nbsp;•&nbsp;
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function toggleMenu(){
-      const menu = document.getElementById("mobileMenu");
-      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
-    }
-
-    // ✅ Safer submit handler (won't crash if the form can't be found)
-    const form = document.getElementById("contactForm");
-    const note = document.getElementById("formNote");
-    const sendBtn = document.getElementById("sendBtn");
-
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        if (note) note.textContent = "Sending…";
-
-        if (sendBtn) {
-          sendBtn.disabled = true;
-          sendBtn.textContent = "Sending…";
-        }
-
-        try{
-          const res = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { "Accept": "application/json" }
-          });
-
-          if (res.ok) {
-            window.location.href = "Thankyoupage.html";
-          } else {
-            if (note) note.textContent = "Something went wrong. Please try again.";
-            alert("Something went wrong. Please try again.");
-          }
-        }catch(err){
-          if (note) note.textContent = "Network error. Please try again.";
-          alert("Network error. Please try again.");
-        } finally {
-          if (sendBtn) {
-            sendBtn.disabled = false;
-            sendBtn.textContent = "Send Message";
-          }
-        }
-      });
-    }
-  </script>
-</body>
-</html>
-
-
-
-
+            <textarea id="message" name
